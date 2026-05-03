@@ -4,7 +4,7 @@ project(drone-lidar)
 
 find_package(mp-units CONFIG REQUIRED)
 
-add_executable(drone_mapper src/main.cpp)
+add_executable(drone_mapper src/main.cpp src/parser.cpp)
 
 target_compile_features(drone_mapper PRIVATE cxx_std_20)
 

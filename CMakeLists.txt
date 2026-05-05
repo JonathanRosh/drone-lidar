@@ -6,6 +6,10 @@ find_package(mp-units CONFIG REQUIRED)
 
 add_executable(drone_mapper src/main.cpp src/parser.cpp)
 
+target_include_directories(drone_mapper PRIVATE
+    include
+)
+
 target_compile_features(drone_mapper PRIVATE cxx_std_20)
 
 target_compile_options(drone_mapper PRIVATE

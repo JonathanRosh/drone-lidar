@@ -1,10 +1,27 @@
+#include "parsing/Parser.h"
+
+#include <exception>
 #include <iostream>
-#include <mp-units/systems/si/unit_symbols.h>
+#include <string>
 
-using mp_units::si::unit_symbols::deg;
+int main(int argc, char** argv) {
+  const std::string base_path = (argc > 1) ? argv[1] : ".";
 
-int main() {
-  auto a = 90.0 * deg;
+  try {
+    const auto drone_config =
+        parsing::parseDroneConfigFile(parsing::buildPath(base_path, "drone_config.txt"));
+    const auto mission_config = parsing::parseMissionConfigFile(
+        parsing::buildPath(base_path, "mission_config.txt"));
+    const auto input_map =
+        parsing::parseInputMapFile(parsing::buildPath(base_path, "map_input.txt"));
 
-  std::cout << a << "\n";
+    std::cout << "Parsing succeeded.\n";
+    std::cout << "Drone FOVC: " << drone_config.lidar_config.fovc << "\n";
+    std::cout << "Mission XY resolution: " << mission_config.resolution.xy << "\n";
+    std::cout << "Occupied points: " << input_map.occupied_points.size() << "\n";
+    return 0;
+  } catch (const std::exception& ex) {
+    std::cerr << "Parsing failed: " << ex.what() << "\n";
+    return 1;
+  }
 }

@@ -13,6 +13,10 @@ target_include_directories(drone_mapper
         PRIVATE ${CMAKE_SOURCE_DIR}/include
 )
 
+target_include_directories(drone_mapper PRIVATE
+    include
+)
+
 target_compile_features(drone_mapper PRIVATE cxx_std_20)
 
 target_compile_options(drone_mapper PRIVATE

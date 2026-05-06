@@ -1,29 +1,35 @@
-#include <mp-units/systems/si.h>
+#include "parsing/Parser.h"
+
+#include <exception>
 #include <iostream>
+#include <string>
 
-int main()
-{
-  // using namespace mp_units;
-  // using namespace mp_units::si::unit_symbols;
-  //
-  // // Using symbols (imported from unit_symbols namespace)
-  // quantity distance1 = 5.0 * km;
-  //
-  // // Using full unit names with prefixes
-  // quantity<si::kilo<si::metre>, double> distance2 = 5.0 * si::kilo<si::metre>;
-  //
-  // std::cout << "With symbols: " << distance1 << "\n";
-  // std::cout << "With names: " << distance2 << "\n";
-  // std::cout << "Equal? " << (distance1 == distance2 ? "Yes" : "No") << "\n";
+int main(int argc, char** argv) {
+  const std::string base_path = (argc > 1) ? argv[1] : ".";
 
+  try {
+    const auto drone_config =
+        parsing::parseDroneConfigFile(parsing::buildPath(base_path, "drone_config.txt"));
+    const auto mission_config = parsing::parseMissionConfigFile(
+        parsing::buildPath(base_path, "mission_config.txt"));
+    const auto input_map =
+        parsing::parseInputMapFile(parsing::buildPath(base_path, "map_input.txt"));
 
+    std::cout << "Parsing succeeded.\n";
+    std::cout << "Drone FOVC: " << drone_config.lidar_config.fovc << "\n";
+    std::cout << "Mission XY resolution: " << mission_config.resolution.xy << "\n";
+    std::cout << "Occupied points: " << input_map.occupied_points.size() << "\n";
+    return 0;
+  } catch (const std::exception& ex) {
+    std::cerr << "Parsing failed: " << ex.what() << "\n";
+    return 1;
+  }
+  
+  
   // parse txt files
 
   // DroneConfig, LidarConfig, MissionConfig, TrueMap
   //
   // // init Simulator
-
-
-
-
+  
 }

@@ -1,4 +1,4 @@
-#include "parser.h"
+#include "parsing/Parser.h"
 
 #include <algorithm>
 #include <cctype>
@@ -6,7 +6,7 @@
 #include <sstream>
 #include <stdexcept>
 
-namespace parser {
+namespace parsing {
 namespace {
 
 std::string trim(const std::string &text) {
@@ -51,8 +51,8 @@ int parseIntOrThrow(const std::string &text, const std::string &key,
 
 } // namespace
 
-DroneConfig parseDroneConfigFile(const std::string &path) {
-  DroneConfig drone_config;
+config::DroneConfig parseDroneConfigFile(const std::string &path) {
+  config::DroneConfig drone_config;
 
   std::ifstream file(path);
   if (!file.is_open()) {
@@ -170,8 +170,8 @@ DroneConfig parseDroneConfigFile(const std::string &path) {
   return drone_config;
 }
 
-MissionConfig parseMissionConfigFile(const std::string &path) {
-  MissionConfig mission_config;
+config::MissionConfig parseMissionConfigFile(const std::string &path) {
+  config::MissionConfig mission_config;
 
   std::ifstream file(path);
   if (!file.is_open()) {
@@ -238,7 +238,7 @@ MissionConfig parseMissionConfigFile(const std::string &path) {
           parseDoubleOrThrow(value_text, key, line_number) *
           mp_units::si::unit_symbols::cm;
     } else if (key == "start_position_angle") {
-      mission_config.start_position.angle =
+      mission_config.start_position.xy_angle =
           parseDoubleOrThrow(value_text, key, line_number) *
           mp_units::si::unit_symbols::deg;
     } else if (key == "resolution_xy") {
@@ -279,8 +279,8 @@ MissionConfig parseMissionConfigFile(const std::string &path) {
   return mission_config;
 }
 
-InputMap parseInputMapFile(const std::string &path) {
-  InputMap input_map;
+config::InputMap parseInputMapFile(const std::string &path) {
+  config::InputMap input_map;
 
   std::ifstream file(path);
   if (!file.is_open()) {
@@ -310,7 +310,7 @@ InputMap parseInputMapFile(const std::string &path) {
                                ". Expected format: x,y,height");
     }
 
-    InputMap::OccupiedPoint point;
+    domain::Point3D point;
     point.x = x * mp_units::si::unit_symbols::cm;
     point.y = y * mp_units::si::unit_symbols::cm;
     point.height = height * mp_units::si::unit_symbols::cm;
@@ -350,4 +350,4 @@ void writeInputErrorsFile(const std::string &base_path,
   }
 }
 
-} // namespace parser
+} // namespace parsing

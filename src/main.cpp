@@ -24,4 +24,12 @@ int main(int argc, char** argv) {
     std::cerr << "Parsing failed: " << ex.what() << "\n";
     return 1;
   }
+  
+  
+  // parse txt files
+
+  // DroneConfig, LidarConfig, MissionConfig, TrueMap
+  //
+  // // init Simulator
+  
 }

@@ -4,7 +4,14 @@ project(drone-lidar)
 
 find_package(mp-units CONFIG REQUIRED)
 
-add_executable(drone_mapper src/main.cpp src/parser.cpp)
+add_executable(drone_mapper
+        src/main.cpp
+        src/parser.cpp
+)
+
+target_include_directories(drone_mapper
+        PRIVATE ${CMAKE_SOURCE_DIR}/include
+)
 
 target_compile_features(drone_mapper PRIVATE cxx_std_20)
 

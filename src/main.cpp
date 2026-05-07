@@ -1,35 +1,41 @@
-#include "parsing/Parser.h"
+#include "Configs.h"
+#include "Parser.h"
 
 #include <exception>
+#include <filesystem>
 #include <iostream>
 #include <string>
 
-int main(int argc, char** argv) {
-  const std::string base_path = (argc > 1) ? argv[1] : ".";
+int main(int argc, char **argv) {
+
+  // parse txt files
+  namespace fs = std::filesystem;
+
+  fs::path input_output_path =
+      (argc >= 2) ? fs::path(argv[1]) : fs::current_path();
+
+  fs::path drone_config_path = input_output_path / "drone_config.txt";
+  fs::path mission_config_path = input_output_path / "mission_config.txt";
+  fs::path true_map_path = input_output_path / "map_input.txt";
 
   try {
-    const auto drone_config =
-        parsing::parseDroneConfigFile(parsing::buildPath(base_path, "drone_config.txt"));
-    const auto mission_config = parsing::parseMissionConfigFile(
-        parsing::buildPath(base_path, "mission_config.txt"));
-    const auto input_map =
-        parsing::parseInputMapFile(parsing::buildPath(base_path, "map_input.txt"));
+    const DroneConfig drone_config =
+        parseDroneConfig(drone_config_path.string());
+    const MissionConfig mission_config =
+        parseMissionConfig(mission_config_path.string());
+    // const TrueMap true_map = parseTrueMap("true_map.txt");
 
-    std::cout << "Parsing succeeded.\n";
-    std::cout << "Drone FOVC: " << drone_config.lidar_config.fovc << "\n";
-    std::cout << "Mission XY resolution: " << mission_config.resolution.xy << "\n";
-    std::cout << "Occupied points: " << input_map.occupied_points.size() << "\n";
-    return 0;
-  } catch (const std::exception& ex) {
-    std::cerr << "Parsing failed: " << ex.what() << "\n";
+    (void)drone_config;
+    (void)mission_config;
+
+  } catch (const std::exception &ex) {
+
+    std::cerr << "Error parsing input files: " << ex.what() << std::endl;
     return 1;
   }
-  
-  
-  // parse txt files
 
   // DroneConfig, LidarConfig, MissionConfig, TrueMap
-  //
+
   // // init Simulator
-  
+  return 0;
 }

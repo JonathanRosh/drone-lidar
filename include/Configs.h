@@ -4,42 +4,43 @@
 #include "Units.h"
 
 struct MinPass {
-    Length width;
-    Length height;
-    Length length;
+  Length width;
+  Length height;
+  Length length;
 };
 
 struct MaxCommand {
-    Distance maxAdvance;
-    Distance maxElevate;
-    Angle maxRotate;
-};
-
-struct DroneConfig {
-    MinPass minPass;
-    MaxCommand maxCommand;
+  Distance maxAdvance;
+  Distance maxElevate;
+  Angle maxRotate;
 };
 
 struct LidarConfig {
-    Distance zMin;
-    Distance zMax;
-    Distance d;
-    unsigned int fovc;
+  Distance zMin;
+  Distance zMax;
+  Distance d;
+  unsigned int fovc;
+};
+
+struct DroneConfig {
+  MinPass minPass;
+  MaxCommand maxCommand;
+  LidarConfig lidarConfig;
 };
 
 struct MapBoundry {
-    Distance minX, minY, maxX, maxY, maxHeight, minHeight;
+  Distance minX, minY, maxX, maxY, maxHeight, minHeight;
 };
 
 struct MapResolution {
-    unsigned int xy_resolution;
-    unsigned int height_resolution;
+  unsigned int xy_resolution;
+  unsigned int height_resolution;
 };
 
 struct MissionConfig {
-    MapBoundry map_boundry;
-    MapResolution map_resolution;
-    // std::set<Position3D> recharging_stations; TODO
+  MapBoundry map_boundry;
+  MapResolution map_resolution;
+  // std::set<Position3D> recharging_stations; TODO
 };
 
-#endif //DRONE_LIDAR_CONFIG_H
+#endif // DRONE_LIDAR_CONFIG_H

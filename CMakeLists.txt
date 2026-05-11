@@ -7,6 +7,8 @@ find_package(mp-units CONFIG REQUIRED)
 add_executable(drone_mapper
         src/main.cpp
         src/parser.cpp
+        src/LidarSensorMock.cpp
+        src/TrueMap.cpp
 )
 
 target_include_directories(drone_mapper

@@ -11,7 +11,11 @@ int toIndex(Distance value, Distance resolution) {
     );
 }
 
-TrueMap::TrueMap(MissionConfig& mission_config) : config(mission_config) {};
+TrueMap::TrueMap(const MissionConfig& mission_config) : 
+    config(mission_config), 
+    res_xy(resolutionToDistance(config.map_resolution.xy_resolution)),
+    res_height(resolutionToDistance(config.map_resolution.height_resolution))
+    {};
 
 void TrueMap::set(const Position3D& pos, Mapping mapping) {
     if (!isInsideBounds(pos)) {
@@ -26,9 +30,9 @@ void TrueMap::set(const Position3D& pos, Mapping mapping) {
 
 GridCoord TrueMap::worldToGrid(const Position3D& pos) const {
     return {
-        toIndex(pos.x, resolutionToDistance(config.map_resolution.xy_resolution)),
-        toIndex(pos.y, resolutionToDistance(config.map_resolution.xy_resolution)),
-        toIndex(pos.z, resolutionToDistance(config.map_resolution.height_resolution))
+        toIndex(pos.x, res_xy),
+        toIndex(pos.y, res_xy),
+        toIndex(pos.z, res_height)
     };
 }
 
@@ -44,7 +48,6 @@ bool TrueMap::isInsideBounds(const Position3D& pos) const {
         pos.z <= b.maxHeight;
 }
 
-// TODO: this should be calculated once in the constructor
 Distance TrueMap::resolutionToDistance(const unsigned int res) const {
     return std::pow(10.0, -static_cast<int>(res)) * cm;
 }

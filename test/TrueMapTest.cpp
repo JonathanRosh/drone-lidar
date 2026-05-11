@@ -9,7 +9,7 @@ Distance maxY = 20.0 * cm;
 Distance maxHeight = 20.0 * cm;
 Distance minHeight = 10.0 * cm;
 
-MapBoundry map_boundry = {
+const MapBoundry map_boundry = {
     minX,
     minY,
     maxX,
@@ -18,12 +18,12 @@ MapBoundry map_boundry = {
     minHeight,
 };
 
-MapResolution map_resolution = {
+const MapResolution map_resolution = {
     2,
     3,
 };
 
-MissionConfig mission_config = {
+const MissionConfig mission_config = {
     map_boundry,
     map_resolution
 };

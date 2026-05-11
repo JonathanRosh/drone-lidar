@@ -3,6 +3,7 @@
 
 #include "IMap3D.h"
 #include "Configs.h"
+#include "TrueMapBuilder.h"
 
 struct GridCoord {
     int x;
@@ -33,11 +34,13 @@ class TrueMap : public IMap3D {
     GridCoord worldToGrid(const Position3D& pos) const;
     bool isInsideBounds(const Position3D& pos) const;
     Distance resolutionToDistance(const unsigned int res) const; // the res is number of places after the number of decimal places after the point
+    void set(const Position3D& pos, const Mapping mapping);
+
+    friend class TrueMapBuilder;
     
 public:
     TrueMap(const MissionConfig& mission_config);
     Mapping get(const Position3D& pos) const override;
-    void set(const Position3D& pos, const Mapping mapping);
 };
 
 #endif //DRONE_LIDAR_TRUEMAP_H

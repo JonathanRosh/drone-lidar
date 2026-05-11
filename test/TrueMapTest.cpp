@@ -1,4 +1,5 @@
 #include "../include/TrueMap.h"
+#include "../include/TrueMapBuilder.h"
 
 #include <gtest/gtest.h>
 
@@ -62,7 +63,7 @@ TEST(TrueMapTest, SetAndGetCell)
         15.0 * cm
     };
 
-    tm.set(pos, OCCUPIED);
+    TrueMapBuilder::set(tm ,pos, OCCUPIED);
 
     EXPECT_EQ(tm.get(pos), OCCUPIED);
 }
@@ -81,8 +82,8 @@ TEST(TrueMapTest, XYResolutionDistinguishesCells)
         15.0 * cm
     };
 
-    tm.set(xy1, OCCUPIED);
-    tm.set(xy2, EMPTY);
+    TrueMapBuilder::set(tm, xy1, OCCUPIED);
+    TrueMapBuilder::set(tm, xy2, EMPTY);
 
     EXPECT_EQ(tm.get(xy1), OCCUPIED);
     EXPECT_EQ(tm.get(xy2), EMPTY);
@@ -102,8 +103,8 @@ TEST(TrueMapTest, HeightResolutionDistinguishesCells)
         16.002 * cm
     };
 
-    tm.set(h1, OCCUPIED);
-    tm.set(h2, EMPTY);
+    TrueMapBuilder::set(tm, h1, OCCUPIED);
+    TrueMapBuilder::set(tm, h2, EMPTY);
 
     EXPECT_EQ(tm.get(h1), OCCUPIED);
     EXPECT_EQ(tm.get(h2), EMPTY);

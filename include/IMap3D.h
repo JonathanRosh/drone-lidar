@@ -12,7 +12,7 @@ enum Mapping {
 
 class IMap3D {
 public:
-    virtual ~IMap3D() = default;
+    //virtual ~IMap3D() = default;
 
     virtual Mapping get(const Position3D& pos) const = 0;
 };

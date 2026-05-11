@@ -19,7 +19,7 @@ class LidarSensorMock : public ILidarSensor {
 
 public:
     LidarSensorMock(const LidarConfig& lidar_config, IMap3D& simulation_map, IPositionSensor& pos_sensor);
-    LidarScanResult getScan(const Orientation& drone_orientation) override;
+    //LidarScanResult getScan(const Orientation& drone_orientation) override;
 };
 
 #endif //DRONE_LIDAR_LIDARSENSORMOCK_H

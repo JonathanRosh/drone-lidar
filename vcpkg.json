@@ -1,5 +1,6 @@
 {
   "dependencies": [
-    "mp-units"
+    "mp-units",
+    "gtest"
   ]
 }

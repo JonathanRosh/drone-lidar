@@ -4,7 +4,7 @@
 
 int toIndex(Distance value, Distance resolution) {
     return static_cast<int>(
-        std::floor(
+        std::round(
             (value / resolution)
                 .numerical_value_in(mp::one)
         )
@@ -44,11 +44,9 @@ bool TrueMap::isInsideBounds(const Position3D& pos) const {
         pos.z <= b.maxHeight;
 }
 
+// TODO: this should be calculated once in the constructor
 Distance TrueMap::resolutionToDistance(const unsigned int res) const {
-    double meters_value =
-        std::pow(10.0, -static_cast<int>(res));
-
-    return meters_value * mp::si::metre;
+    return std::pow(10.0, -static_cast<int>(res)) * cm;
 }
 
 Mapping TrueMap::get(const Position3D& pos) const {

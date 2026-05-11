@@ -18,6 +18,7 @@ struct Orientation {
     Angle elevation;
 };
 
+// TODO: add strong types for x, y, z like in the example
 struct Position3D {
     Distance x;
     Distance y;

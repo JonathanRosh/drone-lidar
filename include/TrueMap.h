@@ -24,18 +24,18 @@ struct GridCoordHash {
 
 class TrueMap : public IMap3D {
 
-    TrueMap(MissionConfig& mission_config);
-
+    
     std::unordered_map<GridCoord, Mapping, GridCoordHash> cells;
     MissionConfig& config;
-
-    void set(const Position3D& pos, const Mapping mapping);
+    
     GridCoord worldToGrid(const Position3D& pos) const;
     bool isInsideBounds(const Position3D& pos) const;
     Distance resolutionToDistance(const unsigned int res) const; // the res is number of places after the number of decimal places after the point
-
+    
 public:
+    TrueMap(MissionConfig& mission_config);
     Mapping get(const Position3D& pos) const override;
+    void set(const Position3D& pos, const Mapping mapping);
 };
 
 #endif //DRONE_LIDAR_TRUEMAP_H

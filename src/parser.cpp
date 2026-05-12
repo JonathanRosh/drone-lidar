@@ -1,7 +1,9 @@
 #include "Configs.h"
 #include "TrueMap.h"
+#include "TrueMapBuilder.h"
 #include "Units.h"
 
+#include <algorithm>
 #include <fstream>
 #include <sstream>
 #include <stdexcept>
@@ -42,13 +44,13 @@ DroneConfig parseDroneConfig(const std::string &filename) {
 
   std::string line;
   while (std::getline(file, line)) {
-    const std::string cleaned_line = trim(line);
-    if (cleaned_line.empty() || cleaned_line[0] == '#')
+    const std::string trimmed_line = trim(line);
+    if (trimmed_line.empty() || trimmed_line[0] == '#')
       continue;
 
     std::string key;
     std::string value;
-    if (parseKeyValue(cleaned_line, key, value)) {
+    if (parseKeyValue(trimmed_line, key, value)) {
       if (key == "min_pass_width") {
         drone_config.minPass.width = Length(std::stod(value), cm);
       } else if (key == "min_pass_height") {
@@ -69,6 +71,8 @@ DroneConfig parseDroneConfig(const std::string &filename) {
         drone_config.lidarConfig.d = Distance(std::stod(value), cm);
       } else if (key == "lidar_fovc") {
         drone_config.lidarConfig.fovc = std::stoi(value);
+      } else {
+        throw std::runtime_error("Failed to parse line: " + line);
       }
     }
   }
@@ -86,13 +90,13 @@ MissionConfig parseMissionConfig(const std::string &filename) {
 
   std::string line;
   while (std::getline(file, line)) {
-    const std::string cleaned_line = trim(line);
-    if (cleaned_line.empty() || cleaned_line[0] == '#')
+    const std::string trimmed_line = trim(line);
+    if (trimmed_line.empty() || trimmed_line[0] == '#')
       continue;
 
     std::string key;
     std::string value;
-    if (parseKeyValue(cleaned_line, key, value)) {
+    if (parseKeyValue(trimmed_line, key, value)) {
       if (key == "map_boundary_x_min") {
         mission_config.map_boundry.minX = Distance(std::stod(value), cm);
       } else if (key == "map_boundary_y_min") {
@@ -109,6 +113,8 @@ MissionConfig parseMissionConfig(const std::string &filename) {
         mission_config.map_resolution.xy_resolution = std::stoi(value);
       } else if (key == "resolution_height" || key == "map_resolution_height") {
         mission_config.map_resolution.height_resolution = std::stoi(value);
+      } else {
+        throw std::runtime_error("Failed to parse line: " + line);
       }
     }
   }
@@ -116,11 +122,38 @@ MissionConfig parseMissionConfig(const std::string &filename) {
   return mission_config;
 }
 
-// TODO after deciding data sturcture for TrueMap
+TrueMap parseTrueMap(const std::string &filename,
+                     const MissionConfig &mission_config) {
+  TrueMap trueMap(mission_config);
 
-/*TrueMap parseTrueMap(const std::string &filename) {
+  std::ifstream file(filename);
+  if (!file.is_open()) {
+    throw std::runtime_error("Failed to open file: " + filename);
+  }
 
-  TrueMap trueMap;
+  std::string line;
+  while (std::getline(file, line)) {
+    std::string trimmed_line = trim(line);
+    if (trimmed_line.empty() || trimmed_line[0] == '#')
+      continue;
+
+    std::replace(trimmed_line.begin(), trimmed_line.end(), ',', ' ');
+
+    std::stringstream ss(trimmed_line);
+    double x_raw, y_raw, z_raw;
+
+    if (ss >> x_raw >> y_raw >> z_raw) {
+
+      XLength x = x_raw * cm;
+      YLength y = y_raw * cm;
+      ZLength z = z_raw * cm;
+
+      Position3D position{x, y, z};
+      TrueMapBuilder::set(trueMap, position, OCCUPIED);
+
+    } else {
+      throw std::runtime_error("Failed to parse line: " + line);
+    }
+  }
   return trueMap;
-
-}*/
+}

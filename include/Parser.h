@@ -7,6 +7,7 @@
 
 DroneConfig parseDroneConfig(const std::string &filename);
 MissionConfig parseMissionConfig(const std::string &filename);
-// TrueMap parseTrueMap(const std::string &filename);
+TrueMap parseTrueMap(const std::string &filename,
+                     const MissionConfig &mission_config);
 
 #endif // DRONE_LIDAR_PARSER_H

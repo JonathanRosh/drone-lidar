@@ -7,12 +7,13 @@
 
 class Simulator {
 
-    IDrone drone;
+  IDrone drone;
 
 public:
-    Simulator(DroneConfig lidar_config, MissionConfig mission_config, TrueMap true_map);
+  Simulator(DroneConfig drone_config, MissionConfig mission_config,
+            TrueMap true_map); // Should it take them as reference?
 
-    IMap3D& simulate();
+  IMap3D &simulate();
 };
 
-#endif //DRONE_LIDAR_ISIMULATOR_H
+#endif // DRONE_LIDAR_ISIMULATOR_H

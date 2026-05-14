@@ -1,16 +1,24 @@
-#ifndef DRONE_LIDAR_DRONEMAP_H
-#define DRONE_LIDAR_DRONEMAP_H
+#pragma once
 
+#include "Configs.h"
+#include "GridCoord.h"
 #include "IMap3D.h"
 
-class DroneMap : public IMap3D {
+#include <unordered_map>
 
-    // TODO
+class DroneMap : public IMap3D {
+  std::unordered_map<GridCoord, Mapping, GridCoordHash> cells_;
+  const MissionConfig &config_;
+  const Distance res_xy_;
+  const Distance res_height_;
+
+  GridCoord worldToGrid(const Position3D &pos) const;
+  Position3D gridToWorld(const GridCoord &grid) const;
 
 public:
-    Mapping get(const Position3D& pos) const override;
-    void set(const Position3D& pos, Mapping val);
-    IMap3D& getMap();
-};
+  explicit DroneMap(const MissionConfig &mission_config);
 
-#endif //DRONE_LIDAR_DRONEMAP_H
+  Mapping get(const Position3D &pos) const override;
+  void set(const Position3D &pos, Mapping val) override;
+  bool isInsideBounds(const Position3D &pos) const override;
+};

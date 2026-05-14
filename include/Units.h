@@ -1,5 +1,4 @@
-#ifndef DRONE_LIDAR_UNITS_H
-#define DRONE_LIDAR_UNITS_H
+#pragma once
 
 #include <mp-units/framework.h>
 #include <mp-units/systems/isq.h>
@@ -15,28 +14,26 @@ QUANTITY_SPEC(x_extent, isq::length);
 QUANTITY_SPEC(y_extent, isq::length);
 QUANTITY_SPEC(z_extent, isq::length);
 
-using Distance =  mp::quantity<isq::length[cm], double>;
-using Length  =  mp::quantity<isq::length[cm], double>;
+using Distance = mp::quantity<isq::length[cm], double>;
+using Length = mp::quantity<isq::length[cm], double>;
 using XLength = mp::quantity<x_extent[cm], double>;
 using YLength = mp::quantity<y_extent[cm], double>;
 using ZLength = mp::quantity<z_extent[cm], double>;
 
 struct Position3D {
-    XLength x{};
-    YLength y{};
-    ZLength z{};
+  XLength x{};
+  YLength y{};
+  ZLength z{};
 };
 
 QUANTITY_SPEC(horizontal_angle, isq::angular_measure);
-QUANTITY_SPEC(altitude_angle,   isq::angular_measure);
+QUANTITY_SPEC(altitude_angle, isq::angular_measure);
 
-using Angle           = mp::quantity<isq::angular_measure[deg], double>;  
+using Angle = mp::quantity<isq::angular_measure[deg], double>;
 using HorizontalAngle = mp::quantity<horizontal_angle[deg], double>;
-using Altitude        = mp::quantity<altitude_angle[deg], double>;
+using Altitude = mp::quantity<altitude_angle[deg], double>;
 
 struct Orientation {
-    HorizontalAngle horizontal{};
-    Altitude altitude{};
+  HorizontalAngle horizontal{};
+  Altitude altitude{};
 };
-
-#endif //DRONE_LIDAR_UNITS_H

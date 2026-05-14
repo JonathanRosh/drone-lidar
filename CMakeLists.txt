@@ -6,10 +6,13 @@ find_package(mp-units CONFIG REQUIRED)
 find_package(GTest CONFIG REQUIRED)
 
 add_library(drone_core
-    src/parser.cpp
+    src/Parser.cpp
+    src/MapGrid.cpp
     src/TrueMap.cpp
+    src/DroneMap.cpp
     src/LidarSensorMock.cpp
     src/TrueMapBuilder.cpp
+    src/Simulator.cpp
 )
 
 target_include_directories(

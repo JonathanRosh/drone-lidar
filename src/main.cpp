@@ -26,8 +26,12 @@ int main(int argc, char **argv) {
   (void)mission_config;
   (void)true_map;
 
-  // Wire Simulator(drone, true_map, map, lidar, position, movement,
-  // mission_config) once concrete drone / map / mocks are available.
+  // TODO:
+  //  Instanciate drone and all other objects needed for the simulator
+
+  // Run simulator.simulate() and get the final map
+
+  // Calculate score and print it
 
   return 0;
 }

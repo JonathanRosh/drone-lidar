@@ -723,6 +723,17 @@ PathAdvanceResult advanceAlongFrontierPath(const vector<Position3D> &path,
           distanceCm(path_start, sim_state.drone_position)};
 }
 
+/** Places the drone at the lexicographically first free cell in the true map. */
+void setInitialPosition(TrueMap &true_map, SimulationState &sim_state) {
+  const std::optional<Position3D> start =
+      true_map.firstUnoccupiedPositionLexOrder();
+  if (!start) {
+    throw std::runtime_error(
+        "TrueMap has no in-bounds cell that is not OCCUPIED");
+  }
+  sim_state.drone_position = *start;
+}
+
 } // namespace
 
 Simulator::Simulator(IDrone &drone, TrueMap &true_map, IMap3D &map,
@@ -735,24 +746,15 @@ Simulator::Simulator(IDrone &drone, TrueMap &true_map, IMap3D &map,
       position_sensor(&position_sensor), movement_driver(&movement_driver),
       mission_config_(mission_config), drone_config_(drone_config) {}
 
-/** Places the drone at the lexicographically first free cell in the true map. */
-void Simulator::setInitialPosition() {
-  const std::optional<Position3D> start =
-      true_map.firstUnoccupiedPositionLexOrder();
-  if (!start) {
-    throw std::runtime_error(
-        "TrueMap has no in-bounds cell that is not OCCUPIED");
-  }
-  simulation_state.drone_position = *start;
-}
-
 /**
  * Autonomous mapping loop: survey → plan frontier → move safely → repeat.
  * Returns the drone's built map when no frontier remains (or all are cooled).
  */
 IMap3D &Simulator::simulate() {
-  setInitialPosition();
-  frontier_failure_counts_.clear();
+  setInitialPosition(true_map, simulation_state);
+
+  // Per-run frontier cooldown (lives only inside simulate, not part of class API).
+  std::unordered_map<GridCoord, int, GridCoordHash> frontier_failure_counts;
 
   const Distance safe_scan_step = computeSafeScanStep(drone_config_);
   const double step_threshold_cm = safe_scan_step.numerical_value_in(cm);
@@ -766,7 +768,7 @@ IMap3D &Simulator::simulate() {
     // 2. BFS to the nearest frontier cell not on cooldown.
     const vector<Position3D> frontier_path = getPathToFrontier(
         simulation_state.drone_position, *map, mission_config_,
-        frontier_failure_counts_);
+        frontier_failure_counts);
 
     if (frontier_path.empty()) {
       break; // No frontier left (mapping complete or all cooled).
@@ -793,7 +795,7 @@ IMap3D &Simulator::simulate() {
     const bool reached_goal =
         sameGridCell(simulation_state.drone_position, frontier_goal,
                      mission_config_);
-    recordFrontierAttempt(frontier_failure_counts_, frontier_cell, reached_goal);
+    recordFrontierAttempt(frontier_failure_counts, frontier_cell, reached_goal);
 
     if (reached_goal) {
       continue; // Replan from the frontier cell we reached.

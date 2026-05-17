@@ -7,13 +7,15 @@
 #include "Configs.h"
 #include "LidarScanResult.h"
 
+#include <optional>
+
 class LidarSensorMock : public ILidarSensor {
 
     const LidarConfig& lidar_config;
     const IMap3D& map;
     const IPositionSensor& pos_sensor;
     
-    LidarHit traceBeam(const Orientation& beam_orientation) const;
+    std::optional<Distance> traceBeam(const Orientation& beam_orientation) const;
     
 public:
     LidarSensorMock(const LidarConfig& lidar_config, IMap3D& simulation_map, IPositionSensor& pos_sensor);

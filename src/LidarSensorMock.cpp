@@ -1,6 +1,7 @@
 #include "../include/LidarSensorMock.h"
+#include "../include/Units.h"
 
-#include <cmath>
+#include <mp-units/systems/si/math.h>
 
 LidarSensorMock::LidarSensorMock(
         const LidarConfig& lidar_config, 
@@ -10,26 +11,106 @@ LidarSensorMock::LidarSensorMock(
 
 // TODO: move semantics
 // 3D DDA Voxel traversal algorithm
-LidarHit LidarSensorMock::traceBeam(const Orientation& beam_orientation) const {
+std::optional<Distance> LidarSensorMock::traceBeam(const Orientation& beam_orientation) const {
 
-    (void)beam_orientation;
+    const Position3D& origin = pos_sensor.getPosition();
 
-    Distance distance = 10.0 * cm;;
-    Orientation orientation;
+    const auto cos_altitude = si::cos(beam_orientation.altitude);
 
-    return LidarHit{
-        distance,
-        orientation
-    };
+    const auto dx = cos_altitude * si::cos(beam_orientation.horizontal);
+    const auto dy = cos_altitude * si::sin(beam_orientation.horizontal);
+    const auto dz = si::sin(beam_orientation.altitude);
+
+    const Distance step = Distance{0.1 * cm};
+    const Distance min_distance = std::min(lidar_config.zMin, step);
+
+    for (Distance distance = min_distance; distance <= lidar_config.zMax; distance += step) {
+       
+        const Position3D sample{
+            origin.x + dx.force_numerical_value_in(mp::one) * distance.force_numerical_value_in(cm) * x_extent[cm],
+            origin.y + dy.force_numerical_value_in(mp::one) * distance.force_numerical_value_in(cm) * y_extent[cm],
+            origin.z + dz.force_numerical_value_in(mp::one) * distance.force_numerical_value_in(cm) * z_extent[cm],
+        };
+
+        // TODO: map.get is expensive right now because of world to grid conversion
+        if (map.get(sample) != EMPTY) {
+            if (distance < lidar_config.zMin){
+                return Distance{0*cm};
+            }
+            return distance;
+        }
+    }
+
+    return std::nullopt;
+}
+
+std::size_t beams_on_circle(std::size_t circle_index) {
+    std::size_t count = 1;
+    for (std::size_t i = 0; i < circle_index; ++i) {
+        count *= 4;
+    }
+    return count;
+}
+
+HorizontalAngle horizontal_delta(Distance offset, Distance distance) {
+    return HorizontalAngle{si::atan2(offset, distance)};
+}
+
+Altitude altitude_delta(Distance offset, Distance distance) {
+    return Altitude{si::atan2(offset, distance)};
 }
 
 // TODO: move semantics for this
 LidarScanResult LidarSensorMock::getScan(const Orientation& drone_orientation) const {
 
-    (void)drone_orientation;
-    std::vector<LidarHit> hits;
+    LidarScanResult results;
+    if (lidar_config.fovc == 0) {
+        return results;
+    }
 
-    return LidarScanResult{
-        hits
+    const Orientation& sensor_heading = pos_sensor.getOrientation();
+    const Orientation& beam_0 = drone_orientation; // alias
+
+    const Orientation beam_0_abs{
+        beam_0.horizontal + sensor_heading.horizontal,
+        beam_0.altitude + sensor_heading.altitude,
     };
+
+    if (auto dist = traceBeam(beam_0_abs)) { 
+        const LidarHit hit{*dist,beam_0}; 
+        results.push_back(hit); 
+    }
+
+    for (std::size_t circle = 1; circle < lidar_config.fovc; ++circle) {
+        const std::size_t beam_count = beams_on_circle(circle);
+        const Distance radius = static_cast<double>(circle) * lidar_config.d / 2.0;
+
+        for (std::size_t i = 0; i < beam_count; ++i) {
+            const auto theta = (360.0 * static_cast<double>(i) / static_cast<double>(beam_count)) * deg;
+            const Distance horizontal_offset = radius * si::cos(theta);
+            const Distance altitude_offset = radius * si::sin(theta);
+            
+            const Orientation offset{
+                horizontal_delta(horizontal_offset, lidar_config.zMin),
+                altitude_delta(altitude_offset, lidar_config.zMin),
+            };
+
+            // TODO: this is not efficient
+            const Orientation abs_circle_beam{
+                beam_0.horizontal + offset.horizontal + sensor_heading.horizontal,
+                beam_0.altitude + offset.altitude + sensor_heading.altitude,
+            };
+            
+            const Orientation circle_beam{
+                beam_0.horizontal + offset.horizontal,
+                beam_0.altitude + offset.altitude,
+            };
+            if (auto dist = traceBeam(abs_circle_beam)) { 
+                const LidarHit hit{*dist,circle_beam};
+                results.push_back(hit);
+            }
+        }
+    }
+
+    return results;
 }

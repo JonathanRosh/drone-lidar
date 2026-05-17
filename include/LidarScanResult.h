@@ -8,8 +8,6 @@ struct LidarHit {
     Orientation orientation;
 };
 
-struct LidarScanResult {
-    std::vector<LidarHit> hits;
-};
+typedef std::vector<LidarHit> LidarScanResult;
 
 #endif //DRONE_LIDAR_SCANRESULT_H

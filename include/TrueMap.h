@@ -4,14 +4,7 @@
 #include "IMap3D.h"
 #include "Configs.h"
 #include "TrueMapBuilder.h"
-
-struct GridCoord {
-    int x;
-    int y;
-    int z;
-
-    bool operator==(const GridCoord&) const = default;
-};
+#include "MapUtils.h"
 
 struct GridCoordHash {
     std::size_t operator()(const GridCoord& c) const {

@@ -7,7 +7,7 @@
 
 class Simulator {
 
-  IDrone drone;
+  IDrone& drone;
 
 public:
   Simulator(DroneConfig drone_config, MissionConfig mission_config,

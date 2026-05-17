@@ -1,15 +1,6 @@
 #include "../include/TrueMap.h"
 
-#include <iostream>
-
-int toIndex(Distance value, Distance resolution) {
-    return static_cast<int>(
-        std::round(
-            (value / resolution)
-                .numerical_value_in(mp::one)
-        )
-    );
-}
+#include <iostream> // TODO: maybe remove this?
 
 TrueMap::TrueMap(const MissionConfig& mission_config) : 
     config(mission_config), 
@@ -29,11 +20,7 @@ void TrueMap::set(const Position3D& pos, Mapping mapping) {
 }
 
 GridCoord TrueMap::worldToGrid(const Position3D& pos) const {
-    return {
-        toIndex(pos.x, res_xy),
-        toIndex(pos.y, res_xy),
-        toIndex(pos.z, res_height)
-    };
+    return MapUtils::worldToGrid(pos, res_xy, res_height);
 }
 
 bool TrueMap::isInsideBounds(const Position3D& pos) const {

@@ -6,7 +6,7 @@
 class ILidarSensor {
 public:
     //virtual ~ILidarSensor();
-    //virtual LidarScanResult getScan(const Orientation& drone_orientation) = 0;
+    virtual LidarScanResult getScan(const Orientation& drone_orientation) const = 0;
 };
 
 #endif //DRONE_LIDAR_ILIDARSENSOR_H

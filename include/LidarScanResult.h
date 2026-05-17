@@ -8,7 +8,7 @@ struct LidarHit {
     Orientation orientation;
 };
 
-struct  LidarScanResult {
+struct LidarScanResult {
     std::vector<LidarHit> hits;
 };
 

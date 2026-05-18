@@ -2,14 +2,7 @@
 #define DRONE_LIDAR_MAPUTILS_H
 
 #include "Units.h"
-
-struct GridCoord {
-    int x;
-    int y;
-    int z;
-
-    bool operator==(const GridCoord&) const = default;
-};
+#include "GridCoord.h"
 
 namespace MapUtils {
 

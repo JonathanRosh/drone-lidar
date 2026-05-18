@@ -9,24 +9,26 @@ Distance clampDistance(Distance value, Distance max) {
     return Distance{std::min(v, m) * cm};
 }
 
-Angle clampAngle(Angle value, Angle max) {
+HorizontalAngle clampAngle(HorizontalAngle value, Angle max)
+{
     const auto v = value.force_numerical_value_in(deg);
     const auto m = max.force_numerical_value_in(deg);
 
-    return Angle{std::min(v, m) * deg};
+    return HorizontalAngle{std::min(v, m) * deg};
 }
 
 MovementDriverMock::MovementDriverMock(SimulationState& sim_state, MaxCommand& limits)
     : sim_state(sim_state), limits(limits) {}
 
-
 // TODO: maybe will need to normalize the angles
 void MovementDriverMock::rotateLeft(HorizontalAngle angle) const {
-    sim_state.drone_orientation.horizontal += angle;
+    const auto limited = clampAngle(angle, limits.maxRotate);
+    sim_state.drone_orientation.horizontal += limited;
 }
 
 void MovementDriverMock::rotateRight(HorizontalAngle angle) const {
-    sim_state.drone_orientation.horizontal -= angle;
+    const auto limited = clampAngle(angle, limits.maxRotate);
+    sim_state.drone_orientation.horizontal -= limited;
 }
 
 void MovementDriverMock::advance(Distance distance) const

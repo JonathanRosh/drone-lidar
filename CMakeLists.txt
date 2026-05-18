@@ -53,6 +53,7 @@ add_executable(
     drone_tests
     test/TrueMapTest.cpp
     test/LidarSensorMockTest.cpp
+    test/MovementDriverMockTest.cpp
 )
 
 target_link_libraries(

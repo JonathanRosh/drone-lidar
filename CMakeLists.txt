@@ -12,6 +12,8 @@ add_library(drone_core
     src/TrueMapBuilder.cpp
     src/MapUtils.cpp
     src/LidarSensorMockTester.cpp
+    src/PositionSensorMock.cpp
+    src/MovementDriverMock.cpp
 )
 
 target_include_directories(

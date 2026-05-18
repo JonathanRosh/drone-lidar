@@ -17,11 +17,11 @@ public:
     Position3D position;
     Orientation orientation;
 
-    const Position3D& getPosition() const override {
+    const Position3D getPosition() const override {
         return position;
     }
 
-    const Orientation& getOrientation() const override {
+    const Orientation getOrientation() const override {
         return orientation;
     }
 };

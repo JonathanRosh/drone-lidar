@@ -16,6 +16,8 @@ class LidarSensorMock : public ILidarSensor {
     const IPositionSensor& pos_sensor;
     
     std::optional<Distance> traceBeam(const Orientation& beam_orientation) const;
+
+    friend class LidarSensorMockTester;
     
 public:
     LidarSensorMock(const LidarConfig& lidar_config, IMap3D& simulation_map, IPositionSensor& pos_sensor);

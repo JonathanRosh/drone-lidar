@@ -11,6 +11,7 @@ add_library(drone_core
     src/LidarSensorMock.cpp
     src/TrueMapBuilder.cpp
     src/MapUtils.cpp
+    src/LidarSensorMockTester.cpp
 )
 
 target_include_directories(
@@ -47,14 +48,16 @@ target_link_libraries(drone_mapper PRIVATE drone_core)
 enable_testing()
 
 add_executable(
-    trueMapTest
+    drone_tests
     test/TrueMapTest.cpp
+    test/LidarSensorMockTest.cpp
 )
 
-target_link_libraries(trueMapTest
+target_link_libraries(
+    drone_tests
     PRIVATE drone_core
     PRIVATE GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(trueMapTest)
+gtest_discover_tests(drone_tests)

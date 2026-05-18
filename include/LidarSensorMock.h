@@ -1,6 +1,7 @@
 #ifndef DRONE_LIDAR_LIDARSENSORMOCK_H
 #define DRONE_LIDAR_LIDARSENSORMOCK_H
 
+#include "Configs.h"
 #include "ILidarSensor.h"
 #include "IMap3D.h"
 #include "IPositionSensor.h"
@@ -24,4 +25,4 @@ public:
     LidarScanResult getScan(const Orientation& drone_orientation) const override;
 };
 
-#endif //DRONE_LIDAR_LIDARSENSORMOCK_H
+#endif // DRONE_LIDAR_LIDARSENSORMOCK_H

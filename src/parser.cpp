@@ -124,6 +124,7 @@ MissionConfig parseMissionConfig(const std::string &filename) {
 
 TrueMap parseTrueMap(const std::string &filename,
                      const MissionConfig &mission_config) {
+
   TrueMap trueMap(mission_config);
 
   std::ifstream file(filename);
@@ -149,6 +150,11 @@ TrueMap parseTrueMap(const std::string &filename,
       ZLength z = z_raw * cm;
 
       Position3D position{x, y, z};
+
+      if (!trueMap.isInsideBounds(position)) {
+        throw std::runtime_error("Point is outside of map boundaries: " + line);
+      }
+
       TrueMapBuilder::set(trueMap, position, OCCUPIED);
 
     } else {

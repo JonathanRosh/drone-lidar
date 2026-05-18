@@ -109,3 +109,26 @@ TEST(TrueMapTest, HeightResolutionDistinguishesCells)
     EXPECT_EQ(tm.get(h1), OCCUPIED);
     EXPECT_EQ(tm.get(h2), EMPTY);
 }
+
+TEST(TrueMapTest, FirstUnoccupiedLexOrderFreshMap)
+{
+    TrueMap fresh(mission_config);
+    const auto p = fresh.firstUnoccupiedPositionLexOrder();
+    ASSERT_TRUE(p.has_value());
+    EXPECT_NEAR(p->x.numerical_value_in(cm), 10.0, 1e-6);
+    EXPECT_NEAR(p->y.numerical_value_in(cm), 10.0, 1e-6);
+    EXPECT_NEAR(p->z.numerical_value_in(cm), 10.0, 1e-6);
+}
+
+TEST(TrueMapTest, FirstUnoccupiedLexOrderSkipsOccupiedCorner)
+{
+    TrueMap fresh(mission_config);
+    const Position3D corner{10.0 * cm, 10.0 * cm, 10.0 * cm};
+    TrueMapBuilder::set(fresh, corner, OCCUPIED);
+
+    const auto p = fresh.firstUnoccupiedPositionLexOrder();
+    ASSERT_TRUE(p.has_value());
+    EXPECT_NE(fresh.get(*p), OCCUPIED);
+    // Next cell in z at same (x,y) for this resolution
+    EXPECT_GT(p->z.numerical_value_in(cm), corner.z.numerical_value_in(cm));
+}

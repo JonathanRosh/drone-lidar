@@ -4,10 +4,10 @@
 #include "Units.h"
 
 struct LidarHit {
-    Distance distance;
-    Orientation orientation;
+  Distance distance;
+  Orientation orientation;
 };
 
 typedef std::vector<LidarHit> LidarScanResult;
 
-#endif //DRONE_LIDAR_SCANRESULT_H
+#endif // DRONE_LIDAR_SCANRESULT_H

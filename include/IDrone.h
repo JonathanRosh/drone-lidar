@@ -7,8 +7,8 @@
 
 class IDrone {
 public:
-    virtual void rotateLeft(HorizontalAngle angle) const = 0;
-    virtual void rotateRight(HorizontalAngle angle) const = 0;
+    virtual void rotateLeft(Angle angle) const = 0;
+    virtual void rotateRight(Angle angle) const = 0;
     virtual void advance(Distance distance) const = 0;
     virtual void elevate(Distance distance) const = 0;
 

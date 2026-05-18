@@ -16,8 +16,8 @@ public:
   Drone(IMovementDriver &movement_driver, IPositionSensor &position_sensor,
         ILidarSensor &lidar_sensor);
 
-    void rotateRight(HorizontalAngle angle) const override;
-    void rotateLeft(HorizontalAngle angle) const override;
+    void rotateRight(Angle angle) const override;
+    void rotateLeft(Angle angle) const override;
     void advance(Distance distance) const override;
     void elevate(Distance distance) const override;
 

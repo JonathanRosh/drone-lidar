@@ -10,6 +10,10 @@ public:
     Mapping get(const Position3D& pos) const override {
         return handler(pos);
     }
+
+    // stubs
+    void set(const Position3D&, Mapping) override {}
+    bool isInsideBounds(const Position3D&) const override { return true; }
 };
 
 class FakePositionSensor : public IPositionSensor {

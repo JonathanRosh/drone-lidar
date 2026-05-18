@@ -1,8 +1,8 @@
 #include "../include/TrueMap.h"
 #include "../include/MapGrid.h"
 
-#include <cmath>
 #include <iostream>
+#include <cmath>
 
 TrueMap::TrueMap(const MissionConfig& mission_config) : 
     config(mission_config), 
@@ -22,7 +22,7 @@ void TrueMap::set(const Position3D& pos, Mapping mapping) {
 }
 
 GridCoord TrueMap::worldToGrid(const Position3D& pos) const {
-    return map_grid::worldToGrid(pos, res_xy, res_height);
+    return MapUtils::worldToGrid(pos, res_xy, res_height);
 }
 
 Position3D TrueMap::gridToWorld(const GridCoord& grid) const {

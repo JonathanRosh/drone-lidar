@@ -11,8 +11,8 @@ class PositionSensorMock : public IPositionSensor {
 public:
     PositionSensorMock(SimulationState& sim_state);
 
-    Position3D getPosition() const override;
-    Orientation getOrientation() const override;
+    const Position3D getPosition() const override;
+    const Orientation getOrientation() const override;
 
 };
 

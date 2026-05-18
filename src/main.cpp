@@ -1,6 +1,12 @@
 #include "Parser.h"
 #include "TrueMap.h"
 #include "Units.h"
+#include "Drone.h"
+#include "MovementDriverMock.h"
+#include "PositionSensorMock.h"
+#include "LidarSensorMock.h"
+#include "SimulationState.h"
+#include "MovementDriverMock.h"
 
 #include <filesystem>
 #include <iostream>
@@ -25,6 +31,32 @@ int main(int argc, char **argv) {
   (void)drone_config;
   (void)mission_config;
   (void)true_map;
+
+    SimulationState state{
+        .drone_position = {0.0 * cm, 0.0 * cm, 0.0 * cm},
+        .drone_orientation = {0.0 * deg, 0.0 * deg}
+    };
+
+    PositionSensorMock psm(
+        state
+    );
+
+    MovementDriverMock mdm(
+        state,
+        drone_config.maxCommand
+    );
+
+    LidarSensorMock lsm(
+        drone_config.lidarConfig,
+        true_map,
+        psm
+    );
+
+    Drone drone(
+        mdm,
+        psm,
+        lsm
+    );
 
   // TODO:
   //  Instanciate drone and all other objects needed for the simulator

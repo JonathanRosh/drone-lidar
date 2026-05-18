@@ -9,10 +9,10 @@
 class MovementDriverMock : public IMovementDriver {
 
     SimulationState& sim_state;
-    MaxCommand& limits;
+    const MaxCommand& limits;
 
 public:
-    MovementDriverMock(SimulationState& sim_state, MaxCommand& limits);
+    MovementDriverMock(SimulationState& sim_state, const MaxCommand& limits);
 
     void rotateLeft(HorizontalAngle angle) const override;
     void rotateRight(HorizontalAngle angle) const override;

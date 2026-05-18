@@ -17,7 +17,7 @@ HorizontalAngle clampAngle(HorizontalAngle value, Angle max)
     return HorizontalAngle{std::min(v, m) * deg};
 }
 
-MovementDriverMock::MovementDriverMock(SimulationState& sim_state, MaxCommand& limits)
+MovementDriverMock::MovementDriverMock(SimulationState& sim_state, const MaxCommand& limits)
     : sim_state(sim_state), limits(limits) {}
 
 // TODO: maybe will need to normalize the angles

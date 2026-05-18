@@ -116,10 +116,10 @@ void rotateTowardHeading(double target_heading_deg, IDrone &drone,
 
     if (delta > 0.0) {
       drone.rotateRight(step);
-      driver.rotateRight(step);
+      driver.rotateRight(HorizontalAngle{step.force_numerical_value_in(deg) * deg});
     } else {
       drone.rotateLeft(step);
-      driver.rotateLeft(step);
+      driver.rotateLeft(HorizontalAngle{step.force_numerical_value_in(deg) * deg});
     }
 
     setHeadingDeg(sim_state, currentHeadingDeg(sim_state) +
@@ -225,7 +225,7 @@ void updateMap(const LidarScanResult &scan_result, IMap3D &map,
     return;
   }
 
-  for (const LidarHit &hit : scan_result.hits) {
+  for (const LidarHit &hit : scan_result) {
     const Position3D end =
         hitToPosition(hit, sensor_position, drone_orientation);
 

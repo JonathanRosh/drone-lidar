@@ -9,12 +9,13 @@ Drone::Drone(
       lidar_sensor(lidar_sensor)
 {}
 
-void Drone::rotateRight(HorizontalAngle angle) const {
-    movement_driver.rotateRight(angle);
+//TODO: fix types to avoid this conversion
+void Drone::rotateRight(Angle angle) const {
+    movement_driver.rotateRight(HorizontalAngle{angle.force_numerical_value_in(deg) * deg});
 }
 
-void Drone::rotateLeft(HorizontalAngle angle) const {
-    movement_driver.rotateLeft(angle);
+void Drone::rotateLeft(Angle angle) const {
+    movement_driver.rotateLeft(HorizontalAngle{angle.force_numerical_value_in(deg) * deg});
 }
 
 void Drone::advance(Distance distance) const {

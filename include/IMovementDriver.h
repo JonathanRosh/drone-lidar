@@ -5,6 +5,8 @@
 
 class IMovementDriver {
 public:
+    virtual ~IMovementDriver() = default;
+
     virtual void rotateLeft(HorizontalAngle angle) const = 0;
     virtual void rotateRight(HorizontalAngle angle) const = 0;
     virtual void advance(Distance distance) const = 0;

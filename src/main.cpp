@@ -34,7 +34,8 @@ int main(int argc, char **argv) {
 
     SimulationState state{
         .drone_position = {0.0 * cm, 0.0 * cm, 0.0 * cm},
-        .drone_orientation = {0.0 * deg, 0.0 * deg}
+        .drone_orientation = {0.0 * deg, 0.0 * deg},
+        .failure_reason = ""
     };
 
     PositionSensorMock psm(
@@ -43,7 +44,10 @@ int main(int argc, char **argv) {
 
     MovementDriverMock mdm(
         state,
-        drone_config.maxCommand
+        drone_config.maxCommand,
+        true_map,
+        mission_config,
+        drone_config.minPass
     );
 
     LidarSensorMock lsm(

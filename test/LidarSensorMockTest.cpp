@@ -11,8 +11,6 @@ public:
         return handler(pos);
     }
 
-    // stubs
-    void set(const Position3D&, Mapping) override {}
     bool isInsideBounds(const Position3D&) const override { return true; }
 };
 

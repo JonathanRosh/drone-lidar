@@ -1,5 +1,6 @@
 #include "../include/TrueMap.h"
 #include "../include/TrueMapBuilder.h"
+#include "../include/DroneMap.h"
 
 #include <gtest/gtest.h>
 
@@ -53,6 +54,7 @@ TEST(TrueMapTest, NotMappedCell)
     };
 
     Mapping non_mapped = tm.get(pos);
+    EXPECT_EQ(non_mapped, NOT_MAPPED);
 }
 
 TEST(TrueMapTest, SetAndGetCell)
@@ -110,25 +112,84 @@ TEST(TrueMapTest, HeightResolutionDistinguishesCells)
     EXPECT_EQ(tm.get(h2), EMPTY);
 }
 
-TEST(TrueMapTest, FirstUnoccupiedLexOrderFreshMap)
+TEST(DroneMapTest, OutsideBoundaryReturnsExpectedValue)
 {
-    TrueMap fresh(mission_config);
-    const auto p = fresh.firstUnoccupiedPositionLexOrder();
-    ASSERT_TRUE(p.has_value());
-    EXPECT_NEAR(p->x.numerical_value_in(cm), 10.0, 1e-6);
-    EXPECT_NEAR(p->y.numerical_value_in(cm), 10.0, 1e-6);
-    EXPECT_NEAR(p->z.numerical_value_in(cm), 10.0, 1e-6);
+    DroneMap map(mission_config);
+    Position3D outside_boundary = {
+        21.0 * cm,
+        10.0 * cm,
+        10.0 * cm
+    };
+
+    EXPECT_EQ(map.get(outside_boundary), OUTSIDE_BOUNDARY);
 }
 
-TEST(TrueMapTest, FirstUnoccupiedLexOrderSkipsOccupiedCorner)
+TEST(DroneMapTest, NotMappedCell)
 {
-    TrueMap fresh(mission_config);
-    const Position3D corner{10.0 * cm, 10.0 * cm, 10.0 * cm};
-    TrueMapBuilder::set(fresh, corner, OCCUPIED);
+    DroneMap map(mission_config);
+    Position3D pos = {
+        15.0 * cm,
+        15.0 * cm,
+        15.0 * cm
+    };
 
-    const auto p = fresh.firstUnoccupiedPositionLexOrder();
-    ASSERT_TRUE(p.has_value());
-    EXPECT_NE(fresh.get(*p), OCCUPIED);
-    // Next cell in z at same (x,y) for this resolution
-    EXPECT_GT(p->z.numerical_value_in(cm), corner.z.numerical_value_in(cm));
+    EXPECT_EQ(map.get(pos), NOT_MAPPED);
+}
+
+TEST(DroneMapTest, SetAndGetCell)
+{
+    DroneMap map(mission_config);
+    Position3D pos = {
+        15.0 * cm,
+        15.0 * cm,
+        15.0 * cm
+    };
+
+    map.set(pos, OCCUPIED);
+
+    EXPECT_EQ(map.get(pos), OCCUPIED);
+}
+
+TEST(DroneMapTest, XYResolutionDistinguishesCells)
+{
+    DroneMap map(mission_config);
+    Position3D xy1 = {
+        15.01 * cm,
+        15.0 * cm,
+        15.0 * cm
+    };
+
+    Position3D xy2 = {
+        15.02 * cm,
+        15.0 * cm,
+        15.0 * cm
+    };
+
+    map.set(xy1, OCCUPIED);
+    map.set(xy2, EMPTY);
+
+    EXPECT_EQ(map.get(xy1), OCCUPIED);
+    EXPECT_EQ(map.get(xy2), EMPTY);
+}
+
+TEST(DroneMapTest, HeightResolutionDistinguishesCells)
+{
+    DroneMap map(mission_config);
+    Position3D h1 = {
+        15.0 * cm,
+        15.0 * cm,
+        16.001 * cm
+    };
+
+    Position3D h2 = {
+        15.0 * cm,
+        15.0 * cm,
+        16.002 * cm
+    };
+
+    map.set(h1, OCCUPIED);
+    map.set(h2, EMPTY);
+
+    EXPECT_EQ(map.get(h1), OCCUPIED);
+    EXPECT_EQ(map.get(h2), EMPTY);
 }

@@ -2,5 +2,5 @@
 #include "../include/TrueMap.h"
 
 void TrueMapBuilder::set(TrueMap& map, Position3D pos, Mapping val) {
-  map.set(pos, val);
+  map.setCell(pos, val);
 }

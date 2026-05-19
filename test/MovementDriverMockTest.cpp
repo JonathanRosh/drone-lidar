@@ -21,8 +21,6 @@ public:
         return EMPTY;
     }
 
-    void set(const Position3D&, Mapping) override {}
-
     bool isInsideBounds(const Position3D& pos) const override {
         return pos.x >= -1000.0 * x_extent[cm] && pos.x <= 1000.0 * x_extent[cm] &&
                pos.y >= -1000.0 * y_extent[cm] && pos.y <= 1000.0 * y_extent[cm] &&

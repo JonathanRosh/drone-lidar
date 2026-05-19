@@ -2,6 +2,7 @@
 
 #include "Configs.h"
 #include "Drone.h"
+#include "DroneMap.h"
 #include "IMap3D.h"
 #include "LidarSensorMock.h"
 #include "MovementDriverMock.h"
@@ -15,7 +16,7 @@ class Simulator {
   const TrueMap &true_map_;
 
   SimulationState sim_state_;
-  TrueMap mapped_map_;
+  DroneMap mapped_map_;
   PositionSensorMock position_sensor_;
   MovementDriverMock movement_driver_;
   LidarSensorMock lidar_sensor_;

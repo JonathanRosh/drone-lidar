@@ -6,13 +6,12 @@ find_package(mp-units CONFIG REQUIRED)
 find_package(GTest CONFIG REQUIRED)
 
 add_library(drone_core
-    src/Parser.cpp
-    src/MapGrid.cpp
+    src/parser.cpp
+    src/MapCore.cpp
     src/TrueMap.cpp
     src/DroneMap.cpp
     src/LidarSensorMock.cpp
     src/TrueMapBuilder.cpp
-    src/MapUtils.cpp
     src/LidarSensorMockTester.cpp
     src/PositionSensorMock.cpp
     src/MovementDriverMock.cpp
@@ -55,7 +54,7 @@ enable_testing()
 
 add_executable(
     drone_tests
-    test/TrueMapTest.cpp
+    test/MapTest.cpp
     test/LidarSensorMockTest.cpp
     test/MovementDriverMockTest.cpp
 )

@@ -9,10 +9,11 @@
 #include "MovementDriverMock.h"
 #include "PositionSensorMock.h"
 #include "SimulationState.h"
+#include "SimulatorLogger.h"
 #include "TrueMap.h"
 
 #include <optional>
-#include <ostream>
+#include <iosfwd>
 #include <vector>
 
 class Simulator {
@@ -29,7 +30,7 @@ class Simulator {
 
   Distance res_xy_;
   Distance res_z_;
-  std::ostream *log_;
+  SimulatorLogger logger_;
 
   GridCoord worldToGrid(const Position3D &position) const;
   Position3D gridToWorld(const GridCoord &grid) const;
@@ -44,8 +45,6 @@ class Simulator {
   void moveAlongPath(const std::vector<GridCoord> &path);
   void moveToAdjacent(const GridCoord &from, const GridCoord &to);
   void rotateTo(HorizontalAngle target);
-  void logState(const char *label) const;
-  void logFailure(const char *context) const;
 
 public:
   Simulator(const DroneConfig &drone_config,

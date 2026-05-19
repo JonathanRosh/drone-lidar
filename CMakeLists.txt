@@ -7,6 +7,11 @@ find_package(GTest CONFIG REQUIRED)
 
 add_library(drone_core
     src/Parser.cpp
+    src/Utils.cpp
+    src/Score.cpp
+    src/MapOutputWriter.cpp
+    src/ApplicationLogger.cpp
+    src/SimulatorLogger.cpp
     src/MapUtils.cpp
     src/MapCore.cpp
     src/TrueMap.cpp

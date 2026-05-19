@@ -21,7 +21,7 @@ class LidarSensorMock : public ILidarSensor {
     friend class LidarSensorMockTester;
     
 public:
-    LidarSensorMock(const LidarConfig& lidar_config, IMap3D& simulation_map, IPositionSensor& pos_sensor);
+    LidarSensorMock(const LidarConfig& lidar_config, const IMap3D& simulation_map, IPositionSensor& pos_sensor);
     LidarScanResult getScan(const Orientation& drone_orientation) const override;
 };
 

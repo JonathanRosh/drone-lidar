@@ -1,15 +1,8 @@
 #include "Parser.h"
+#include "Simulator.h"
 #include "TrueMap.h"
-#include "Units.h"
-#include "Drone.h"
-#include "MovementDriverMock.h"
-#include "PositionSensorMock.h"
-#include "LidarSensorMock.h"
-#include "SimulationState.h"
-#include "MovementDriverMock.h"
 
 #include <filesystem>
-#include <iostream>
 #include <string>
 
 int main(int argc, char **argv) {
@@ -28,45 +21,11 @@ int main(int argc, char **argv) {
       parseMissionConfig(mission_config_path.string());
   TrueMap true_map = parseTrueMap(true_map_path.string(), mission_config);
 
-  (void)drone_config;
-  (void)mission_config;
-  (void)true_map;
-
-    SimulationState state{
-        .drone_position = {0.0 * cm, 0.0 * cm, 0.0 * cm},
-        .drone_orientation = {0.0 * deg, 0.0 * deg},
-        .failure_reason = ""
-    };
-
-    PositionSensorMock psm(
-        state
-    );
-
-    MovementDriverMock mdm(
-        state,
-        drone_config.maxCommand,
-        true_map,
-        mission_config,
-        drone_config.minPass
-    );
-
-    LidarSensorMock lsm(
-        drone_config.lidarConfig,
-        true_map,
-        psm
-    );
-
-    Drone drone(
-        mdm,
-        psm,
-        lsm
-    );
+  Simulator simulator(drone_config, mission_config, true_map);
+  IMap3D &mapped_map = simulator.simulate();
+  (void)mapped_map;
 
   // TODO:
-  //  Instanciate drone and all other objects needed for the simulator
-
-  // Run simulator.simulate() and get the final map
-
   // Calculate score and print it
 
   return 0;

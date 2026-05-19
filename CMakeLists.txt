@@ -17,6 +17,7 @@ add_library(drone_core
     src/PositionSensorMock.cpp
     src/MovementDriverMock.cpp
     src/Drone.cpp
+    src/Simulator.cpp
 )
 
 target_include_directories(

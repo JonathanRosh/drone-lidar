@@ -15,10 +15,12 @@
 
 namespace {
 
+// TODO: this is duplicate from simulator
 double cmValue(Distance distance) {
   return distance.force_numerical_value_in(cm);
 }
 
+// TODO: move score logic and map output to its own class 
 int lowerGridIndex(Distance value, Distance resolution) {
   return static_cast<int>(
       std::ceil(cmValue(value) / cmValue(resolution) - 1e-9));
@@ -33,6 +35,36 @@ struct GridBounds {
   GridCoord min;
   GridCoord max;
 };
+
+struct ProgramOptions {
+  std::filesystem::path input_output_path;
+  bool log_enabled = false;
+};
+
+ProgramOptions parseProgramOptions(int argc, char **argv) {
+  ProgramOptions options{
+      .input_output_path = std::filesystem::current_path(),
+      .log_enabled = false,
+  };
+
+  bool path_set = false;
+  for (int i = 1; i < argc; ++i) {
+    const std::string arg = argv[i];
+    if (arg == "--log") {
+      options.log_enabled = true;
+      continue;
+    }
+
+    if (path_set) {
+      throw std::runtime_error("Unexpected command line argument: " + arg);
+    }
+
+    options.input_output_path = std::filesystem::path(arg);
+    path_set = true;
+  }
+
+  return options;
+}
 
 GridBounds gridBoundsForMission(const MissionConfig &mission_config) {
   const Distance res_xy = MapUtils::xyResolution(mission_config);
@@ -191,13 +223,27 @@ int main(int argc, char **argv) {
   namespace fs = std::filesystem;
 
   try {
-    fs::path input_output_path =
-        (argc >= 2) ? fs::path(argv[1]) : fs::current_path();
+    const ProgramOptions options = parseProgramOptions(argc, argv);
+    const fs::path input_output_path = options.input_output_path;
 
     fs::path drone_config_path = input_output_path / "drone_config.txt";
     fs::path mission_config_path = input_output_path / "mission_config.txt";
     fs::path true_map_path = input_output_path / "map_input.txt";
     fs::path output_map_path = input_output_path / "map_output.txt";
+    fs::path log_path = input_output_path / "log.txt";
+
+    std::ofstream log_file;
+    std::ostream *log = nullptr;
+    if (options.log_enabled) {
+      log_file.open(log_path);
+      if (!log_file.is_open()) {
+        throw std::runtime_error("Failed to open file for writing: " +
+                                 log_path.string());
+      }
+      log = &log_file;
+      *log << "drone_mapper log enabled\n";
+      *log << "input_output_path: " << input_output_path << '\n';
+    }
 
     const DroneConfig drone_config =
         Parser::parseDroneConfig(drone_config_path.string());
@@ -206,13 +252,28 @@ int main(int argc, char **argv) {
     TrueMap true_map =
         Parser::parseTrueMap(true_map_path.string(), mission_config);
 
-    Simulator simulator(drone_config, mission_config, true_map);
+    Simulator simulator(drone_config, mission_config, true_map, log);
     IMap3D &mapped_map = simulator.simulate();
 
     const MappingStats stats =
         calculateStats(true_map, mapped_map, mission_config);
     printStats(stats);
+    if (log != nullptr) {
+      *log << "score: " << stats.score << '\n';
+      *log << "stats: total=" << stats.total_voxels
+           << " correct=" << stats.correct_voxels
+           << " incorrect=" << stats.incorrect_voxels
+           << " mapped_occupied=" << stats.mapped_occupied
+           << " mapped_empty=" << stats.mapped_empty
+           << " mapped_not_mapped=" << stats.mapped_not_mapped
+           << " occupied_found=" << stats.occupied_found
+           << " occupied_missed=" << stats.occupied_missed
+           << " false_occupied=" << stats.false_occupied << '\n';
+    }
     writeMapOutput(mapped_map, mission_config, output_map_path);
+    if (log != nullptr) {
+      *log << "wrote map output: " << output_map_path << '\n';
+    }
   } catch (const std::exception &e) {
     std::cerr << "Unrecoverable error: " << e.what() << '\n';
   } catch (...) {

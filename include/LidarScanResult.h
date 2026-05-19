@@ -6,6 +6,7 @@
 struct LidarHit {
   Distance distance;
   Orientation orientation;
+  bool detected = true;
 };
 
 typedef std::vector<LidarHit> LidarScanResult;

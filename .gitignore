@@ -3,3 +3,5 @@ test_inputs
 project_instructions.md
 .gitignore
 ai/
+test/test_input/log.txt
+test/test_input/map_output.txt

@@ -12,6 +12,7 @@
 #include "TrueMap.h"
 
 #include <optional>
+#include <ostream>
 #include <vector>
 
 class Simulator {
@@ -28,23 +29,29 @@ class Simulator {
 
   Distance res_xy_;
   Distance res_z_;
+  std::ostream *log_;
 
   GridCoord worldToGrid(const Position3D &position) const;
   Position3D gridToWorld(const GridCoord &grid) const;
   std::vector<GridCoord> neighbors(const GridCoord &grid) const;
+  Distance clearanceRadius() const;
+  bool canOccupyDiscovered(const Position3D &position) const;
   bool isFrontier(const GridCoord &grid) const;
   std::optional<std::vector<GridCoord>> pathToNearestFrontier() const;
   void scanCurrentPosition();
-  void integrateHit(const Position3D &origin, const Orientation &drone_orientation,
+  void integrateBeam(const Position3D &origin, const Orientation &drone_orientation,
                     const LidarHit &hit);
   void moveAlongPath(const std::vector<GridCoord> &path);
   void moveToAdjacent(const GridCoord &from, const GridCoord &to);
   void rotateTo(HorizontalAngle target);
+  void logState(const char *label) const;
+  void logFailure(const char *context) const;
 
 public:
   Simulator(const DroneConfig &drone_config,
             const MissionConfig &mission_config,
-            const TrueMap &true_map);
+            const TrueMap &true_map,
+            std::ostream *log = nullptr);
 
   IMap3D& simulate();
 };

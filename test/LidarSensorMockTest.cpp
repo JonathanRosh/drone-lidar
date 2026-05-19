@@ -257,6 +257,7 @@ TEST(MockLidarSensorTest, GetScanReturnsCenterHit)
     auto results = lidar.getScan(scan_dir);
 
     ASSERT_EQ(results.size(), 1);
+    EXPECT_TRUE(results[0].detected);
 
     EXPECT_NEAR(
         results[0].distance.force_numerical_value_in(cm),
@@ -308,6 +309,7 @@ TEST(MockLidarSensorTest, SensorHeadingRotatesBeam)
     auto results = lidar.getScan(relative_scan);
 
     ASSERT_EQ(results.size(), 1);
+    EXPECT_TRUE(results[0].detected);
 
     EXPECT_NEAR(
         results[0].distance.force_numerical_value_in(cm),
@@ -361,4 +363,47 @@ TEST(MockLidarSensorTest, GetScanGeneratesAllCircleBeams)
     // total       -> 21
 
     ASSERT_EQ(results.size(), 21);
+}
+
+TEST(MockLidarSensorTest, GetScanReturnsMissedBeamAtMaxRange)
+{
+    FakeMap map;
+    map.handler = [](const Position3D&) {
+        return EMPTY;
+    };
+
+    FakePositionSensor sensor;
+    sensor.position = {
+        0.0 * cm,
+        0.0 * cm,
+        0.0 * cm
+    };
+    sensor.orientation = {
+        0.0 * deg,
+        0.0 * deg
+    };
+
+    LidarConfig config{
+        .zMin = 1.0 * cm,
+        .zMax = 20.0 * cm,
+        .d = 1.0 * cm,
+        .fovc = 1
+    };
+
+    LidarSensorMock lidar(config, map, sensor);
+
+    Orientation scan_direction{
+        0.0 * deg,
+        0.0 * deg
+    };
+
+    auto results = lidar.getScan(scan_direction);
+
+    ASSERT_EQ(results.size(), 1);
+    EXPECT_FALSE(results[0].detected);
+    EXPECT_NEAR(
+        results[0].distance.force_numerical_value_in(cm),
+        20.0,
+        1e-6
+    );
 }

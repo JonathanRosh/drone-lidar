@@ -32,8 +32,12 @@ std::optional<Distance> LidarSensorMock::traceBeam(const Orientation& beam_orien
             origin.z + dz.force_numerical_value_in(mp::one) * distance.force_numerical_value_in(cm) * z_extent[cm],
         };
 
+        if (!map.isInsideBounds(sample)) {
+            return std::nullopt;
+        }
+
         // TODO: map.get is expensive right now because of world to grid conversion
-        if (map.get(sample) != EMPTY) {
+        if (map.get(sample) == OCCUPIED) {
             if (distance < lidar_config.zMin){
                 return Distance{0*cm};
             }
@@ -76,10 +80,12 @@ LidarScanResult LidarSensorMock::getScan(const Orientation& drone_orientation) c
         beam_0.altitude + sensor_heading.altitude,
     };
 
-    if (auto dist = traceBeam(beam_0_abs)) { 
-        const LidarHit hit{*dist,beam_0}; 
-        results.push_back(hit); 
-    }
+    const auto center_distance = traceBeam(beam_0_abs);
+    results.push_back(LidarHit{
+        center_distance.value_or(lidar_config.zMax),
+        beam_0,
+        center_distance.has_value(),
+    });
 
     for (std::size_t circle = 1; circle < lidar_config.fovc; ++circle) {
         const std::size_t beam_count = beams_on_circle(circle);
@@ -105,10 +111,12 @@ LidarScanResult LidarSensorMock::getScan(const Orientation& drone_orientation) c
                 beam_0.horizontal + offset.horizontal,
                 beam_0.altitude + offset.altitude,
             };
-            if (auto dist = traceBeam(abs_circle_beam)) { 
-                const LidarHit hit{*dist,circle_beam};
-                results.push_back(hit);
-            }
+            const auto distance = traceBeam(abs_circle_beam);
+            results.push_back(LidarHit{
+                distance.value_or(lidar_config.zMax),
+                circle_beam,
+                distance.has_value(),
+            });
         }
     }
 

@@ -12,6 +12,8 @@
 #include <unordered_map>
 #include <unordered_set>
 
+// TODO: refactor the logger
+
 namespace mp = mp_units;
 
 namespace {
@@ -21,6 +23,10 @@ double cmValue(Distance distance) {
 }
 
 double degValue(HorizontalAngle angle) {
+  return angle.force_numerical_value_in(deg);
+}
+
+double degValue(Altitude angle) {
   return angle.force_numerical_value_in(deg);
 }
 
@@ -57,7 +63,8 @@ std::size_t inBoundsVoxelCount(const MissionConfig &mission_config,
 
 Simulator::Simulator(const DroneConfig &drone_config,
                      const MissionConfig &mission_config,
-                     const TrueMap &true_map)
+                     const TrueMap &true_map,
+                     std::ostream *log)
     : drone_config_(drone_config),
       mission_config_(mission_config),
       true_map_(true_map),
@@ -76,7 +83,8 @@ Simulator::Simulator(const DroneConfig &drone_config,
       lidar_sensor_(drone_config_.lidarConfig, true_map_, position_sensor_),
       drone_(movement_driver_, position_sensor_, lidar_sensor_),
       res_xy_(MapUtils::xyResolution(mission_config_)),
-      res_z_(MapUtils::zResolution(mission_config_)) {}
+      res_z_(MapUtils::zResolution(mission_config_)),
+      log_(log) {}
 
 GridCoord Simulator::worldToGrid(const Position3D &position) const {
   return MapUtils::worldToGrid(position, res_xy_, res_z_);
@@ -97,9 +105,51 @@ std::vector<GridCoord> Simulator::neighbors(const GridCoord &grid) const {
   };
 }
 
+Distance Simulator::clearanceRadius() const {
+  const double width = drone_config_.minPass.width.force_numerical_value_in(cm);
+  const double height = drone_config_.minPass.height.force_numerical_value_in(cm);
+  const double length = drone_config_.minPass.length.force_numerical_value_in(cm);
+  const double diameter = std::max({width, height, length});
+  return Distance{(diameter / 2.0) * cm};
+}
+
+bool Simulator::canOccupyDiscovered(const Position3D &position) const {
+  const double r = clearanceRadius().force_numerical_value_in(cm);
+  const double offsets[] = {-r, 0.0, r};
+
+  for (double dx : offsets) {
+    for (double dy : offsets) {
+      for (double dz : offsets) {
+        const Position3D sample{
+            position.x + dx * x_extent[cm],
+            position.y + dy * y_extent[cm],
+            position.z + dz * z_extent[cm],
+        };
+
+        if (!mapped_map_.isInsideBounds(sample)) {
+          return false;
+        }
+
+        if (mapped_map_.get(sample) == OCCUPIED) {
+          return false;
+        }
+      }
+    }
+  }
+
+  return true;
+}
+
 bool Simulator::isFrontier(const GridCoord &grid) const {
   const Position3D position = gridToWorld(grid);
   if (mapped_map_.get(position) != EMPTY) {
+    return false;
+  }
+  if (!canOccupyDiscovered(position)) {
+    if (log_ != nullptr) {
+      *log_ << "frontier rejected by clearance: grid=(" << grid.x << ','
+            << grid.y << ',' << grid.z << ")\n";
+    }
     return false;
   }
 
@@ -136,6 +186,12 @@ std::optional<std::vector<GridCoord>> Simulator::pathToNearestFrontier() const {
         path.push_back(step);
       }
       std::reverse(path.begin(), path.end());
+      if (log_ != nullptr) {
+        *log_ << "frontier path found: length=" << path.size()
+              << " visited=" << visited.size()
+              << " target_grid=(" << current.x << ',' << current.y << ','
+              << current.z << ")\n";
+      }
       return path;
     }
 
@@ -145,7 +201,8 @@ std::optional<std::vector<GridCoord>> Simulator::pathToNearestFrontier() const {
       }
 
       const Position3D neighbor_position = gridToWorld(neighbor);
-      if (mapped_map_.get(neighbor_position) != EMPTY) {
+      if (mapped_map_.get(neighbor_position) != EMPTY ||
+          !canOccupyDiscovered(neighbor_position)) {
         continue;
       }
 
@@ -155,6 +212,10 @@ std::optional<std::vector<GridCoord>> Simulator::pathToNearestFrontier() const {
     }
   }
 
+  if (log_ != nullptr) {
+    *log_ << "frontier search stopped: no reachable frontier, visited="
+          << visited.size() << '\n';
+  }
   return std::nullopt;
 }
 
@@ -173,13 +234,36 @@ void Simulator::scanCurrentPosition() {
   };
 
   for (const auto &scan_direction : scan_directions) {
-    for (const LidarHit &hit : drone_.scan(scan_direction.xy, scan_direction.z)) {
-      integrateHit(origin, orientation, hit);
+    const LidarScanResult scan =
+        drone_.scan(scan_direction.xy, scan_direction.z);
+    std::size_t detected = 0;
+    for (const LidarHit &hit : scan) {
+      if (hit.detected) {
+        ++detected;
+      }
+    }
+    if (log_ != nullptr) {
+      *log_ << "scan: relative_xy=" << scan_direction.xy.force_numerical_value_in(deg)
+            << " relative_altitude="
+            << scan_direction.z.force_numerical_value_in(deg)
+            << " beams=" << scan.size()
+            << " detected=" << detected
+            << " missed=" << (scan.size() - detected) << '\n';
+    }
+
+    for (const LidarHit &hit : scan) {
+      if (log_ != nullptr && hit.detected) {
+        *log_ << "lidar hit: distance_cm=" << cmValue(hit.distance)
+              << " relative_xy_deg=" << degValue(hit.orientation.horizontal)
+              << " relative_altitude_deg=" << degValue(hit.orientation.altitude)
+              << '\n';
+      }
+      integrateBeam(origin, orientation, hit);
     }
   }
 }
 
-void Simulator::integrateHit(const Position3D &origin,
+void Simulator::integrateBeam(const Position3D &origin,
                              const Orientation &drone_orientation,
                              const LidarHit &hit) {
   const Orientation absolute{
@@ -195,9 +279,9 @@ void Simulator::integrateHit(const Position3D &origin,
   const Distance step = minResolution(res_xy_, res_z_);
   const double step_cm = cmValue(step);
   const double hit_cm = cmValue(hit.distance);
-  const double occupied_cm = hit_cm == 0.0 ? step_cm : hit_cm;
+  const double ray_end_cm = hit.detected && hit_cm == 0.0 ? step_cm : hit_cm;
 
-  for (double distance_cm = step_cm; distance_cm < occupied_cm;
+  for (double distance_cm = step_cm; distance_cm < ray_end_cm;
        distance_cm += step_cm) {
     const Position3D sample{
         origin.x + dx.force_numerical_value_in(mp::one) * distance_cm *
@@ -212,12 +296,27 @@ void Simulator::integrateHit(const Position3D &origin,
     }
   }
 
+  if (!hit.detected) {
+    const Position3D ray_end{
+        origin.x + dx.force_numerical_value_in(mp::one) * ray_end_cm *
+                       x_extent[cm],
+        origin.y + dy.force_numerical_value_in(mp::one) * ray_end_cm *
+                       y_extent[cm],
+        origin.z + dz.force_numerical_value_in(mp::one) * ray_end_cm *
+                       z_extent[cm],
+    };
+    if (mapped_map_.isInsideBounds(ray_end)) {
+      mapped_map_.set(ray_end, EMPTY);
+    }
+    return;
+  }
+
   const Position3D occupied{
-      origin.x + dx.force_numerical_value_in(mp::one) * occupied_cm *
+      origin.x + dx.force_numerical_value_in(mp::one) * ray_end_cm *
                      x_extent[cm],
-      origin.y + dy.force_numerical_value_in(mp::one) * occupied_cm *
+      origin.y + dy.force_numerical_value_in(mp::one) * ray_end_cm *
                      y_extent[cm],
-      origin.z + dz.force_numerical_value_in(mp::one) * occupied_cm *
+      origin.z + dz.force_numerical_value_in(mp::one) * ray_end_cm *
                      z_extent[cm],
   };
   if (mapped_map_.isInsideBounds(occupied)) {
@@ -245,16 +344,29 @@ void Simulator::rotateTo(HorizontalAngle target) {
     const bool rotate_left = left_delta <= 180.0;
     const double remaining = rotate_left ? left_delta : 360.0 - left_delta;
     const double command = std::min(remaining, max_rotate);
+    if (log_ != nullptr) {
+      *log_ << "command: rotate_" << (rotate_left ? "left" : "right")
+            << " angle_deg=" << command
+            << " from_deg=" << current
+            << " target_deg=" << target_deg << '\n';
+    }
     if (rotate_left) {
       drone_.rotateLeft(command * deg);
     } else {
       drone_.rotateRight(command * deg);
     }
+    logFailure("rotate");
   }
 }
 
 void Simulator::moveToAdjacent(const GridCoord &from, const GridCoord &to) {
   const GridCoord delta = gridDelta(from, to);
+
+  if (log_ != nullptr) {
+    *log_ << "move step: from_grid=(" << from.x << ',' << from.y << ','
+          << from.z << ") to_grid=(" << to.x << ',' << to.y << ',' << to.z
+          << ")\n";
+  }
 
   if (delta.z != 0) {
     const double step = static_cast<double>(delta.z) * cmValue(res_z_);
@@ -269,7 +381,11 @@ void Simulator::moveToAdjacent(const GridCoord &from, const GridCoord &to) {
     while (!sim_state_.failed && std::abs(remaining) > 1e-9) {
       const double command =
           std::clamp(remaining, -max_elevate, max_elevate);
+      if (log_ != nullptr) {
+        *log_ << "command: elevate distance_cm=" << command << '\n';
+      }
       drone_.elevate(command * cm);
+      logFailure("elevate");
       remaining -= command;
     }
     return;
@@ -303,16 +419,49 @@ void Simulator::moveToAdjacent(const GridCoord &from, const GridCoord &to) {
 
   while (!sim_state_.failed && remaining > 1e-9) {
     const double command = std::min(remaining, max_advance);
+    if (log_ != nullptr) {
+      *log_ << "command: advance distance_cm=" << command << '\n';
+    }
     drone_.advance(command * cm);
+    logFailure("advance");
     remaining -= command;
   }
 }
 
 void Simulator::moveAlongPath(const std::vector<GridCoord> &path) {
+  if (log_ != nullptr) {
+    *log_ << "follow path: steps=" << (path.empty() ? 0 : path.size() - 1)
+          << '\n';
+  }
   for (std::size_t i = 1; i < path.size() && !sim_state_.failed; ++i) {
     moveToAdjacent(path[i - 1], path[i]);
     mapped_map_.set(drone_.getPosition(), EMPTY);
+    logState("after move");
   }
+}
+
+void Simulator::logState(const char *label) const {
+  if (log_ == nullptr) {
+    return;
+  }
+
+  const Position3D position = drone_.getPosition();
+  const Orientation orientation = drone_.getOrientation();
+  *log_ << label
+        << ": position_cm=(" << position.x.force_numerical_value_in(cm)
+        << ',' << position.y.force_numerical_value_in(cm)
+        << ',' << position.z.force_numerical_value_in(cm)
+        << ") orientation_deg=(" << degValue(orientation.horizontal)
+        << ',' << degValue(orientation.altitude) << ")\n";
+}
+
+void Simulator::logFailure(const char *context) const {
+  if (log_ == nullptr || !sim_state_.failed) {
+    return;
+  }
+
+  *log_ << "simulation failed during " << context
+        << ": " << sim_state_.failure_reason << '\n';
 }
 
 /*
@@ -326,14 +475,15 @@ void Simulator::moveAlongPath(const std::vector<GridCoord> &path) {
  * Mapping is done as a sparse voxel occupancy grid in mapped_map_. Every
  * position starts as NOT_MAPPED because mapped_map_ is a DroneMap. At the
  * current drone position we scan six deterministic directions: four horizontal
- * compass directions and up/down. Each lidar result is a hit along one beam.
+ * compass directions and up/down. Each lidar result describes one emitted beam.
  * For that beam, the simulator combines the drone orientation with the
- * hit-relative beam orientation, steps along the ray at mission resolution,
- * marks intermediate voxels EMPTY, and marks the hit voxel OCCUPIED. If the
- * lidar reports distance 0, the obstacle is too close to measure accurately,
- * so only the nearest voxel in that beam direction is marked OCCUPIED. Missing
- * lidar beams are intentionally ignored: with the current LidarScanResult API,
- * lack of a hit does not prove that all cells out to zMax are empty.
+ * beam-relative orientation, steps along the ray at mission resolution, and
+ * marks traversed voxels EMPTY. If the beam detected an obstacle, the endpoint
+ * voxel is marked OCCUPIED. If the lidar reports distance 0, the obstacle is
+ * too close to measure accurately, so only the nearest voxel in that beam
+ * direction is marked OCCUPIED. If the beam did not detect an obstacle, the ray
+ * is still useful: cells along the beam up to the reported max range are marked
+ * EMPTY, but no endpoint is marked OCCUPIED.
  *
  * Exploration uses a frontier strategy over the discovered map. A frontier is
  * a known EMPTY voxel that has at least one in-bounds NOT_MAPPED 6-neighbor.
@@ -353,6 +503,23 @@ void Simulator::moveAlongPath(const std::vector<GridCoord> &path) {
  * unobservable cells may legitimately remain NOT_MAPPED in the returned map.
  */
 IMap3D &Simulator::simulate() {
+  if (log_ != nullptr) {
+    *log_ << "simulation start\n";
+    *log_ << "resolution: xy_cm=" << cmValue(res_xy_)
+          << " z_cm=" << cmValue(res_z_) << '\n';
+    *log_ << "movement limits: max_advance_cm="
+          << cmValue(drone_config_.maxCommand.maxAdvance)
+          << " max_elevate_cm=" << cmValue(drone_config_.maxCommand.maxElevate)
+          << " max_rotate_deg="
+          << drone_config_.maxCommand.maxRotate.force_numerical_value_in(deg)
+          << '\n';
+    *log_ << "lidar: z_min_cm=" << cmValue(drone_config_.lidarConfig.zMin)
+          << " z_max_cm=" << cmValue(drone_config_.lidarConfig.zMax)
+          << " d_cm=" << cmValue(drone_config_.lidarConfig.d)
+          << " fovc=" << drone_config_.lidarConfig.fovc << '\n';
+    logState("initial state");
+  }
+
   mapped_map_.set(drone_.getPosition(), EMPTY);
 
   const std::size_t max_iterations =
@@ -361,12 +528,27 @@ IMap3D &Simulator::simulate() {
   for (std::size_t iteration = 0;
        iteration < max_iterations && !sim_state_.failed;
        ++iteration) {
+    if (log_ != nullptr) {
+      *log_ << "iteration " << iteration << '\n';
+      logState("before scan");
+    }
     scanCurrentPosition();
     const auto path = pathToNearestFrontier();
     if (!path.has_value()) {
+      if (log_ != nullptr) {
+        *log_ << "simulation stop: no path to frontier\n";
+      }
       break;
     }
     moveAlongPath(*path);
+  }
+
+  if (log_ != nullptr) {
+    if (sim_state_.failed) {
+      *log_ << "simulation stop: failed: " << sim_state_.failure_reason << '\n';
+    }
+    *log_ << "simulation end\n";
+    logState("final state");
   }
 
   return mapped_map_;

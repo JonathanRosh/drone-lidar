@@ -30,6 +30,10 @@ Position3D Drone::getPosition() const {
     return position_sensor.getPosition();
 }
 
+Orientation Drone::getOrientation() const {
+    return position_sensor.getOrientation();
+}
+
 LidarScanResult Drone::scan(Angle xy_angle, Angle height_angle) const {
     Orientation scan_orientation{
         HorizontalAngle{xy_angle.force_numerical_value_in(deg) * deg},

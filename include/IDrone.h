@@ -14,6 +14,7 @@ public:
 
     virtual LidarScanResult scan(Angle xy_angle, Angle height_angle) const = 0;
     virtual Position3D getPosition() const = 0;
+    virtual Orientation getOrientation() const = 0;
 
     // virtual IMap3D& finish() const = 0;
 };

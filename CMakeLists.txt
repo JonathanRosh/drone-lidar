@@ -7,6 +7,7 @@ find_package(GTest CONFIG REQUIRED)
 
 add_library(drone_core
     src/Parser.cpp
+    src/MapUtils.cpp
     src/MapCore.cpp
     src/TrueMap.cpp
     src/DroneMap.cpp
@@ -56,6 +57,7 @@ add_executable(
     drone_tests
     test/MapTest.cpp
     test/ParserTest.cpp
+    test/SimulatorTest.cpp
     test/LidarSensorMockTest.cpp
     test/MovementDriverMockTest.cpp
 )

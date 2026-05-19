@@ -23,6 +23,7 @@ public:
 
   LidarScanResult scan(Angle xy_angle, Angle height_angle) const override;
   Position3D getPosition() const override;
+  Orientation getOrientation() const override;
 
     // IMap3D& finish() const override;
 };

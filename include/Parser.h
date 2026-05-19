@@ -5,9 +5,12 @@
 #include "TrueMap.h"
 #include <string>
 
-DroneConfig parseDroneConfig(const std::string &filename);
-MissionConfig parseMissionConfig(const std::string &filename);
-TrueMap parseTrueMap(const std::string &filename,
-                     const MissionConfig &mission_config);
+class Parser {
+public:
+  static DroneConfig parseDroneConfig(const std::string &filename);
+  static MissionConfig parseMissionConfig(const std::string &filename);
+  static TrueMap parseTrueMap(const std::string &filename,
+                              const MissionConfig &mission_config);
+};
 
 #endif // DRONE_LIDAR_PARSER_H

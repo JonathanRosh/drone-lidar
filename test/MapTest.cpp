@@ -45,7 +45,7 @@ TEST(TrueMapTest, OutsideBoundaryReturnsExpectedValue)
     EXPECT_EQ(result, OUTSIDE_BOUNDARY);
 }
 
-TEST(TrueMapTest, NotMappedCell)
+TEST(TrueMapTest, UnsetInBoundsCellIsEmpty)
 {
   Position3D pos = { 
         15.0 * cm,            
@@ -53,8 +53,8 @@ TEST(TrueMapTest, NotMappedCell)
         15.0 * cm
     };
 
-    Mapping non_mapped = tm.get(pos);
-    EXPECT_EQ(non_mapped, NOT_MAPPED);
+    Mapping result = tm.get(pos);
+    EXPECT_EQ(result, EMPTY);
 }
 
 TEST(TrueMapTest, SetAndGetCell)

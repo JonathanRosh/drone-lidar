@@ -36,10 +36,11 @@ bool insideMissionBounds(const Position3D &position,
 
 } // namespace
 
-MapCore::MapCore(const MissionConfig &mission_config)
+MapCore::MapCore(const MissionConfig &mission_config, Mapping default_in_bounds)
     : config_(mission_config),
       res_xy_(xyResolution(mission_config)),
-      res_height_(zResolution(mission_config)) {}
+      res_height_(zResolution(mission_config)),
+      default_in_bounds_(default_in_bounds) {}
 
 GridCoord MapCore::worldToGrid(const Position3D &pos) const {
   return {toGridIndex(pos.x, res_xy_), toGridIndex(pos.y, res_xy_),
@@ -69,7 +70,7 @@ Mapping MapCore::get(const Position3D &pos) const {
 
   const auto it = cells_.find(worldToGrid(pos));
   if (it == cells_.end()) {
-    return NOT_MAPPED;
+    return default_in_bounds_;
   }
   return it->second;
 }

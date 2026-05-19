@@ -1,5 +1,4 @@
-#include "Configs.h"
-#include "TrueMap.h"
+#include "Parser.h"
 #include "TrueMapBuilder.h"
 #include "Units.h"
 
@@ -33,7 +32,7 @@ bool parseKeyValue(const std::string &line, std::string &key,
 
 } // namespace
 
-DroneConfig parseDroneConfig(const std::string &filename) {
+DroneConfig Parser::parseDroneConfig(const std::string &filename) {
 
   DroneConfig drone_config{};
 
@@ -50,37 +49,39 @@ DroneConfig parseDroneConfig(const std::string &filename) {
 
     std::string key;
     std::string value;
-    if (parseKeyValue(trimmed_line, key, value)) {
-      if (key == "min_pass_width") {
-        drone_config.minPass.width = Length(std::stod(value), cm);
-      } else if (key == "min_pass_height") {
-        drone_config.minPass.height = Length(std::stod(value), cm);
-      } else if (key == "min_pass_length") {
-        drone_config.minPass.length = Length(std::stod(value), cm);
-      } else if (key == "max_advance") {
-        drone_config.maxCommand.maxAdvance = Distance(std::stod(value), cm);
-      } else if (key == "max_elevate") {
-        drone_config.maxCommand.maxElevate = Distance(std::stod(value), cm);
-      } else if (key == "max_rotate") {
-        drone_config.maxCommand.maxRotate = Angle(std::stod(value), deg);
-      } else if (key == "lidar_z_min") {
-        drone_config.lidarConfig.zMin = Distance(std::stod(value), cm);
-      } else if (key == "lidar_z_max") {
-        drone_config.lidarConfig.zMax = Distance(std::stod(value), cm);
-      } else if (key == "lidar_d") {
-        drone_config.lidarConfig.d = Distance(std::stod(value), cm);
-      } else if (key == "lidar_fovc") {
-        drone_config.lidarConfig.fovc = std::stoi(value);
-      } else {
-        throw std::runtime_error("Failed to parse line: " + line);
-      }
+    if (!parseKeyValue(trimmed_line, key, value)) {
+      throw std::runtime_error("Failed to parse line: " + line);
+    }
+
+    if (key == "min_pass_width") {
+      drone_config.minPass.width = Length(std::stod(value), cm);
+    } else if (key == "min_pass_height") {
+      drone_config.minPass.height = Length(std::stod(value), cm);
+    } else if (key == "min_pass_length") {
+      drone_config.minPass.length = Length(std::stod(value), cm);
+    } else if (key == "max_advance") {
+      drone_config.maxCommand.maxAdvance = Distance(std::stod(value), cm);
+    } else if (key == "max_elevate") {
+      drone_config.maxCommand.maxElevate = Distance(std::stod(value), cm);
+    } else if (key == "max_rotate") {
+      drone_config.maxCommand.maxRotate = Angle(std::stod(value), deg);
+    } else if (key == "lidar_z_min") {
+      drone_config.lidarConfig.zMin = Distance(std::stod(value), cm);
+    } else if (key == "lidar_z_max") {
+      drone_config.lidarConfig.zMax = Distance(std::stod(value), cm);
+    } else if (key == "lidar_d") {
+      drone_config.lidarConfig.d = Distance(std::stod(value), cm);
+    } else if (key == "lidar_fovc") {
+      drone_config.lidarConfig.fovc = std::stoi(value);
+    } else {
+      throw std::runtime_error("Failed to parse line: " + line);
     }
   }
 
   return drone_config;
 }
 
-MissionConfig parseMissionConfig(const std::string &filename) {
+MissionConfig Parser::parseMissionConfig(const std::string &filename) {
   MissionConfig mission_config{};
 
   std::ifstream file(filename);
@@ -96,34 +97,36 @@ MissionConfig parseMissionConfig(const std::string &filename) {
 
     std::string key;
     std::string value;
-    if (parseKeyValue(trimmed_line, key, value)) {
-      if (key == "map_boundary_x_min") {
-        mission_config.map_boundry.minX = Distance(std::stod(value), cm);
-      } else if (key == "map_boundary_y_min") {
-        mission_config.map_boundry.minY = Distance(std::stod(value), cm);
-      } else if (key == "map_boundary_x_max") {
-        mission_config.map_boundry.maxX = Distance(std::stod(value), cm);
-      } else if (key == "map_boundary_y_max") {
-        mission_config.map_boundry.maxY = Distance(std::stod(value), cm);
-      } else if (key == "map_boundary_height_max") {
-        mission_config.map_boundry.maxHeight = Distance(std::stod(value), cm);
-      } else if (key == "map_boundary_height_min") {
-        mission_config.map_boundry.minHeight = Distance(std::stod(value), cm);
-      } else if (key == "resolution_xy" || key == "map_resolution_xy") {
-        mission_config.map_resolution.xy_resolution = std::stoi(value);
-      } else if (key == "resolution_height" || key == "map_resolution_height") {
-        mission_config.map_resolution.height_resolution = std::stoi(value);
-      } else {
-        throw std::runtime_error("Failed to parse line: " + line);
-      }
+    if (!parseKeyValue(trimmed_line, key, value)) {
+      throw std::runtime_error("Failed to parse line: " + line);
+    }
+
+    if (key == "map_boundary_x_min") {
+      mission_config.map_boundry.minX = Distance(std::stod(value), cm);
+    } else if (key == "map_boundary_y_min") {
+      mission_config.map_boundry.minY = Distance(std::stod(value), cm);
+    } else if (key == "map_boundary_x_max") {
+      mission_config.map_boundry.maxX = Distance(std::stod(value), cm);
+    } else if (key == "map_boundary_y_max") {
+      mission_config.map_boundry.maxY = Distance(std::stod(value), cm);
+    } else if (key == "map_boundary_height_max") {
+      mission_config.map_boundry.maxHeight = Distance(std::stod(value), cm);
+    } else if (key == "map_boundary_height_min") {
+      mission_config.map_boundry.minHeight = Distance(std::stod(value), cm);
+    } else if (key == "resolution_xy" || key == "map_resolution_xy") {
+      mission_config.map_resolution.xy_resolution = std::stoi(value);
+    } else if (key == "resolution_height" || key == "map_resolution_height") {
+      mission_config.map_resolution.height_resolution = std::stoi(value);
+    } else {
+      throw std::runtime_error("Failed to parse line: " + line);
     }
   }
 
   return mission_config;
 }
 
-TrueMap parseTrueMap(const std::string &filename,
-                     const MissionConfig &mission_config) {
+TrueMap Parser::parseTrueMap(const std::string &filename,
+                             const MissionConfig &mission_config) {
 
   TrueMap trueMap(mission_config);
 

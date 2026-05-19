@@ -11,6 +11,7 @@ class MapCore : public virtual IMap3D {
   const MissionConfig &config_;
   const Distance res_xy_;
   const Distance res_height_;
+  const Mapping default_in_bounds_;
 
 protected:
   GridCoord worldToGrid(const Position3D &pos) const;
@@ -18,7 +19,7 @@ protected:
   void setCell(const Position3D &pos, Mapping mapping);
 
 public:
-  explicit MapCore(const MissionConfig &mission_config);
+  MapCore(const MissionConfig &mission_config, Mapping default_in_bounds);
 
   Mapping get(const Position3D &pos) const override;
   bool isInsideBounds(const Position3D &pos) const override;

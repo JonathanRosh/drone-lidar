@@ -1,0 +1,9 @@
+# mission config
+map_boundary_x_min: 1
+map_boundary_y_min: 2
+map_boundary_x_max: 30
+map_boundary_y_max: 40
+map_boundary_height_min: 3
+map_boundary_height_max: 50
+resolution_xy: 2
+map_resolution_height: 3

@@ -16,10 +16,11 @@ int main(int argc, char **argv) {
   fs::path mission_config_path = input_output_path / "mission_config.txt";
   fs::path true_map_path = input_output_path / "map_input.txt";
 
-  const DroneConfig drone_config = parseDroneConfig(drone_config_path.string());
+  const DroneConfig drone_config =
+      Parser::parseDroneConfig(drone_config_path.string());
   const MissionConfig mission_config =
-      parseMissionConfig(mission_config_path.string());
-  TrueMap true_map = parseTrueMap(true_map_path.string(), mission_config);
+      Parser::parseMissionConfig(mission_config_path.string());
+  TrueMap true_map = Parser::parseTrueMap(true_map_path.string(), mission_config);
 
   Simulator simulator(drone_config, mission_config, true_map);
   IMap3D &mapped_map = simulator.simulate();

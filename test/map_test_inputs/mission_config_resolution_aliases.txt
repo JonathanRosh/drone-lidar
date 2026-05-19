@@ -1,0 +1,8 @@
+map_boundary_x_min: 0
+map_boundary_y_min: 0
+map_boundary_x_max: 10
+map_boundary_y_max: 10
+map_boundary_height_min: 0
+map_boundary_height_max: 10
+map_resolution_xy: 4
+resolution_height: 5

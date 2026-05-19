@@ -1,0 +1,12 @@
+# drone config
+min_pass_width: 30
+min_pass_height: 20
+min_pass_length: 25
+
+max_advance: 100
+max_elevate: 40
+max_rotate: 90
+lidar_z_min: 5
+lidar_z_max: 120
+lidar_d: 2.5
+lidar_fovc: 3

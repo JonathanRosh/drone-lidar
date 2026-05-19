@@ -1,33 +1,223 @@
+#include "IMap3D.h"
+#include "MapUtils.h"
 #include "Parser.h"
 #include "Simulator.h"
 #include "TrueMap.h"
 
+#include <cmath>
+#include <cstddef>
 #include <filesystem>
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <stdexcept>
 #include <string>
 
-int main(int argc, char **argv) {
+namespace {
 
+double cmValue(Distance distance) {
+  return distance.force_numerical_value_in(cm);
+}
+
+int lowerGridIndex(Distance value, Distance resolution) {
+  return static_cast<int>(
+      std::ceil(cmValue(value) / cmValue(resolution) - 1e-9));
+}
+
+int upperGridIndex(Distance value, Distance resolution) {
+  return static_cast<int>(
+      std::floor(cmValue(value) / cmValue(resolution) + 1e-9));
+}
+
+struct GridBounds {
+  GridCoord min;
+  GridCoord max;
+};
+
+GridBounds gridBoundsForMission(const MissionConfig &mission_config) {
+  const Distance res_xy = MapUtils::xyResolution(mission_config);
+  const Distance res_z = MapUtils::zResolution(mission_config);
+  const auto &boundary = mission_config.map_boundry;
+
+  return {
+      {
+          lowerGridIndex(boundary.minX, res_xy),
+          lowerGridIndex(boundary.minY, res_xy),
+          lowerGridIndex(boundary.minHeight, res_z),
+      },
+      {
+          upperGridIndex(boundary.maxX, res_xy),
+          upperGridIndex(boundary.maxY, res_xy),
+          upperGridIndex(boundary.maxHeight, res_z),
+      },
+  };
+}
+
+struct MappingStats {
+  std::size_t total_voxels = 0;
+  std::size_t correct_voxels = 0;
+  std::size_t incorrect_voxels = 0;
+  std::size_t true_occupied = 0;
+  std::size_t true_empty = 0;
+  std::size_t mapped_occupied = 0;
+  std::size_t mapped_empty = 0;
+  std::size_t mapped_not_mapped = 0;
+  std::size_t occupied_found = 0;
+  std::size_t occupied_missed = 0;
+  std::size_t false_occupied = 0;
+  std::size_t empty_found = 0;
+  double score = 0.0;
+};
+
+MappingStats calculateStats(const IMap3D &true_map,
+                            const IMap3D &mapped_map,
+                            const MissionConfig &mission_config) {
+  MappingStats stats;
+  const Distance res_xy = MapUtils::xyResolution(mission_config);
+  const Distance res_z = MapUtils::zResolution(mission_config);
+  const GridBounds bounds = gridBoundsForMission(mission_config);
+
+  for (int z = bounds.min.z; z <= bounds.max.z; ++z) {
+    for (int y = bounds.min.y; y <= bounds.max.y; ++y) {
+      for (int x = bounds.min.x; x <= bounds.max.x; ++x) {
+        const Position3D position = MapUtils::gridToWorld({x, y, z},
+                                                          res_xy,
+                                                          res_z);
+        if (!MapUtils::insideMissionBounds(position, mission_config)) {
+          continue;
+        }
+
+        const Mapping true_value = true_map.get(position);
+        const Mapping mapped_value = mapped_map.get(position);
+
+        ++stats.total_voxels;
+        if (true_value == mapped_value) {
+          ++stats.correct_voxels;
+        } else {
+          ++stats.incorrect_voxels;
+        }
+
+        if (true_value == OCCUPIED) {
+          ++stats.true_occupied;
+          if (mapped_value == OCCUPIED) {
+            ++stats.occupied_found;
+          } else {
+            ++stats.occupied_missed;
+          }
+        } else {
+          ++stats.true_empty;
+          if (mapped_value == EMPTY) {
+            ++stats.empty_found;
+          }
+        }
+
+        if (mapped_value == OCCUPIED) {
+          ++stats.mapped_occupied;
+          if (true_value != OCCUPIED) {
+            ++stats.false_occupied;
+          }
+        } else if (mapped_value == EMPTY) {
+          ++stats.mapped_empty;
+        } else if (mapped_value == NOT_MAPPED) {
+          ++stats.mapped_not_mapped;
+        }
+      }
+    }
+  }
+
+  if (stats.total_voxels != 0) {
+    stats.score = 100.0 * static_cast<double>(stats.correct_voxels) /
+                  static_cast<double>(stats.total_voxels);
+  }
+
+  return stats;
+}
+
+void printStats(const MappingStats &stats) {
+  std::cout << std::fixed << std::setprecision(2);
+  std::cout << "Mapping score: " << stats.score << " / 100\n";
+  std::cout << "Total in-bound voxels: " << stats.total_voxels << '\n';
+  std::cout << "Correct voxels: " << stats.correct_voxels << '\n';
+  std::cout << "Incorrect voxels: " << stats.incorrect_voxels << '\n';
+  std::cout << "True occupied cells: " << stats.true_occupied << '\n';
+  std::cout << "True empty cells: " << stats.true_empty << '\n';
+  std::cout << "Mapped occupied cells: " << stats.mapped_occupied << '\n';
+  std::cout << "Mapped empty cells: " << stats.mapped_empty << '\n';
+  std::cout << "Mapped not-mapped cells: " << stats.mapped_not_mapped << '\n';
+  std::cout << "True occupied cells found: " << stats.occupied_found << '\n';
+  std::cout << "True occupied cells missed: " << stats.occupied_missed << '\n';
+  std::cout << "False occupied cells: " << stats.false_occupied << '\n';
+  std::cout << "True empty cells found: " << stats.empty_found << '\n';
+}
+
+void writeMapOutput(const IMap3D &mapped_map,
+                    const MissionConfig &mission_config,
+                    const std::filesystem::path &output_path) {
+  std::ofstream output(output_path);
+  if (!output.is_open()) {
+    throw std::runtime_error("Failed to open file for writing: " +
+                             output_path.string());
+  }
+
+  const Distance res_xy = MapUtils::xyResolution(mission_config);
+  const Distance res_z = MapUtils::zResolution(mission_config);
+  const GridBounds bounds = gridBoundsForMission(mission_config);
+
+  output << std::setprecision(10);
+  for (int z = bounds.min.z; z <= bounds.max.z; ++z) {
+    for (int y = bounds.min.y; y <= bounds.max.y; ++y) {
+      for (int x = bounds.min.x; x <= bounds.max.x; ++x) {
+        const Position3D position = MapUtils::gridToWorld({x, y, z},
+                                                          res_xy,
+                                                          res_z);
+        if (!MapUtils::insideMissionBounds(position, mission_config)) {
+          continue;
+        }
+        if (mapped_map.get(position) != OCCUPIED) {
+          continue;
+        }
+
+        output << position.x.force_numerical_value_in(cm) << ' '
+               << position.y.force_numerical_value_in(cm) << ' '
+               << position.z.force_numerical_value_in(cm) << '\n';
+      }
+    }
+  }
+}
+
+} // namespace
+
+int main(int argc, char **argv) {
   namespace fs = std::filesystem;
 
-  fs::path input_output_path =
-      (argc >= 2) ? fs::path(argv[1]) : fs::current_path();
+  try {
+    fs::path input_output_path =
+        (argc >= 2) ? fs::path(argv[1]) : fs::current_path();
 
-  fs::path drone_config_path = input_output_path / "drone_config.txt";
-  fs::path mission_config_path = input_output_path / "mission_config.txt";
-  fs::path true_map_path = input_output_path / "map_input.txt";
+    fs::path drone_config_path = input_output_path / "drone_config.txt";
+    fs::path mission_config_path = input_output_path / "mission_config.txt";
+    fs::path true_map_path = input_output_path / "map_input.txt";
+    fs::path output_map_path = input_output_path / "map_output.txt";
 
-  const DroneConfig drone_config =
-      Parser::parseDroneConfig(drone_config_path.string());
-  const MissionConfig mission_config =
-      Parser::parseMissionConfig(mission_config_path.string());
-  TrueMap true_map = Parser::parseTrueMap(true_map_path.string(), mission_config);
+    const DroneConfig drone_config =
+        Parser::parseDroneConfig(drone_config_path.string());
+    const MissionConfig mission_config =
+        Parser::parseMissionConfig(mission_config_path.string());
+    TrueMap true_map =
+        Parser::parseTrueMap(true_map_path.string(), mission_config);
 
-  Simulator simulator(drone_config, mission_config, true_map);
-  IMap3D &mapped_map = simulator.simulate();
-  (void)mapped_map;
+    Simulator simulator(drone_config, mission_config, true_map);
+    IMap3D &mapped_map = simulator.simulate();
 
-  // TODO:
-  // Calculate score and print it
+    const MappingStats stats =
+        calculateStats(true_map, mapped_map, mission_config);
+    printStats(stats);
+    writeMapOutput(mapped_map, mission_config, output_map_path);
+  } catch (const std::exception &e) {
+    std::cerr << "Unrecoverable error: " << e.what() << '\n';
+  } catch (...) {
+    std::cerr << "Unrecoverable error: unknown exception\n";
+  }
 
   return 0;
 }

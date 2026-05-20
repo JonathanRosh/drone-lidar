@@ -23,7 +23,7 @@ After building the project from the `build` directory you can run the following:
 ./drone_mapper <input_output_files_path>
 ```
 
-If you want to also get a log file to the output you can add the `--log` flag:
+If you want to also add a `log.txt` file with simulation logs to the output you can add the `--log` flag:
 
 ```text
 ./drone_mapper <input_output_files_path> --log

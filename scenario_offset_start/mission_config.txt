@@ -1,0 +1,15 @@
+# mission config with an explicit non-origin starting pose
+map_boundary_x_min: 5
+map_boundary_y_min: 0
+map_boundary_x_max: 15
+map_boundary_y_max: 10
+map_boundary_height_min: -1
+map_boundary_height_max: 3
+
+initial_x: 6
+initial_y: 2
+initial_height: 0
+initial_xy_angle: 0
+
+resolution_xy: 0
+resolution_height: 0

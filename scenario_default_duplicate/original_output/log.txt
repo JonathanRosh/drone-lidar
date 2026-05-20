@@ -1,0 +1,3130 @@
+drone_mapper log enabled
+input_output_path: "../scenario_default_duplicate"
+simulation start
+resolution: xy_cm=1 z_cm=1
+movement limits: max_advance_cm=1 max_elevate_cm=1 max_rotate_deg=90
+lidar: z_min_cm=0.5 z_max_cm=30 d_cm=1 fovc=3
+initial state: position_cm=(0,0,0) orientation_deg=(0,0)
+iteration 0
+before scan: position_cm=(0,0,0) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=19.5 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=9.2 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=21.9 relative_xy_deg=63.4349 relative_altitude_deg=0
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=19.5 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=9.2 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=21.9 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=16 target_grid=(0,2,0)
+follow path: steps=2
+move step: from_grid=(0,0,0) to_grid=(0,1,0)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(6.12323e-17,1,0) orientation_deg=(90,0)
+move step: from_grid=(0,1,0) to_grid=(0,2,0)
+command: advance distance_cm=1
+after move: position_cm=(1.22465e-16,2,0) orientation_deg=(90,0)
+iteration 1
+before scan: position_cm=(1.22465e-16,2,0) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=17.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=9.2 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=10.1 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=19.5 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=9.2 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=19.6 relative_xy_deg=333.435 relative_altitude_deg=0
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=14 target_grid=(2,2,0)
+follow path: steps=2
+move step: from_grid=(0,2,0) to_grid=(1,2,0)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(1,2,0) orientation_deg=(0,0)
+move step: from_grid=(1,2,0) to_grid=(2,2,0)
+command: advance distance_cm=1
+after move: position_cm=(2,2,0) orientation_deg=(0,0)
+iteration 2
+before scan: position_cm=(2,2,0) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=17.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=19.6 relative_xy_deg=63.4349 relative_altitude_deg=0
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=17.6 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=19.6 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=36 target_grid=(2,4,0)
+follow path: steps=2
+move step: from_grid=(2,2,0) to_grid=(2,3,0)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(2,3,0) orientation_deg=(90,0)
+move step: from_grid=(2,3,0) to_grid=(2,4,0)
+command: advance distance_cm=1
+after move: position_cm=(2,4,0) orientation_deg=(90,0)
+iteration 3
+before scan: position_cm=(2,4,0) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=15.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=5.6 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=17.6 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=17.4 relative_xy_deg=333.435 relative_altitude_deg=0
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=19 target_grid=(4,4,0)
+follow path: steps=2
+move step: from_grid=(2,4,0) to_grid=(3,4,0)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(3,4,0) orientation_deg=(0,0)
+move step: from_grid=(3,4,0) to_grid=(4,4,0)
+command: advance distance_cm=1
+after move: position_cm=(4,4,0) orientation_deg=(0,0)
+iteration 4
+before scan: position_cm=(4,4,0) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=15.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=5.6 relative_xy_deg=63.4349 relative_altitude_deg=0
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=15.6 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=5.6 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=37 target_grid=(4,6,0)
+follow path: steps=2
+move step: from_grid=(4,4,0) to_grid=(4,5,0)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(4,5,0) orientation_deg=(90,0)
+move step: from_grid=(4,5,0) to_grid=(4,6,0)
+command: advance distance_cm=1
+after move: position_cm=(4,6,0) orientation_deg=(90,0)
+iteration 5
+before scan: position_cm=(4,6,0) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=13.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=2.8 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=9.6 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=15.1 relative_xy_deg=333.435 relative_altitude_deg=0
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=19 target_grid=(6,6,0)
+follow path: steps=2
+move step: from_grid=(4,6,0) to_grid=(5,6,0)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(5,6,0) orientation_deg=(0,0)
+move step: from_grid=(5,6,0) to_grid=(6,6,0)
+command: advance distance_cm=1
+after move: position_cm=(6,6,0) orientation_deg=(0,0)
+iteration 6
+before scan: position_cm=(6,6,0) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=7.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=1.2 relative_xy_deg=63.4349 relative_altitude_deg=0
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=13.6 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=1.2 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=28.4221
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=-28.4221
+frontier path found: length=3 visited=18 target_grid=(8,6,0)
+follow path: steps=2
+move step: from_grid=(6,6,0) to_grid=(7,6,0)
+command: advance distance_cm=1
+after move: position_cm=(7,6,0) orientation_deg=(0,0)
+move step: from_grid=(7,6,0) to_grid=(8,6,0)
+command: advance distance_cm=1
+after move: position_cm=(8,6,0) orientation_deg=(0,0)
+iteration 7
+before scan: position_cm=(8,6,0) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=5.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=0.6 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=61.5779 relative_altitude_deg=37.4292
+lidar hit: distance_cm=0.8 relative_xy_deg=61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=0.5 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=1.2 relative_xy_deg=153.435 relative_altitude_deg=0
+lidar hit: distance_cm=1.2 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=0.8 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=0.8 relative_xy_deg=118.422 relative_altitude_deg=37.4292
+lidar hit: distance_cm=0.6 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+lidar hit: distance_cm=0.8 relative_xy_deg=118.422 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=12.9 relative_xy_deg=333.435 relative_altitude_deg=0
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=1 relative_xy_deg=-37.4292 relative_altitude_deg=151.578
+lidar hit: distance_cm=0.8 relative_xy_deg=-54.7356 relative_altitude_deg=144.736
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=28.4221
+lidar hit: distance_cm=0.8 relative_xy_deg=54.7356 relative_altitude_deg=35.2644
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=0.8 relative_xy_deg=54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=0.8 relative_xy_deg=-54.7356 relative_altitude_deg=-144.736
+lidar hit: distance_cm=1 relative_xy_deg=-37.4292 relative_altitude_deg=-151.578
+frontier path found: length=3 visited=15 target_grid=(10,6,0)
+follow path: steps=2
+move step: from_grid=(8,6,0) to_grid=(9,6,0)
+command: advance distance_cm=1
+after move: position_cm=(9,6,0) orientation_deg=(0,0)
+move step: from_grid=(9,6,0) to_grid=(10,6,0)
+command: advance distance_cm=1
+after move: position_cm=(10,6,0) orientation_deg=(0,0)
+iteration 8
+before scan: position_cm=(10,6,0) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=3.5 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=13.5 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=15.1 relative_xy_deg=63.4349 relative_altitude_deg=0
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=13.6 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=13.5 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=1.2 relative_xy_deg=153.435 relative_altitude_deg=0
+lidar hit: distance_cm=10.7 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=0.8 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=1.2 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=10.7 relative_xy_deg=333.435 relative_altitude_deg=0
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=2 missed=19
+lidar hit: distance_cm=1 relative_xy_deg=-37.4292 relative_altitude_deg=151.578
+lidar hit: distance_cm=4 relative_xy_deg=-2.10501e-14 relative_altitude_deg=26.5651
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=1 relative_xy_deg=-37.4292 relative_altitude_deg=-151.578
+frontier path found: length=3 visited=34 target_grid=(10,8,0)
+follow path: steps=2
+move step: from_grid=(10,6,0) to_grid=(10,7,0)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(10,7,0) orientation_deg=(90,0)
+move step: from_grid=(10,7,0) to_grid=(10,8,0)
+command: advance distance_cm=1
+after move: position_cm=(10,8,0) orientation_deg=(90,0)
+iteration 9
+before scan: position_cm=(10,8,0) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=11.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=13.5 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=0.6 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=61.5779 relative_altitude_deg=37.4292
+lidar hit: distance_cm=10.7 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+lidar hit: distance_cm=0.8 relative_xy_deg=61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=0.6 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=1.2 relative_xy_deg=153.435 relative_altitude_deg=0
+lidar hit: distance_cm=1.2 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=0.8 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=4 relative_xy_deg=243.435 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=118.422 relative_altitude_deg=37.4292
+lidar hit: distance_cm=0.6 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+lidar hit: distance_cm=0.8 relative_xy_deg=118.422 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=9.6 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=13.5 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=12.9 relative_xy_deg=333.435 relative_altitude_deg=0
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=1 relative_xy_deg=-37.4292 relative_altitude_deg=151.578
+lidar hit: distance_cm=0.8 relative_xy_deg=-54.7356 relative_altitude_deg=144.736
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=28.4221
+lidar hit: distance_cm=0.8 relative_xy_deg=54.7356 relative_altitude_deg=35.2644
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=0.8 relative_xy_deg=54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=0.8 relative_xy_deg=-54.7356 relative_altitude_deg=-144.736
+lidar hit: distance_cm=1 relative_xy_deg=-37.4292 relative_altitude_deg=-151.578
+frontier path found: length=3 visited=15 target_grid=(12,8,0)
+follow path: steps=2
+move step: from_grid=(10,8,0) to_grid=(11,8,0)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(11,8,0) orientation_deg=(0,0)
+move step: from_grid=(11,8,0) to_grid=(12,8,0)
+command: advance distance_cm=1
+after move: position_cm=(12,8,0) orientation_deg=(0,0)
+iteration 10
+before scan: position_cm=(12,8,0) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=7.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=10.7 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=12.9 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=4 relative_xy_deg=-61.5779 relative_altitude_deg=37.4292
+lidar hit: distance_cm=3.4 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=11.6 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=16.3 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=10.7 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=2.8 relative_xy_deg=153.435 relative_altitude_deg=0
+lidar hit: distance_cm=8.4 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=2.6 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=16.3 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=12.9 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=2.2 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=8.4 relative_xy_deg=333.435 relative_altitude_deg=0
+lidar hit: distance_cm=2.8 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=2 missed=19
+lidar hit: distance_cm=3.2 relative_xy_deg=-54.7356 relative_altitude_deg=35.2644
+lidar hit: distance_cm=2.9 relative_xy_deg=-37.4292 relative_altitude_deg=28.4221
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=36 target_grid=(12,10,0)
+follow path: steps=2
+move step: from_grid=(12,8,0) to_grid=(12,9,0)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(12,9,0) orientation_deg=(90,0)
+move step: from_grid=(12,9,0) to_grid=(12,10,0)
+command: advance distance_cm=1
+after move: position_cm=(12,10,0) orientation_deg=(90,0)
+iteration 11
+before scan: position_cm=(12,10,0) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=9.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=13.5 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=10.7 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=8.4 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=3.6 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=13.5 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=10.7 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=10.7 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=8.4 relative_xy_deg=243.435 relative_altitude_deg=0
+lidar hit: distance_cm=2.8 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=7.6 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=10.7 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=10.7 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=10.7 relative_xy_deg=333.435 relative_altitude_deg=0
+lidar hit: distance_cm=4 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=19 target_grid=(14,10,0)
+follow path: steps=2
+move step: from_grid=(12,10,0) to_grid=(13,10,0)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(13,10,0) orientation_deg=(0,0)
+move step: from_grid=(13,10,0) to_grid=(14,10,0)
+command: advance distance_cm=1
+after move: position_cm=(14,10,0) orientation_deg=(0,0)
+iteration 12
+before scan: position_cm=(14,10,0) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=5.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=7.8 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=7.8 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=10.7 relative_xy_deg=63.4349 relative_altitude_deg=0
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=9.6 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=13.5 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=7.8 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=6.2 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=13.5 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=10.7 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=3.5 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=7.8 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=6.2 relative_xy_deg=333.435 relative_altitude_deg=0
+lidar hit: distance_cm=5.1 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=37 target_grid=(14,12,0)
+follow path: steps=2
+move step: from_grid=(14,10,0) to_grid=(14,11,0)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(14,11,0) orientation_deg=(90,0)
+move step: from_grid=(14,11,0) to_grid=(14,12,0)
+command: advance distance_cm=1
+after move: position_cm=(14,12,0) orientation_deg=(90,0)
+iteration 13
+before scan: position_cm=(14,12,0) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=7.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=10.7 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=7.8 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=6.2 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=6.4 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=10.7 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=8.4 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=5.6 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=7.8 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=6.2 relative_xy_deg=243.435 relative_altitude_deg=0
+lidar hit: distance_cm=5.6 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=5.6 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=7.8 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=7.8 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=8.4 relative_xy_deg=333.435 relative_altitude_deg=0
+lidar hit: distance_cm=12.3 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=19 target_grid=(16,12,0)
+follow path: steps=2
+move step: from_grid=(14,12,0) to_grid=(15,12,0)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(15,12,0) orientation_deg=(0,0)
+move step: from_grid=(15,12,0) to_grid=(16,12,0)
+command: advance distance_cm=1
+after move: position_cm=(16,12,0) orientation_deg=(0,0)
+iteration 14
+before scan: position_cm=(16,12,0) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=3.5 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=5 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=5 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=7.9 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=7.9 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=7.6 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=10.7 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=5 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=16.8 relative_xy_deg=153.435 relative_altitude_deg=0
+lidar hit: distance_cm=4 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=10.7 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=8.4 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=5 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=4 relative_xy_deg=333.435 relative_altitude_deg=0
+lidar hit: distance_cm=7.3 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=37 target_grid=(16,14,0)
+follow path: steps=2
+move step: from_grid=(16,12,0) to_grid=(16,13,0)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(16,13,0) orientation_deg=(90,0)
+move step: from_grid=(16,13,0) to_grid=(16,14,0)
+command: advance distance_cm=1
+after move: position_cm=(16,14,0) orientation_deg=(90,0)
+iteration 15
+before scan: position_cm=(16,14,0) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=5.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=7.8 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=5 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=12.3 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=4 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=9.2 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=7.8 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=6.2 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=5 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=9.2 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=4 relative_xy_deg=243.435 relative_altitude_deg=0
+lidar hit: distance_cm=10.1 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=3.5 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=5 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=5 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=6.2 relative_xy_deg=333.435 relative_altitude_deg=0
+lidar hit: distance_cm=7.9 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=19 target_grid=(18,14,0)
+follow path: steps=2
+move step: from_grid=(16,14,0) to_grid=(17,14,0)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(17,14,0) orientation_deg=(0,0)
+move step: from_grid=(17,14,0) to_grid=(18,14,0)
+command: advance distance_cm=1
+after move: position_cm=(18,14,0) orientation_deg=(0,0)
+iteration 16
+before scan: position_cm=(18,14,0) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=1.5 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=3.4 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=3.4 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=5.6 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=7.8 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=12.3 relative_xy_deg=153.435 relative_altitude_deg=0
+lidar hit: distance_cm=1.7 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=7.8 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=8.4 relative_xy_deg=243.435 relative_altitude_deg=0
+lidar hit: distance_cm=6.2 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=2.2 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=1.7 relative_xy_deg=333.435 relative_altitude_deg=0
+lidar hit: distance_cm=10.1 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=33 target_grid=(18,16,0)
+follow path: steps=2
+move step: from_grid=(18,14,0) to_grid=(18,15,0)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(18,15,0) orientation_deg=(90,0)
+move step: from_grid=(18,15,0) to_grid=(18,16,0)
+command: advance distance_cm=1
+after move: position_cm=(18,16,0) orientation_deg=(90,0)
+iteration 17
+before scan: position_cm=(18,16,0) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=3.5 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=5 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=7.9 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=1.7 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=12.1 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=5 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=4 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=2.2 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=12.1 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=1.7 relative_xy_deg=243.435 relative_altitude_deg=0
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=1.5 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=3.4 relative_xy_deg=333.435 relative_altitude_deg=0
+lidar hit: distance_cm=3.4 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=4 visited=40 target_grid=(19,18,0)
+follow path: steps=3
+move step: from_grid=(18,16,0) to_grid=(19,16,0)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(19,16,0) orientation_deg=(0,0)
+move step: from_grid=(19,16,0) to_grid=(19,17,0)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(19,17,0) orientation_deg=(90,0)
+move step: from_grid=(19,17,0) to_grid=(19,18,0)
+command: advance distance_cm=1
+after move: position_cm=(19,18,0) orientation_deg=(90,0)
+iteration 18
+before scan: position_cm=(19,18,0) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=1.5 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=3.4 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=-61.5779 relative_altitude_deg=37.4292
+lidar hit: distance_cm=0.6 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+lidar hit: distance_cm=0.8 relative_xy_deg=-61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=13.5 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=1.7 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=0.8 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=13.5 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=0.6 relative_xy_deg=243.435 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=241.578 relative_altitude_deg=37.4292
+lidar hit: distance_cm=0.8 relative_xy_deg=241.578 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=0.5 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=1.2 relative_xy_deg=333.435 relative_altitude_deg=0
+lidar hit: distance_cm=1.2 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=0.8 relative_xy_deg=54.7356 relative_altitude_deg=144.736
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=151.578
+lidar hit: distance_cm=0.8 relative_xy_deg=-54.7356 relative_altitude_deg=35.2644
+lidar hit: distance_cm=1 relative_xy_deg=-37.4292 relative_altitude_deg=28.4221
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=1 relative_xy_deg=-37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=0.8 relative_xy_deg=-54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=-151.578
+lidar hit: distance_cm=0.8 relative_xy_deg=54.7356 relative_altitude_deg=-144.736
+frontier path found: length=3 visited=14 target_grid=(17,18,0)
+follow path: steps=2
+move step: from_grid=(19,18,0) to_grid=(18,18,0)
+command: rotate_left angle_deg=90 from_deg=90 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(18,18,0) orientation_deg=(180,0)
+move step: from_grid=(18,18,0) to_grid=(17,18,0)
+command: advance distance_cm=1
+after move: position_cm=(17,18,0) orientation_deg=(180,0)
+iteration 19
+before scan: position_cm=(17,18,0) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=12.1 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=1.7 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=3.6 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=12.1 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=2.8 relative_xy_deg=153.435 relative_altitude_deg=0
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=2.5 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=1.7 relative_xy_deg=243.435 relative_altitude_deg=0
+lidar hit: distance_cm=5.6 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=1.5 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=3.4 relative_xy_deg=333.435 relative_altitude_deg=0
+lidar hit: distance_cm=2.8 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=4 visited=44 target_grid=(18,19,1)
+follow path: steps=3
+move step: from_grid=(17,18,0) to_grid=(18,18,0)
+command: rotate_left angle_deg=90 from_deg=180 target_deg=0
+command: rotate_left angle_deg=90 from_deg=270 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(18,18,0) orientation_deg=(0,0)
+move step: from_grid=(18,18,0) to_grid=(18,19,0)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(18,19,0) orientation_deg=(90,0)
+move step: from_grid=(18,19,0) to_grid=(18,19,1)
+command: elevate distance_cm=1
+after move: position_cm=(18,19,1) orientation_deg=(90,0)
+iteration 20
+before scan: position_cm=(18,19,1) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=8 missed=13
+lidar hit: distance_cm=0.8 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-45
+lidar hit: distance_cm=1.4 relative_xy_deg=-61.5779 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=1.5 relative_xy_deg=-54.7356 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=1.4 relative_xy_deg=-37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=1.2 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=1.4 relative_xy_deg=37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=1.5 relative_xy_deg=54.7356 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=1.4 relative_xy_deg=61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=0.9 relative_xy_deg=28.4221 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=1.1 relative_xy_deg=35.2644 relative_altitude_deg=-54.7356
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=2.2 relative_xy_deg=241.578 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=1.1 relative_xy_deg=324.736 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.9 relative_xy_deg=331.578 relative_altitude_deg=-37.4292
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=10 missed=11
+lidar hit: distance_cm=0.8 relative_xy_deg=3.50835e-15 relative_altitude_deg=-45
+lidar hit: distance_cm=1.8 relative_xy_deg=61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=1.1 relative_xy_deg=54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=1.1 relative_xy_deg=37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=1.2 relative_xy_deg=7.01671e-15 relative_altitude_deg=-26.5651
+lidar hit: distance_cm=1.1 relative_xy_deg=-37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=1.1 relative_xy_deg=-54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=1.8 relative_xy_deg=-61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=2.9 relative_xy_deg=37.4292 relative_altitude_deg=-151.578
+lidar hit: distance_cm=2.3 relative_xy_deg=54.7356 relative_altitude_deg=-144.736
+frontier path found: length=4 visited=46 target_grid=(20,20,1)
+follow path: steps=3
+move step: from_grid=(18,19,1) to_grid=(19,19,1)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(19,19,1) orientation_deg=(0,0)
+move step: from_grid=(19,19,1) to_grid=(20,19,1)
+command: advance distance_cm=1
+after move: position_cm=(20,19,1) orientation_deg=(0,0)
+move step: from_grid=(20,19,1) to_grid=(20,20,1)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(20,20,1) orientation_deg=(90,0)
+iteration 21
+before scan: position_cm=(20,20,1) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=0.7 relative_xy_deg=-54.7356 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=-37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=54.7356 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.9 relative_xy_deg=61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=0.8 relative_xy_deg=90 relative_altitude_deg=-45
+lidar hit: distance_cm=0.7 relative_xy_deg=35.2644 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=52.5708 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=90 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=127.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=144.736 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.9 relative_xy_deg=151.578 relative_altitude_deg=-37.4292
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=0.8 relative_xy_deg=180 relative_altitude_deg=-45
+lidar hit: distance_cm=0.9 relative_xy_deg=118.422 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=0.7 relative_xy_deg=125.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=142.571 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=180 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=217.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=234.736 relative_altitude_deg=-54.7356
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=0.9 relative_xy_deg=208.422 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=0.7 relative_xy_deg=215.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=232.571 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=270 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=307.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=324.736 relative_altitude_deg=-54.7356
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=13 missed=8
+lidar hit: distance_cm=0.6 relative_xy_deg=0 relative_altitude_deg=-90
+lidar hit: distance_cm=0.6 relative_xy_deg=45 relative_altitude_deg=-90
+lidar hit: distance_cm=0.6 relative_xy_deg=-45 relative_altitude_deg=-90
+lidar hit: distance_cm=0.8 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-135
+lidar hit: distance_cm=0.6 relative_xy_deg=63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=0.7 relative_xy_deg=61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=0.9 relative_xy_deg=54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=0.7 relative_xy_deg=-61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=0.6 relative_xy_deg=-63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=0.7 relative_xy_deg=-61.5779 relative_altitude_deg=-127.429
+lidar hit: distance_cm=0.9 relative_xy_deg=-54.7356 relative_altitude_deg=-144.736
+lidar hit: distance_cm=1.2 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+lidar hit: distance_cm=0.7 relative_xy_deg=61.5779 relative_altitude_deg=-127.429
+frontier path found: length=4 visited=33 target_grid=(20,17,1)
+follow path: steps=3
+move step: from_grid=(20,20,1) to_grid=(20,19,1)
+command: rotate_left angle_deg=90 from_deg=90 target_deg=270
+command: rotate_left angle_deg=90 from_deg=180 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(20,19,1) orientation_deg=(270,0)
+move step: from_grid=(20,19,1) to_grid=(20,18,1)
+command: advance distance_cm=1
+after move: position_cm=(20,18,1) orientation_deg=(270,0)
+move step: from_grid=(20,18,1) to_grid=(20,17,1)
+command: advance distance_cm=1
+after move: position_cm=(20,17,1) orientation_deg=(270,0)
+iteration 22
+before scan: position_cm=(20,17,1) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=0.8 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-45
+lidar hit: distance_cm=0.7 relative_xy_deg=-54.7356 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=-37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=54.7356 relative_altitude_deg=-54.7356
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=0.9 relative_xy_deg=28.4221 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=0.7 relative_xy_deg=35.2644 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=52.5708 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=90 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=127.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=144.736 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.9 relative_xy_deg=151.578 relative_altitude_deg=-37.4292
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=0.8 relative_xy_deg=180 relative_altitude_deg=-45
+lidar hit: distance_cm=0.7 relative_xy_deg=125.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=142.571 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=180 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=217.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=234.736 relative_altitude_deg=-54.7356
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=8 missed=13
+lidar hit: distance_cm=12.3 relative_xy_deg=333.435 relative_altitude_deg=0
+lidar hit: distance_cm=0.9 relative_xy_deg=208.422 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=0.7 relative_xy_deg=215.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=232.571 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=270 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=307.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=324.736 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.9 relative_xy_deg=331.578 relative_altitude_deg=-37.4292
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=13 missed=8
+lidar hit: distance_cm=0.6 relative_xy_deg=0 relative_altitude_deg=-90
+lidar hit: distance_cm=0.6 relative_xy_deg=45 relative_altitude_deg=-90
+lidar hit: distance_cm=0.8 relative_xy_deg=3.50835e-15 relative_altitude_deg=-45
+lidar hit: distance_cm=0.6 relative_xy_deg=-45 relative_altitude_deg=-90
+lidar hit: distance_cm=0.8 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-135
+lidar hit: distance_cm=0.6 relative_xy_deg=63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=0.7 relative_xy_deg=61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=1.2 relative_xy_deg=7.01671e-15 relative_altitude_deg=-26.5651
+lidar hit: distance_cm=0.7 relative_xy_deg=-61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=0.6 relative_xy_deg=-63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=0.7 relative_xy_deg=-61.5779 relative_altitude_deg=-127.429
+lidar hit: distance_cm=1.2 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+lidar hit: distance_cm=0.7 relative_xy_deg=61.5779 relative_altitude_deg=-127.429
+frontier path found: length=5 visited=93 target_grid=(20,13,1)
+follow path: steps=4
+move step: from_grid=(20,17,1) to_grid=(20,16,1)
+command: advance distance_cm=1
+after move: position_cm=(20,16,1) orientation_deg=(270,0)
+move step: from_grid=(20,16,1) to_grid=(20,15,1)
+command: advance distance_cm=1
+after move: position_cm=(20,15,1) orientation_deg=(270,0)
+move step: from_grid=(20,15,1) to_grid=(20,14,1)
+command: advance distance_cm=1
+after move: position_cm=(20,14,1) orientation_deg=(270,0)
+move step: from_grid=(20,14,1) to_grid=(20,13,1)
+command: advance distance_cm=1
+after move: position_cm=(20,13,1) orientation_deg=(270,0)
+iteration 23
+before scan: position_cm=(20,13,1) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=0.8 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-45
+lidar hit: distance_cm=0.7 relative_xy_deg=-54.7356 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=-37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=54.7356 relative_altitude_deg=-54.7356
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=0.9 relative_xy_deg=28.4221 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=0.7 relative_xy_deg=35.2644 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=52.5708 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=90 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=127.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=144.736 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.9 relative_xy_deg=151.578 relative_altitude_deg=-37.4292
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=0.8 relative_xy_deg=180 relative_altitude_deg=-45
+lidar hit: distance_cm=0.7 relative_xy_deg=125.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=142.571 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=180 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=217.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=234.736 relative_altitude_deg=-54.7356
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=0.9 relative_xy_deg=208.422 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=0.7 relative_xy_deg=215.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=232.571 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=270 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=307.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=324.736 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.9 relative_xy_deg=331.578 relative_altitude_deg=-37.4292
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=13 missed=8
+lidar hit: distance_cm=0.6 relative_xy_deg=0 relative_altitude_deg=-90
+lidar hit: distance_cm=0.6 relative_xy_deg=45 relative_altitude_deg=-90
+lidar hit: distance_cm=0.8 relative_xy_deg=3.50835e-15 relative_altitude_deg=-45
+lidar hit: distance_cm=0.6 relative_xy_deg=-45 relative_altitude_deg=-90
+lidar hit: distance_cm=0.8 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-135
+lidar hit: distance_cm=0.6 relative_xy_deg=63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=0.7 relative_xy_deg=61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=1.2 relative_xy_deg=7.01671e-15 relative_altitude_deg=-26.5651
+lidar hit: distance_cm=0.7 relative_xy_deg=-61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=0.6 relative_xy_deg=-63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=0.7 relative_xy_deg=-61.5779 relative_altitude_deg=-127.429
+lidar hit: distance_cm=1.2 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+lidar hit: distance_cm=0.7 relative_xy_deg=61.5779 relative_altitude_deg=-127.429
+frontier path found: length=4 visited=54 target_grid=(19,12,0)
+follow path: steps=3
+move step: from_grid=(20,13,1) to_grid=(19,13,1)
+command: rotate_right angle_deg=90 from_deg=270 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(19,13,1) orientation_deg=(180,0)
+move step: from_grid=(19,13,1) to_grid=(19,12,1)
+command: rotate_left angle_deg=90 from_deg=180 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(19,12,1) orientation_deg=(270,0)
+move step: from_grid=(19,12,1) to_grid=(19,12,0)
+command: elevate distance_cm=-1
+after move: position_cm=(19,12,0) orientation_deg=(270,0)
+iteration 24
+before scan: position_cm=(19,12,0) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=0.8 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=0.6 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=61.5779 relative_altitude_deg=37.4292
+lidar hit: distance_cm=10.7 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+lidar hit: distance_cm=0.8 relative_xy_deg=61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=0.5 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=1.2 relative_xy_deg=153.435 relative_altitude_deg=0
+lidar hit: distance_cm=1.2 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=7.6 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=10.7 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=16.8 relative_xy_deg=243.435 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=118.422 relative_altitude_deg=37.4292
+lidar hit: distance_cm=0.6 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+lidar hit: distance_cm=0.8 relative_xy_deg=118.422 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=10.7 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=8.4 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=1 relative_xy_deg=-37.4292 relative_altitude_deg=151.578
+lidar hit: distance_cm=0.8 relative_xy_deg=-54.7356 relative_altitude_deg=144.736
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=28.4221
+lidar hit: distance_cm=0.8 relative_xy_deg=54.7356 relative_altitude_deg=35.2644
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=0.8 relative_xy_deg=54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=0.8 relative_xy_deg=-54.7356 relative_altitude_deg=-144.736
+lidar hit: distance_cm=1 relative_xy_deg=-37.4292 relative_altitude_deg=-151.578
+frontier path found: length=4 visited=56 target_grid=(19,9,0)
+follow path: steps=3
+move step: from_grid=(19,12,0) to_grid=(19,11,0)
+command: advance distance_cm=1
+after move: position_cm=(19,11,0) orientation_deg=(270,0)
+move step: from_grid=(19,11,0) to_grid=(19,10,0)
+command: advance distance_cm=1
+after move: position_cm=(19,10,0) orientation_deg=(270,0)
+move step: from_grid=(19,10,0) to_grid=(19,9,0)
+command: advance distance_cm=1
+after move: position_cm=(19,9,0) orientation_deg=(270,0)
+iteration 25
+before scan: position_cm=(19,9,0) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=0.8 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=0.6 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=61.5779 relative_altitude_deg=37.4292
+lidar hit: distance_cm=5.6 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+lidar hit: distance_cm=0.8 relative_xy_deg=61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=0.5 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=1.2 relative_xy_deg=153.435 relative_altitude_deg=0
+lidar hit: distance_cm=1.2 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=10.6 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=14.9 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=0.8 relative_xy_deg=118.422 relative_altitude_deg=37.4292
+lidar hit: distance_cm=0.6 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+lidar hit: distance_cm=0.8 relative_xy_deg=118.422 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=9.6 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=14.9 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=11.8 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=1 relative_xy_deg=-37.4292 relative_altitude_deg=151.578
+lidar hit: distance_cm=0.8 relative_xy_deg=-54.7356 relative_altitude_deg=144.736
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=28.4221
+lidar hit: distance_cm=0.8 relative_xy_deg=54.7356 relative_altitude_deg=35.2644
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=0.8 relative_xy_deg=54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=0.8 relative_xy_deg=-54.7356 relative_altitude_deg=-144.736
+lidar hit: distance_cm=1 relative_xy_deg=-37.4292 relative_altitude_deg=-151.578
+frontier path found: length=3 visited=15 target_grid=(17,9,0)
+follow path: steps=2
+move step: from_grid=(19,9,0) to_grid=(18,9,0)
+command: rotate_right angle_deg=90 from_deg=270 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(18,9,0) orientation_deg=(180,0)
+move step: from_grid=(18,9,0) to_grid=(17,9,0)
+command: advance distance_cm=1
+after move: position_cm=(17,9,0) orientation_deg=(180,0)
+iteration 26
+before scan: position_cm=(17,9,0) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=7.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=14.9 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=11.8 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=3.6 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=2.8 relative_xy_deg=153.435 relative_altitude_deg=0
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=2.5 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=5.6 relative_xy_deg=243.435 relative_altitude_deg=0
+lidar hit: distance_cm=5.6 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=10.6 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=14.9 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=2.8 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=4.7 relative_xy_deg=37.4292 relative_altitude_deg=28.4221
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=39 target_grid=(17,7,0)
+follow path: steps=2
+move step: from_grid=(17,9,0) to_grid=(17,8,0)
+command: rotate_left angle_deg=90 from_deg=180 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(17,8,0) orientation_deg=(270,0)
+move step: from_grid=(17,8,0) to_grid=(17,7,0)
+command: advance distance_cm=1
+after move: position_cm=(17,7,0) orientation_deg=(270,0)
+iteration 27
+before scan: position_cm=(17,7,0) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=3.6 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=2.8 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=-61.5779 relative_altitude_deg=37.4292
+lidar hit: distance_cm=2.8 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=2.5 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=5.6 relative_xy_deg=153.435 relative_altitude_deg=0
+lidar hit: distance_cm=5.6 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=12.6 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=17.7 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=2.8 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=7.6 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=17.7 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=14 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=3.8 relative_xy_deg=-54.7356 relative_altitude_deg=35.2644
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=27 target_grid=(15,7,0)
+follow path: steps=2
+move step: from_grid=(17,7,0) to_grid=(16,7,0)
+command: rotate_right angle_deg=90 from_deg=270 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(16,7,0) orientation_deg=(180,0)
+move step: from_grid=(16,7,0) to_grid=(15,7,0)
+command: advance distance_cm=1
+after move: position_cm=(15,7,0) orientation_deg=(180,0)
+iteration 28
+before scan: position_cm=(15,7,0) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=8 missed=13
+lidar hit: distance_cm=5.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=17.7 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=1.2 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=1.4 relative_xy_deg=61.5779 relative_altitude_deg=37.4292
+lidar hit: distance_cm=1.6 relative_xy_deg=54.7356 relative_altitude_deg=54.7356
+lidar hit: distance_cm=1.8 relative_xy_deg=37.4292 relative_altitude_deg=61.5779
+lidar hit: distance_cm=14 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=6.4 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=5.1 relative_xy_deg=153.435 relative_altitude_deg=0
+lidar hit: distance_cm=1.8 relative_xy_deg=52.5708 relative_altitude_deg=61.5779
+lidar hit: distance_cm=1.6 relative_xy_deg=35.2644 relative_altitude_deg=54.7356
+lidar hit: distance_cm=1.4 relative_xy_deg=28.4221 relative_altitude_deg=37.4292
+lidar hit: distance_cm=1.2 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=4.5 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=10.1 relative_xy_deg=243.435 relative_altitude_deg=0
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=12.6 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=17.7 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=5.1 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=3 missed=18
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=28.4221
+lidar hit: distance_cm=1.1 relative_xy_deg=54.7356 relative_altitude_deg=35.2644
+lidar hit: distance_cm=1.8 relative_xy_deg=61.5779 relative_altitude_deg=52.5708
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=-28.4221
+frontier path found: length=3 visited=37 target_grid=(15,5,0)
+follow path: steps=2
+move step: from_grid=(15,7,0) to_grid=(15,6,0)
+command: rotate_left angle_deg=90 from_deg=180 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(15,6,0) orientation_deg=(270,0)
+move step: from_grid=(15,6,0) to_grid=(15,5,0)
+command: advance distance_cm=1
+after move: position_cm=(15,5,0) orientation_deg=(270,0)
+iteration 29
+before scan: position_cm=(15,5,0) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=6.4 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=5.1 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=1.1 relative_xy_deg=-54.7356 relative_altitude_deg=54.7356
+lidar hit: distance_cm=0.8 relative_xy_deg=-61.5779 relative_altitude_deg=37.4292
+lidar hit: distance_cm=0.6 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+lidar hit: distance_cm=0.8 relative_xy_deg=-61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=4.5 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=10.1 relative_xy_deg=153.435 relative_altitude_deg=0
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=9 missed=12
+lidar hit: distance_cm=14.6 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=0.6 relative_xy_deg=243.435 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=241.578 relative_altitude_deg=37.4292
+lidar hit: distance_cm=1.1 relative_xy_deg=234.736 relative_altitude_deg=54.7356
+lidar hit: distance_cm=1.8 relative_xy_deg=217.429 relative_altitude_deg=61.5779
+lidar hit: distance_cm=5.1 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+lidar hit: distance_cm=0.8 relative_xy_deg=241.578 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=9 missed=12
+lidar hit: distance_cm=0.6 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=270 relative_altitude_deg=45
+lidar hit: distance_cm=0.8 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=1.4 relative_xy_deg=307.429 relative_altitude_deg=61.5779
+lidar hit: distance_cm=1.2 relative_xy_deg=270 relative_altitude_deg=63.4349
+lidar hit: distance_cm=1.4 relative_xy_deg=232.571 relative_altitude_deg=61.5779
+lidar hit: distance_cm=1.6 relative_xy_deg=215.264 relative_altitude_deg=54.7356
+lidar hit: distance_cm=1.4 relative_xy_deg=208.422 relative_altitude_deg=37.4292
+lidar hit: distance_cm=1.2 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=5 missed=16
+lidar hit: distance_cm=1 relative_xy_deg=61.5779 relative_altitude_deg=127.429
+lidar hit: distance_cm=0.8 relative_xy_deg=54.7356 relative_altitude_deg=144.736
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=151.578
+lidar hit: distance_cm=1 relative_xy_deg=-61.5779 relative_altitude_deg=52.5708
+lidar hit: distance_cm=0.8 relative_xy_deg=-54.7356 relative_altitude_deg=35.2644
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=3 missed=18
+lidar hit: distance_cm=0.8 relative_xy_deg=-54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=1 relative_xy_deg=37.4292 relative_altitude_deg=-151.578
+lidar hit: distance_cm=0.8 relative_xy_deg=54.7356 relative_altitude_deg=-144.736
+frontier path found: length=4 visited=35 target_grid=(18,5,0)
+follow path: steps=3
+move step: from_grid=(15,5,0) to_grid=(16,5,0)
+command: rotate_left angle_deg=90 from_deg=270 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(16,5,0) orientation_deg=(0,0)
+move step: from_grid=(16,5,0) to_grid=(17,5,0)
+command: advance distance_cm=1
+after move: position_cm=(17,5,0) orientation_deg=(0,0)
+move step: from_grid=(17,5,0) to_grid=(18,5,0)
+command: advance distance_cm=1
+after move: position_cm=(18,5,0) orientation_deg=(0,0)
+iteration 30
+before scan: position_cm=(18,5,0) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=1.5 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=3.4 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=3.4 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=14.6 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=20.6 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=9.6 relative_xy_deg=153.435 relative_altitude_deg=0
+lidar hit: distance_cm=1.7 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=3.5 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=20.6 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=16.3 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=2.2 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=1.7 relative_xy_deg=333.435 relative_altitude_deg=0
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=4 relative_xy_deg=7.01671e-15 relative_altitude_deg=153.435
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=36 target_grid=(18,3,0)
+follow path: steps=2
+move step: from_grid=(18,5,0) to_grid=(18,4,0)
+command: rotate_right angle_deg=90 from_deg=0 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(18,4,0) orientation_deg=(270,0)
+move step: from_grid=(18,4,0) to_grid=(18,3,0)
+command: advance distance_cm=1
+after move: position_cm=(18,3,0) orientation_deg=(270,0)
+iteration 31
+before scan: position_cm=(18,3,0) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=2.2 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=1.7 relative_xy_deg=63.4349 relative_altitude_deg=0
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=1.5 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=3.4 relative_xy_deg=153.435 relative_altitude_deg=0
+lidar hit: distance_cm=3.4 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=16.6 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=23.4 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=4 relative_xy_deg=243.435 relative_altitude_deg=0
+lidar hit: distance_cm=1.7 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=23.4 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=18.5 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=24 target_grid=(16,3,0)
+follow path: steps=2
+move step: from_grid=(18,3,0) to_grid=(17,3,0)
+command: rotate_right angle_deg=90 from_deg=270 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(17,3,0) orientation_deg=(180,0)
+move step: from_grid=(17,3,0) to_grid=(16,3,0)
+command: advance distance_cm=1
+after move: position_cm=(16,3,0) orientation_deg=(180,0)
+iteration 32
+before scan: position_cm=(16,3,0) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=2.2 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=4 relative_xy_deg=-61.5779 relative_altitude_deg=37.4292
+lidar hit: distance_cm=3.4 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=4 relative_xy_deg=153.435 relative_altitude_deg=0
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=3.5 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=5 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=7.9 relative_xy_deg=243.435 relative_altitude_deg=0
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=16.6 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=5 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=7.9 relative_xy_deg=333.435 relative_altitude_deg=0
+lidar hit: distance_cm=4 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=2 missed=19
+lidar hit: distance_cm=3.2 relative_xy_deg=-54.7356 relative_altitude_deg=35.2644
+lidar hit: distance_cm=2.9 relative_xy_deg=-37.4292 relative_altitude_deg=28.4221
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=40 target_grid=(16,1,0)
+follow path: steps=2
+move step: from_grid=(16,3,0) to_grid=(16,2,0)
+command: rotate_left angle_deg=90 from_deg=180 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(16,2,0) orientation_deg=(270,0)
+move step: from_grid=(16,2,0) to_grid=(16,1,0)
+command: advance distance_cm=1
+after move: position_cm=(16,1,0) orientation_deg=(270,0)
+iteration 33
+before scan: position_cm=(16,1,0) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=3.5 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=5 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=7.9 relative_xy_deg=153.435 relative_altitude_deg=0
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=18.6 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=9.2 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=5 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=4 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=9.2 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=4 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=26 target_grid=(14,1,0)
+follow path: steps=2
+move step: from_grid=(16,1,0) to_grid=(15,1,0)
+command: rotate_right angle_deg=90 from_deg=270 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(15,1,0) orientation_deg=(180,0)
+move step: from_grid=(15,1,0) to_grid=(14,1,0)
+command: advance distance_cm=1
+after move: position_cm=(14,1,0) orientation_deg=(180,0)
+iteration 34
+before scan: position_cm=(14,1,0) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=7.8 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=20.7 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=5.6 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=7.8 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=12.3 relative_xy_deg=243.435 relative_altitude_deg=0
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=3.5 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=7.8 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=7.8 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=6.2 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=37 target_grid=(14,0,1)
+follow path: steps=2
+move step: from_grid=(14,1,0) to_grid=(14,0,0)
+command: rotate_left angle_deg=90 from_deg=180 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(14,4.44089e-16,0) orientation_deg=(270,0)
+move step: from_grid=(14,0,0) to_grid=(14,0,1)
+command: elevate distance_cm=1
+after move: position_cm=(14,4.44089e-16,1) orientation_deg=(270,0)
+iteration 35
+before scan: position_cm=(14,4.44089e-16,1) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=4.5 relative_xy_deg=180 relative_altitude_deg=0
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=4 visited=39 target_grid=(17,0,1)
+follow path: steps=3
+move step: from_grid=(14,0,1) to_grid=(15,0,1)
+command: rotate_left angle_deg=90 from_deg=270 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(15,4.44089e-16,1) orientation_deg=(0,0)
+move step: from_grid=(15,0,1) to_grid=(16,0,1)
+command: advance distance_cm=1
+after move: position_cm=(16,4.44089e-16,1) orientation_deg=(0,0)
+move step: from_grid=(16,0,1) to_grid=(17,0,1)
+command: advance distance_cm=1
+after move: position_cm=(17,4.44089e-16,1) orientation_deg=(0,0)
+iteration 36
+before scan: position_cm=(17,4.44089e-16,1) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.6 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=2.8 relative_xy_deg=7.01671e-15 relative_altitude_deg=-26.5651
+frontier path found: length=4 visited=45 target_grid=(19,0,0)
+follow path: steps=3
+move step: from_grid=(17,0,1) to_grid=(18,0,1)
+command: advance distance_cm=1
+after move: position_cm=(18,4.44089e-16,1) orientation_deg=(0,0)
+move step: from_grid=(18,0,1) to_grid=(19,0,1)
+command: advance distance_cm=1
+after move: position_cm=(19,4.44089e-16,1) orientation_deg=(0,0)
+move step: from_grid=(19,0,1) to_grid=(19,0,0)
+command: elevate distance_cm=-1
+after move: position_cm=(19,4.44089e-16,0) orientation_deg=(0,0)
+iteration 37
+before scan: position_cm=(19,4.44089e-16,0) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=0.5 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=1.2 relative_xy_deg=63.4349 relative_altitude_deg=0
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=19.5 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=0.8 relative_xy_deg=28.4221 relative_altitude_deg=37.4292
+lidar hit: distance_cm=0.6 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+lidar hit: distance_cm=0.8 relative_xy_deg=28.4221 relative_altitude_deg=-37.4292
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=6.4 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=21.9 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=0.6 relative_xy_deg=333.435 relative_altitude_deg=0
+lidar hit: distance_cm=0.8 relative_xy_deg=331.578 relative_altitude_deg=37.4292
+lidar hit: distance_cm=0.8 relative_xy_deg=331.578 relative_altitude_deg=-37.4292
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=3 missed=18
+lidar hit: distance_cm=0.8 relative_xy_deg=-37.4292 relative_altitude_deg=28.4221
+lidar hit: distance_cm=0.6 relative_xy_deg=-2.10501e-14 relative_altitude_deg=26.5651
+lidar hit: distance_cm=0.8 relative_xy_deg=37.4292 relative_altitude_deg=28.4221
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=3 missed=18
+lidar hit: distance_cm=0.8 relative_xy_deg=37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=0.6 relative_xy_deg=7.01671e-15 relative_altitude_deg=-26.5651
+lidar hit: distance_cm=0.8 relative_xy_deg=-37.4292 relative_altitude_deg=-28.4221
+frontier path found: length=4 visited=37 target_grid=(20,1,1)
+follow path: steps=3
+move step: from_grid=(19,0,0) to_grid=(19,1,0)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(19,1,0) orientation_deg=(90,0)
+move step: from_grid=(19,1,0) to_grid=(19,1,1)
+command: elevate distance_cm=1
+after move: position_cm=(19,1,1) orientation_deg=(90,0)
+move step: from_grid=(19,1,1) to_grid=(20,1,1)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(20,1,1) orientation_deg=(0,0)
+iteration 38
+before scan: position_cm=(20,1,1) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=0.9 relative_xy_deg=-61.5779 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=0.7 relative_xy_deg=-54.7356 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=-37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=54.7356 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.9 relative_xy_deg=61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=0.8 relative_xy_deg=90 relative_altitude_deg=-45
+lidar hit: distance_cm=0.7 relative_xy_deg=35.2644 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=52.5708 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=90 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=127.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=144.736 relative_altitude_deg=-54.7356
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=0.9 relative_xy_deg=118.422 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=0.7 relative_xy_deg=125.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=142.571 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=180 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=217.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=234.736 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.9 relative_xy_deg=241.578 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=0.8 relative_xy_deg=270 relative_altitude_deg=-45
+lidar hit: distance_cm=0.7 relative_xy_deg=215.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=232.571 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=270 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=307.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=324.736 relative_altitude_deg=-54.7356
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=13 missed=8
+lidar hit: distance_cm=0.6 relative_xy_deg=0 relative_altitude_deg=-90
+lidar hit: distance_cm=0.6 relative_xy_deg=45 relative_altitude_deg=-90
+lidar hit: distance_cm=0.6 relative_xy_deg=-45 relative_altitude_deg=-90
+lidar hit: distance_cm=0.6 relative_xy_deg=63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=0.7 relative_xy_deg=61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=0.9 relative_xy_deg=54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=0.9 relative_xy_deg=-54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=0.7 relative_xy_deg=-61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=0.6 relative_xy_deg=-63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=0.7 relative_xy_deg=-61.5779 relative_altitude_deg=-127.429
+lidar hit: distance_cm=0.9 relative_xy_deg=-54.7356 relative_altitude_deg=-144.736
+lidar hit: distance_cm=0.9 relative_xy_deg=54.7356 relative_altitude_deg=-144.736
+lidar hit: distance_cm=0.7 relative_xy_deg=61.5779 relative_altitude_deg=-127.429
+frontier path found: length=5 visited=77 target_grid=(20,4,2)
+follow path: steps=4
+move step: from_grid=(20,1,1) to_grid=(20,2,1)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(20,2,1) orientation_deg=(90,0)
+move step: from_grid=(20,2,1) to_grid=(20,3,1)
+command: advance distance_cm=1
+after move: position_cm=(20,3,1) orientation_deg=(90,0)
+move step: from_grid=(20,3,1) to_grid=(20,4,1)
+command: advance distance_cm=1
+after move: position_cm=(20,4,1) orientation_deg=(90,0)
+move step: from_grid=(20,4,1) to_grid=(20,4,2)
+command: elevate distance_cm=1
+after move: position_cm=(20,4,2) orientation_deg=(90,0)
+iteration 39
+before scan: position_cm=(20,4,2) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=2.2 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-45
+lidar hit: distance_cm=1.7 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-63.4349
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=2.2 relative_xy_deg=180 relative_altitude_deg=-45
+lidar hit: distance_cm=1.7 relative_xy_deg=180 relative_altitude_deg=-63.4349
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=9 missed=12
+lidar hit: distance_cm=1.5 relative_xy_deg=0 relative_altitude_deg=-90
+lidar hit: distance_cm=1.5 relative_xy_deg=45 relative_altitude_deg=-90
+lidar hit: distance_cm=2.2 relative_xy_deg=3.50835e-15 relative_altitude_deg=-45
+lidar hit: distance_cm=1.5 relative_xy_deg=-45 relative_altitude_deg=-90
+lidar hit: distance_cm=2.2 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-135
+lidar hit: distance_cm=1.5 relative_xy_deg=63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=3.4 relative_xy_deg=7.01671e-15 relative_altitude_deg=-26.5651
+lidar hit: distance_cm=1.5 relative_xy_deg=-63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=3.4 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+frontier path found: length=4 visited=66 target_grid=(20,6,1)
+follow path: steps=3
+move step: from_grid=(20,4,2) to_grid=(20,5,2)
+command: advance distance_cm=1
+after move: position_cm=(20,5,2) orientation_deg=(90,0)
+move step: from_grid=(20,5,2) to_grid=(20,6,2)
+command: advance distance_cm=1
+after move: position_cm=(20,6,2) orientation_deg=(90,0)
+move step: from_grid=(20,6,2) to_grid=(20,6,1)
+command: elevate distance_cm=-1
+after move: position_cm=(20,6,1) orientation_deg=(90,0)
+iteration 40
+before scan: position_cm=(20,6,1) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=0.8 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-45
+lidar hit: distance_cm=0.7 relative_xy_deg=-54.7356 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=-37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=54.7356 relative_altitude_deg=-54.7356
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=8 missed=13
+lidar hit: distance_cm=5.6 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=0.9 relative_xy_deg=28.4221 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=0.7 relative_xy_deg=35.2644 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=52.5708 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=90 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=127.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=144.736 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.9 relative_xy_deg=151.578 relative_altitude_deg=-37.4292
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=0.8 relative_xy_deg=180 relative_altitude_deg=-45
+lidar hit: distance_cm=0.7 relative_xy_deg=125.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=142.571 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=180 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=217.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=234.736 relative_altitude_deg=-54.7356
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=0.9 relative_xy_deg=208.422 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=0.7 relative_xy_deg=215.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=232.571 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=270 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=307.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=324.736 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.9 relative_xy_deg=331.578 relative_altitude_deg=-37.4292
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=13 missed=8
+lidar hit: distance_cm=0.6 relative_xy_deg=0 relative_altitude_deg=-90
+lidar hit: distance_cm=0.6 relative_xy_deg=45 relative_altitude_deg=-90
+lidar hit: distance_cm=0.8 relative_xy_deg=3.50835e-15 relative_altitude_deg=-45
+lidar hit: distance_cm=0.6 relative_xy_deg=-45 relative_altitude_deg=-90
+lidar hit: distance_cm=0.8 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-135
+lidar hit: distance_cm=0.6 relative_xy_deg=63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=0.7 relative_xy_deg=61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=1.2 relative_xy_deg=7.01671e-15 relative_altitude_deg=-26.5651
+lidar hit: distance_cm=0.7 relative_xy_deg=-61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=0.6 relative_xy_deg=-63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=0.7 relative_xy_deg=-61.5779 relative_altitude_deg=-127.429
+lidar hit: distance_cm=1.2 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+lidar hit: distance_cm=0.7 relative_xy_deg=61.5779 relative_altitude_deg=-127.429
+frontier path found: length=4 visited=55 target_grid=(20,9,1)
+follow path: steps=3
+move step: from_grid=(20,6,1) to_grid=(20,7,1)
+command: advance distance_cm=1
+after move: position_cm=(20,7,1) orientation_deg=(90,0)
+move step: from_grid=(20,7,1) to_grid=(20,8,1)
+command: advance distance_cm=1
+after move: position_cm=(20,8,1) orientation_deg=(90,0)
+move step: from_grid=(20,8,1) to_grid=(20,9,1)
+command: advance distance_cm=1
+after move: position_cm=(20,9,1) orientation_deg=(90,0)
+iteration 41
+before scan: position_cm=(20,9,1) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=0.8 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-45
+lidar hit: distance_cm=0.7 relative_xy_deg=-54.7356 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=-37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=54.7356 relative_altitude_deg=-54.7356
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=0.9 relative_xy_deg=28.4221 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=0.7 relative_xy_deg=35.2644 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=52.5708 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=90 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=127.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=144.736 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.9 relative_xy_deg=151.578 relative_altitude_deg=-37.4292
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=0.8 relative_xy_deg=180 relative_altitude_deg=-45
+lidar hit: distance_cm=6.2 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+lidar hit: distance_cm=0.7 relative_xy_deg=125.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=142.571 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=180 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=217.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=234.736 relative_altitude_deg=-54.7356
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=0.9 relative_xy_deg=208.422 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=0.7 relative_xy_deg=215.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=232.571 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=270 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=307.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=324.736 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.9 relative_xy_deg=331.578 relative_altitude_deg=-37.4292
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=13 missed=8
+lidar hit: distance_cm=0.6 relative_xy_deg=0 relative_altitude_deg=-90
+lidar hit: distance_cm=0.6 relative_xy_deg=45 relative_altitude_deg=-90
+lidar hit: distance_cm=0.8 relative_xy_deg=3.50835e-15 relative_altitude_deg=-45
+lidar hit: distance_cm=0.6 relative_xy_deg=-45 relative_altitude_deg=-90
+lidar hit: distance_cm=0.8 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-135
+lidar hit: distance_cm=0.6 relative_xy_deg=63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=0.7 relative_xy_deg=61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=1.2 relative_xy_deg=7.01671e-15 relative_altitude_deg=-26.5651
+lidar hit: distance_cm=0.7 relative_xy_deg=-61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=0.6 relative_xy_deg=-63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=0.7 relative_xy_deg=-61.5779 relative_altitude_deg=-127.429
+lidar hit: distance_cm=1.2 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+lidar hit: distance_cm=0.7 relative_xy_deg=61.5779 relative_altitude_deg=-127.429
+frontier path found: length=9 visited=353 target_grid=(20,14,4)
+follow path: steps=8
+move step: from_grid=(20,9,1) to_grid=(20,10,1)
+command: advance distance_cm=1
+after move: position_cm=(20,10,1) orientation_deg=(90,0)
+move step: from_grid=(20,10,1) to_grid=(20,11,1)
+command: advance distance_cm=1
+after move: position_cm=(20,11,1) orientation_deg=(90,0)
+move step: from_grid=(20,11,1) to_grid=(20,12,1)
+command: advance distance_cm=1
+after move: position_cm=(20,12,1) orientation_deg=(90,0)
+move step: from_grid=(20,12,1) to_grid=(20,13,1)
+command: advance distance_cm=1
+after move: position_cm=(20,13,1) orientation_deg=(90,0)
+move step: from_grid=(20,13,1) to_grid=(20,14,1)
+command: advance distance_cm=1
+after move: position_cm=(20,14,1) orientation_deg=(90,0)
+move step: from_grid=(20,14,1) to_grid=(20,14,2)
+command: elevate distance_cm=1
+after move: position_cm=(20,14,2) orientation_deg=(90,0)
+move step: from_grid=(20,14,2) to_grid=(20,14,3)
+command: elevate distance_cm=1
+after move: position_cm=(20,14,3) orientation_deg=(90,0)
+move step: from_grid=(20,14,3) to_grid=(20,14,4)
+command: elevate distance_cm=1
+after move: position_cm=(20,14,4) orientation_deg=(90,0)
+iteration 42
+before scan: position_cm=(20,14,4) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=5 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-45
+lidar hit: distance_cm=4 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-63.4349
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=5 relative_xy_deg=180 relative_altitude_deg=-45
+lidar hit: distance_cm=4 relative_xy_deg=180 relative_altitude_deg=-63.4349
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=9 missed=12
+lidar hit: distance_cm=3.5 relative_xy_deg=0 relative_altitude_deg=-90
+lidar hit: distance_cm=3.5 relative_xy_deg=45 relative_altitude_deg=-90
+lidar hit: distance_cm=5 relative_xy_deg=3.50835e-15 relative_altitude_deg=-45
+lidar hit: distance_cm=3.5 relative_xy_deg=-45 relative_altitude_deg=-90
+lidar hit: distance_cm=5 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-135
+lidar hit: distance_cm=3.5 relative_xy_deg=63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=7.9 relative_xy_deg=37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=3.5 relative_xy_deg=-63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=7.9 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+frontier path found: length=7 visited=136 target_grid=(15,13,4)
+follow path: steps=6
+move step: from_grid=(20,14,4) to_grid=(19,14,4)
+command: rotate_left angle_deg=90 from_deg=90 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(19,14,4) orientation_deg=(180,0)
+move step: from_grid=(19,14,4) to_grid=(18,14,4)
+command: advance distance_cm=1
+after move: position_cm=(18,14,4) orientation_deg=(180,0)
+move step: from_grid=(18,14,4) to_grid=(17,14,4)
+command: advance distance_cm=1
+after move: position_cm=(17,14,4) orientation_deg=(180,0)
+move step: from_grid=(17,14,4) to_grid=(16,14,4)
+command: advance distance_cm=1
+after move: position_cm=(16,14,4) orientation_deg=(180,0)
+move step: from_grid=(16,14,4) to_grid=(15,14,4)
+command: advance distance_cm=1
+after move: position_cm=(15,14,4) orientation_deg=(180,0)
+move step: from_grid=(15,14,4) to_grid=(15,13,4)
+command: rotate_left angle_deg=90 from_deg=180 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(15,13,4) orientation_deg=(270,0)
+iteration 43
+before scan: position_cm=(15,13,4) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.5 relative_xy_deg=61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.5 relative_xy_deg=118.422 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=6 missed=15
+lidar hit: distance_cm=6.8 relative_xy_deg=54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=8.5 relative_xy_deg=37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=6.8 relative_xy_deg=-54.7356 relative_altitude_deg=-144.736
+lidar hit: distance_cm=8.5 relative_xy_deg=-37.4292 relative_altitude_deg=-151.578
+lidar hit: distance_cm=7.9 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+lidar hit: distance_cm=9.4 relative_xy_deg=37.4292 relative_altitude_deg=-151.578
+frontier path found: length=5 visited=110 target_grid=(11,13,4)
+follow path: steps=4
+move step: from_grid=(15,13,4) to_grid=(14,13,4)
+command: rotate_right angle_deg=90 from_deg=270 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(14,13,4) orientation_deg=(180,0)
+move step: from_grid=(14,13,4) to_grid=(13,13,4)
+command: advance distance_cm=1
+after move: position_cm=(13,13,4) orientation_deg=(180,0)
+move step: from_grid=(13,13,4) to_grid=(12,13,4)
+command: advance distance_cm=1
+after move: position_cm=(12,13,4) orientation_deg=(180,0)
+move step: from_grid=(12,13,4) to_grid=(11,13,4)
+command: advance distance_cm=1
+after move: position_cm=(11,13,4) orientation_deg=(180,0)
+iteration 44
+before scan: position_cm=(11,13,4) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.8 relative_xy_deg=61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=2 missed=19
+lidar hit: distance_cm=6.1 relative_xy_deg=54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=9.6 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+frontier path found: length=3 visited=37 target_grid=(11,15,4)
+follow path: steps=2
+move step: from_grid=(11,13,4) to_grid=(11,14,4)
+command: rotate_right angle_deg=90 from_deg=180 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(11,14,4) orientation_deg=(90,0)
+move step: from_grid=(11,14,4) to_grid=(11,15,4)
+command: advance distance_cm=1
+after move: position_cm=(11,15,4) orientation_deg=(90,0)
+iteration 45
+before scan: position_cm=(11,15,4) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.5 relative_xy_deg=28.4221 relative_altitude_deg=-37.4292
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.5 relative_xy_deg=331.578 relative_altitude_deg=-37.4292
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=3 missed=18
+lidar hit: distance_cm=7.4 relative_xy_deg=37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=7.4 relative_xy_deg=-37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=7.9 relative_xy_deg=-37.4292 relative_altitude_deg=-151.578
+frontier path found: length=3 visited=28 target_grid=(9,15,4)
+follow path: steps=2
+move step: from_grid=(11,15,4) to_grid=(10,15,4)
+command: rotate_left angle_deg=90 from_deg=90 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(10,15,4) orientation_deg=(180,0)
+move step: from_grid=(10,15,4) to_grid=(9,15,4)
+command: advance distance_cm=1
+after move: position_cm=(9,15,4) orientation_deg=(180,0)
+iteration 46
+before scan: position_cm=(9,15,4) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.5 relative_xy_deg=-61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.5 relative_xy_deg=241.578 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=8.5 relative_xy_deg=-37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=6.8 relative_xy_deg=-54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=8.5 relative_xy_deg=37.4292 relative_altitude_deg=-151.578
+lidar hit: distance_cm=6.8 relative_xy_deg=54.7356 relative_altitude_deg=-144.736
+frontier path found: length=4 visited=60 target_grid=(6,15,4)
+follow path: steps=3
+move step: from_grid=(9,15,4) to_grid=(8,15,4)
+command: advance distance_cm=1
+after move: position_cm=(8,15,4) orientation_deg=(180,0)
+move step: from_grid=(8,15,4) to_grid=(7,15,4)
+command: advance distance_cm=1
+after move: position_cm=(7,15,4) orientation_deg=(180,0)
+move step: from_grid=(7,15,4) to_grid=(6,15,4)
+command: advance distance_cm=1
+after move: position_cm=(6,15,4) orientation_deg=(180,0)
+iteration 47
+before scan: position_cm=(6,15,4) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.5 relative_xy_deg=-61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.5 relative_xy_deg=241.578 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=8.5 relative_xy_deg=-37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=6.8 relative_xy_deg=-54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=8.5 relative_xy_deg=37.4292 relative_altitude_deg=-151.578
+lidar hit: distance_cm=6.8 relative_xy_deg=54.7356 relative_altitude_deg=-144.736
+frontier path found: length=3 visited=37 target_grid=(6,17,4)
+follow path: steps=2
+move step: from_grid=(6,15,4) to_grid=(6,16,4)
+command: rotate_right angle_deg=90 from_deg=180 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(6,16,4) orientation_deg=(90,0)
+move step: from_grid=(6,16,4) to_grid=(6,17,4)
+command: advance distance_cm=1
+after move: position_cm=(6,17,4) orientation_deg=(90,0)
+iteration 48
+before scan: position_cm=(6,17,4) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=6.7 relative_xy_deg=-61.5779 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=6.7 relative_xy_deg=61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.4 relative_xy_deg=35.2644 relative_altitude_deg=-54.7356
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.4 relative_xy_deg=324.736 relative_altitude_deg=-54.7356
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=2 missed=19
+lidar hit: distance_cm=6.1 relative_xy_deg=54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=6.1 relative_xy_deg=-54.7356 relative_altitude_deg=-35.2644
+frontier path found: length=3 visited=19 target_grid=(8,17,4)
+follow path: steps=2
+move step: from_grid=(6,17,4) to_grid=(7,17,4)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(7,17,4) orientation_deg=(0,0)
+move step: from_grid=(7,17,4) to_grid=(8,17,4)
+command: advance distance_cm=1
+after move: position_cm=(8,17,4) orientation_deg=(0,0)
+iteration 49
+before scan: position_cm=(8,17,4) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.4 relative_xy_deg=54.7356 relative_altitude_deg=-54.7356
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=6.7 relative_xy_deg=28.4221 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=6.7 relative_xy_deg=151.578 relative_altitude_deg=-37.4292
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.4 relative_xy_deg=125.264 relative_altitude_deg=-54.7356
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=2 missed=19
+lidar hit: distance_cm=4.7 relative_xy_deg=61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=4.7 relative_xy_deg=-61.5779 relative_altitude_deg=-127.429
+frontier path found: length=3 visited=37 target_grid=(8,19,4)
+follow path: steps=2
+move step: from_grid=(8,17,4) to_grid=(8,18,4)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(8,18,4) orientation_deg=(90,0)
+move step: from_grid=(8,18,4) to_grid=(8,19,4)
+command: advance distance_cm=1
+after move: position_cm=(8,19,4) orientation_deg=(90,0)
+iteration 50
+before scan: position_cm=(8,19,4) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=4.3 relative_xy_deg=-54.7356 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=4.3 relative_xy_deg=54.7356 relative_altitude_deg=-54.7356
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=4 relative_xy_deg=52.5708 relative_altitude_deg=-61.5779
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=4 relative_xy_deg=307.429 relative_altitude_deg=-61.5779
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=2 missed=19
+lidar hit: distance_cm=4.5 relative_xy_deg=61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=4.5 relative_xy_deg=-61.5779 relative_altitude_deg=-52.5708
+frontier path found: length=3 visited=18 target_grid=(10,19,4)
+follow path: steps=2
+move step: from_grid=(8,19,4) to_grid=(9,19,4)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(9,19,4) orientation_deg=(0,0)
+move step: from_grid=(9,19,4) to_grid=(10,19,4)
+command: advance distance_cm=1
+after move: position_cm=(10,19,4) orientation_deg=(0,0)
+iteration 51
+before scan: position_cm=(10,19,4) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=4 relative_xy_deg=37.4292 relative_altitude_deg=-61.5779
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=4.3 relative_xy_deg=35.2644 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=4.3 relative_xy_deg=144.736 relative_altitude_deg=-54.7356
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=4 relative_xy_deg=142.571 relative_altitude_deg=-61.5779
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=34 target_grid=(10,20,3)
+follow path: steps=2
+move step: from_grid=(10,19,4) to_grid=(10,20,4)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(10,20,4) orientation_deg=(90,0)
+move step: from_grid=(10,20,4) to_grid=(10,20,3)
+command: elevate distance_cm=-1
+after move: position_cm=(10,20,3) orientation_deg=(90,0)
+iteration 52
+before scan: position_cm=(10,20,3) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=3.6 relative_xy_deg=90 relative_altitude_deg=-45
+lidar hit: distance_cm=2.8 relative_xy_deg=90 relative_altitude_deg=-63.4349
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=3.6 relative_xy_deg=270 relative_altitude_deg=-45
+lidar hit: distance_cm=2.8 relative_xy_deg=270 relative_altitude_deg=-63.4349
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=5 missed=16
+lidar hit: distance_cm=2.5 relative_xy_deg=0 relative_altitude_deg=-90
+lidar hit: distance_cm=2.5 relative_xy_deg=45 relative_altitude_deg=-90
+lidar hit: distance_cm=2.5 relative_xy_deg=-45 relative_altitude_deg=-90
+lidar hit: distance_cm=2.5 relative_xy_deg=63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=2.5 relative_xy_deg=-63.4349 relative_altitude_deg=-90
+frontier path found: length=4 visited=38 target_grid=(13,20,3)
+follow path: steps=3
+move step: from_grid=(10,20,3) to_grid=(11,20,3)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(11,20,3) orientation_deg=(0,0)
+move step: from_grid=(11,20,3) to_grid=(12,20,3)
+command: advance distance_cm=1
+after move: position_cm=(12,20,3) orientation_deg=(0,0)
+move step: from_grid=(12,20,3) to_grid=(13,20,3)
+command: advance distance_cm=1
+after move: position_cm=(13,20,3) orientation_deg=(0,0)
+iteration 53
+before scan: position_cm=(13,20,3) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=3.6 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-45
+lidar hit: distance_cm=2.8 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-63.4349
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=3.6 relative_xy_deg=180 relative_altitude_deg=-45
+lidar hit: distance_cm=2.8 relative_xy_deg=180 relative_altitude_deg=-63.4349
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=9 missed=12
+lidar hit: distance_cm=2.5 relative_xy_deg=0 relative_altitude_deg=-90
+lidar hit: distance_cm=2.5 relative_xy_deg=45 relative_altitude_deg=-90
+lidar hit: distance_cm=3.6 relative_xy_deg=3.50835e-15 relative_altitude_deg=-45
+lidar hit: distance_cm=2.5 relative_xy_deg=-45 relative_altitude_deg=-90
+lidar hit: distance_cm=3.6 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-135
+lidar hit: distance_cm=2.5 relative_xy_deg=63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=5.6 relative_xy_deg=7.01671e-15 relative_altitude_deg=-26.5651
+lidar hit: distance_cm=2.5 relative_xy_deg=-63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=5.6 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+frontier path found: length=4 visited=38 target_grid=(16,20,3)
+follow path: steps=3
+move step: from_grid=(13,20,3) to_grid=(14,20,3)
+command: advance distance_cm=1
+after move: position_cm=(14,20,3) orientation_deg=(0,0)
+move step: from_grid=(14,20,3) to_grid=(15,20,3)
+command: advance distance_cm=1
+after move: position_cm=(15,20,3) orientation_deg=(0,0)
+move step: from_grid=(15,20,3) to_grid=(16,20,3)
+command: advance distance_cm=1
+after move: position_cm=(16,20,3) orientation_deg=(0,0)
+iteration 54
+before scan: position_cm=(16,20,3) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=3.6 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-45
+lidar hit: distance_cm=2.8 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-63.4349
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=3.6 relative_xy_deg=180 relative_altitude_deg=-45
+lidar hit: distance_cm=2.8 relative_xy_deg=180 relative_altitude_deg=-63.4349
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.1 relative_xy_deg=331.578 relative_altitude_deg=-37.4292
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=9 missed=12
+lidar hit: distance_cm=2.5 relative_xy_deg=0 relative_altitude_deg=-90
+lidar hit: distance_cm=2.5 relative_xy_deg=45 relative_altitude_deg=-90
+lidar hit: distance_cm=3.6 relative_xy_deg=3.50835e-15 relative_altitude_deg=-45
+lidar hit: distance_cm=2.5 relative_xy_deg=-45 relative_altitude_deg=-90
+lidar hit: distance_cm=3.6 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-135
+lidar hit: distance_cm=2.5 relative_xy_deg=63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=5.3 relative_xy_deg=-37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=2.5 relative_xy_deg=-63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=5.6 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+frontier path found: length=6 visited=143 target_grid=(15,17,4)
+follow path: steps=5
+move step: from_grid=(16,20,3) to_grid=(15,20,3)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=180
+command: rotate_left angle_deg=90 from_deg=90 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(15,20,3) orientation_deg=(180,0)
+move step: from_grid=(15,20,3) to_grid=(15,19,3)
+command: rotate_left angle_deg=90 from_deg=180 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(15,19,3) orientation_deg=(270,0)
+move step: from_grid=(15,19,3) to_grid=(15,18,3)
+command: advance distance_cm=1
+after move: position_cm=(15,18,3) orientation_deg=(270,0)
+move step: from_grid=(15,18,3) to_grid=(15,17,3)
+command: advance distance_cm=1
+after move: position_cm=(15,17,3) orientation_deg=(270,0)
+move step: from_grid=(15,17,3) to_grid=(15,17,4)
+command: elevate distance_cm=1
+after move: position_cm=(15,17,4) orientation_deg=(270,0)
+iteration 55
+before scan: position_cm=(15,17,4) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.5 relative_xy_deg=61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.4 relative_xy_deg=144.736 relative_altitude_deg=-54.7356
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=6.5 relative_xy_deg=118.422 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=6.7 relative_xy_deg=241.578 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.4 relative_xy_deg=215.264 relative_altitude_deg=-54.7356
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=6.8 relative_xy_deg=54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=8.5 relative_xy_deg=37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=6.1 relative_xy_deg=-54.7356 relative_altitude_deg=-144.736
+lidar hit: distance_cm=6.1 relative_xy_deg=54.7356 relative_altitude_deg=-144.736
+frontier path found: length=3 visited=28 target_grid=(13,17,4)
+follow path: steps=2
+move step: from_grid=(15,17,4) to_grid=(14,17,4)
+command: rotate_right angle_deg=90 from_deg=270 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(14,17,4) orientation_deg=(180,0)
+move step: from_grid=(14,17,4) to_grid=(13,17,4)
+command: advance distance_cm=1
+after move: position_cm=(13,17,4) orientation_deg=(180,0)
+iteration 56
+before scan: position_cm=(13,17,4) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.4 relative_xy_deg=-54.7356 relative_altitude_deg=-54.7356
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.4 relative_xy_deg=234.736 relative_altitude_deg=-54.7356
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=6.7 relative_xy_deg=208.422 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=6.7 relative_xy_deg=331.578 relative_altitude_deg=-37.4292
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=4.7 relative_xy_deg=-61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=9.4 relative_xy_deg=-37.4292 relative_altitude_deg=-151.578
+lidar hit: distance_cm=7.9 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+lidar hit: distance_cm=4.7 relative_xy_deg=61.5779 relative_altitude_deg=-127.429
+frontier path found: length=7 visited=289 target_grid=(13,11,4)
+follow path: steps=6
+move step: from_grid=(13,17,4) to_grid=(13,16,4)
+command: rotate_left angle_deg=90 from_deg=180 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(13,16,4) orientation_deg=(270,0)
+move step: from_grid=(13,16,4) to_grid=(13,15,4)
+command: advance distance_cm=1
+after move: position_cm=(13,15,4) orientation_deg=(270,0)
+move step: from_grid=(13,15,4) to_grid=(13,14,4)
+command: advance distance_cm=1
+after move: position_cm=(13,14,4) orientation_deg=(270,0)
+move step: from_grid=(13,14,4) to_grid=(13,13,4)
+command: advance distance_cm=1
+after move: position_cm=(13,13,4) orientation_deg=(270,0)
+move step: from_grid=(13,13,4) to_grid=(13,12,4)
+command: advance distance_cm=1
+after move: position_cm=(13,12,4) orientation_deg=(270,0)
+move step: from_grid=(13,12,4) to_grid=(13,11,4)
+command: advance distance_cm=1
+after move: position_cm=(13,11,4) orientation_deg=(270,0)
+iteration 57
+before scan: position_cm=(13,11,4) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.8 relative_xy_deg=-61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=2 missed=19
+lidar hit: distance_cm=6.1 relative_xy_deg=-54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=9.6 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+frontier path found: length=3 visited=28 target_grid=(11,11,4)
+follow path: steps=2
+move step: from_grid=(13,11,4) to_grid=(12,11,4)
+command: rotate_right angle_deg=90 from_deg=270 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(12,11,4) orientation_deg=(180,0)
+move step: from_grid=(12,11,4) to_grid=(11,11,4)
+command: advance distance_cm=1
+after move: position_cm=(11,11,4) orientation_deg=(180,0)
+iteration 58
+before scan: position_cm=(11,11,4) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=4.6 relative_xy_deg=54.7356 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=5.8 relative_xy_deg=61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=5.8 relative_xy_deg=28.4221 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=4.6 relative_xy_deg=35.2644 relative_altitude_deg=-54.7356
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.7 relative_xy_deg=118.422 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=5.2 relative_xy_deg=61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=6.1 relative_xy_deg=54.7356 relative_altitude_deg=-35.2644
+lidar hit: distance_cm=6.8 relative_xy_deg=-54.7356 relative_altitude_deg=-144.736
+lidar hit: distance_cm=9.6 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+frontier path found: length=5 visited=116 target_grid=(8,10,4)
+follow path: steps=4
+move step: from_grid=(11,11,4) to_grid=(10,11,4)
+command: advance distance_cm=1
+after move: position_cm=(10,11,4) orientation_deg=(180,0)
+move step: from_grid=(10,11,4) to_grid=(9,11,4)
+command: advance distance_cm=1
+after move: position_cm=(9,11,4) orientation_deg=(180,0)
+move step: from_grid=(9,11,4) to_grid=(8,11,4)
+command: advance distance_cm=1
+after move: position_cm=(8,11,4) orientation_deg=(180,0)
+move step: from_grid=(8,11,4) to_grid=(8,10,4)
+command: rotate_left angle_deg=90 from_deg=180 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(8,10,4) orientation_deg=(270,0)
+iteration 59
+before scan: position_cm=(8,10,4) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=4 relative_xy_deg=-37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=4 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=4 relative_xy_deg=37.4292 relative_altitude_deg=-61.5779
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=4.3 relative_xy_deg=35.2644 relative_altitude_deg=-54.7356
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=4.3 relative_xy_deg=324.736 relative_altitude_deg=-54.7356
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=28 target_grid=(6,10,4)
+follow path: steps=2
+move step: from_grid=(8,10,4) to_grid=(7,10,4)
+command: rotate_right angle_deg=90 from_deg=270 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(7,10,4) orientation_deg=(180,0)
+move step: from_grid=(7,10,4) to_grid=(6,10,4)
+command: advance distance_cm=1
+after move: position_cm=(6,10,4) orientation_deg=(180,0)
+iteration 60
+before scan: position_cm=(6,10,4) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=4 relative_xy_deg=127.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=4.3 relative_xy_deg=144.736 relative_altitude_deg=-54.7356
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=4.3 relative_xy_deg=125.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=4 relative_xy_deg=142.571 relative_altitude_deg=-61.5779
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=4.5 relative_xy_deg=-61.5779 relative_altitude_deg=-127.429
+frontier path found: length=3 visited=40 target_grid=(6,8,4)
+follow path: steps=2
+move step: from_grid=(6,10,4) to_grid=(6,9,4)
+command: rotate_left angle_deg=90 from_deg=180 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(6,9,4) orientation_deg=(270,0)
+move step: from_grid=(6,9,4) to_grid=(6,8,4)
+command: advance distance_cm=1
+after move: position_cm=(6,8,4) orientation_deg=(270,0)
+iteration 61
+before scan: position_cm=(6,8,4) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=4.3 relative_xy_deg=54.7356 relative_altitude_deg=-54.7356
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=4 relative_xy_deg=52.5708 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=4 relative_xy_deg=90 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=4 relative_xy_deg=127.429 relative_altitude_deg=-61.5779
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=4.3 relative_xy_deg=125.264 relative_altitude_deg=-54.7356
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=2 missed=19
+lidar hit: distance_cm=4.5 relative_xy_deg=61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=4.5 relative_xy_deg=-61.5779 relative_altitude_deg=-127.429
+frontier path found: length=3 visited=28 target_grid=(4,8,4)
+follow path: steps=2
+move step: from_grid=(6,8,4) to_grid=(5,8,4)
+command: rotate_right angle_deg=90 from_deg=270 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(5,8,4) orientation_deg=(180,0)
+move step: from_grid=(5,8,4) to_grid=(4,8,4)
+command: advance distance_cm=1
+after move: position_cm=(4,8,4) orientation_deg=(180,0)
+iteration 62
+before scan: position_cm=(4,8,4) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5 relative_xy_deg=180 relative_altitude_deg=-45
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-135
+frontier path found: length=4 visited=69 target_grid=(3,10,4)
+follow path: steps=3
+move step: from_grid=(4,8,4) to_grid=(3,8,4)
+command: advance distance_cm=1
+after move: position_cm=(3,8,4) orientation_deg=(180,0)
+move step: from_grid=(3,8,4) to_grid=(3,9,4)
+command: rotate_right angle_deg=90 from_deg=180 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(3,9,4) orientation_deg=(90,0)
+move step: from_grid=(3,9,4) to_grid=(3,10,4)
+command: advance distance_cm=1
+after move: position_cm=(3,10,4) orientation_deg=(90,0)
+iteration 63
+before scan: position_cm=(3,10,4) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.8 relative_xy_deg=241.578 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.1 relative_xy_deg=54.7356 relative_altitude_deg=-144.736
+frontier path found: length=4 visited=53 target_grid=(4,12,4)
+follow path: steps=3
+move step: from_grid=(3,10,4) to_grid=(4,10,4)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(4,10,4) orientation_deg=(0,0)
+move step: from_grid=(4,10,4) to_grid=(4,11,4)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(4,11,4) orientation_deg=(90,0)
+move step: from_grid=(4,11,4) to_grid=(4,12,4)
+command: advance distance_cm=1
+after move: position_cm=(4,12,4) orientation_deg=(90,0)
+iteration 64
+before scan: position_cm=(4,12,4) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.7 relative_xy_deg=241.578 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.7 relative_xy_deg=208.422 relative_altitude_deg=-37.4292
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=3 missed=18
+lidar hit: distance_cm=8.4 relative_xy_deg=7.01671e-15 relative_altitude_deg=-26.5651
+lidar hit: distance_cm=7.4 relative_xy_deg=37.4292 relative_altitude_deg=-151.578
+lidar hit: distance_cm=6.1 relative_xy_deg=54.7356 relative_altitude_deg=-144.736
+frontier path found: length=3 visited=28 target_grid=(2,12,4)
+follow path: steps=2
+move step: from_grid=(4,12,4) to_grid=(3,12,4)
+command: rotate_left angle_deg=90 from_deg=90 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(3,12,4) orientation_deg=(180,0)
+move step: from_grid=(3,12,4) to_grid=(2,12,4)
+command: advance distance_cm=1
+after move: position_cm=(2,12,4) orientation_deg=(180,0)
+iteration 65
+before scan: position_cm=(2,12,4) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.7 relative_xy_deg=151.578 relative_altitude_deg=-37.4292
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=7.4 relative_xy_deg=-37.4292 relative_altitude_deg=-151.578
+frontier path found: length=4 visited=52 target_grid=(3,14,4)
+follow path: steps=3
+move step: from_grid=(2,12,4) to_grid=(3,12,4)
+command: rotate_left angle_deg=90 from_deg=180 target_deg=0
+command: rotate_left angle_deg=90 from_deg=270 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(3,12,4) orientation_deg=(0,0)
+move step: from_grid=(3,12,4) to_grid=(3,13,4)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(3,13,4) orientation_deg=(90,0)
+move step: from_grid=(3,13,4) to_grid=(3,14,4)
+command: advance distance_cm=1
+after move: position_cm=(3,14,4) orientation_deg=(90,0)
+iteration 66
+before scan: position_cm=(3,14,4) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=2 missed=19
+lidar hit: distance_cm=7.9 relative_xy_deg=-37.4292 relative_altitude_deg=-28.4221
+lidar hit: distance_cm=7.4 relative_xy_deg=37.4292 relative_altitude_deg=-151.578
+frontier path found: length=3 visited=28 target_grid=(1,14,4)
+follow path: steps=2
+move step: from_grid=(3,14,4) to_grid=(2,14,4)
+command: rotate_left angle_deg=90 from_deg=90 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(2,14,4) orientation_deg=(180,0)
+move step: from_grid=(2,14,4) to_grid=(1,14,4)
+command: advance distance_cm=1
+after move: position_cm=(1,14,4) orientation_deg=(180,0)
+iteration 67
+before scan: position_cm=(1,14,4) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=8.5 relative_xy_deg=-37.4292 relative_altitude_deg=-151.578
+frontier path found: length=3 visited=32 target_grid=(1,16,4)
+follow path: steps=2
+move step: from_grid=(1,14,4) to_grid=(1,15,4)
+command: rotate_right angle_deg=90 from_deg=180 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(1,15,4) orientation_deg=(90,0)
+move step: from_grid=(1,15,4) to_grid=(1,16,4)
+command: advance distance_cm=1
+after move: position_cm=(1,16,4) orientation_deg=(90,0)
+iteration 68
+before scan: position_cm=(1,16,4) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-45
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.8 relative_xy_deg=331.578 relative_altitude_deg=-37.4292
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=2 missed=19
+lidar hit: distance_cm=5 relative_xy_deg=3.50835e-15 relative_altitude_deg=-45
+lidar hit: distance_cm=7.5 relative_xy_deg=-54.7356 relative_altitude_deg=-35.2644
+frontier path found: length=3 visited=31 target_grid=(0,16,3)
+follow path: steps=2
+move step: from_grid=(1,16,4) to_grid=(0,16,4)
+command: rotate_left angle_deg=90 from_deg=90 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(0,16,4) orientation_deg=(180,0)
+move step: from_grid=(0,16,4) to_grid=(0,16,3)
+command: elevate distance_cm=-1
+after move: position_cm=(0,16,3) orientation_deg=(180,0)
+iteration 69
+before scan: position_cm=(0,16,3) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.1 relative_xy_deg=241.578 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=2 missed=19
+lidar hit: distance_cm=6.6 relative_xy_deg=37.4292 relative_altitude_deg=-151.578
+lidar hit: distance_cm=5.3 relative_xy_deg=54.7356 relative_altitude_deg=-144.736
+frontier path found: length=4 visited=60 target_grid=(0,19,3)
+follow path: steps=3
+move step: from_grid=(0,16,3) to_grid=(0,17,3)
+command: rotate_right angle_deg=90 from_deg=180 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(6.12323e-17,17,3) orientation_deg=(90,0)
+move step: from_grid=(0,17,3) to_grid=(0,18,3)
+command: advance distance_cm=1
+after move: position_cm=(1.22465e-16,18,3) orientation_deg=(90,0)
+move step: from_grid=(0,18,3) to_grid=(0,19,3)
+command: advance distance_cm=1
+after move: position_cm=(1.83697e-16,19,3) orientation_deg=(90,0)
+iteration 70
+before scan: position_cm=(1.83697e-16,19,3) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=3.1 relative_xy_deg=-54.7356 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=2.9 relative_xy_deg=-37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=2.8 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-63.4349
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=2.9 relative_xy_deg=307.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=3.1 relative_xy_deg=324.736 relative_altitude_deg=-54.7356
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=3.2 relative_xy_deg=-61.5779 relative_altitude_deg=-52.5708
+frontier path found: length=3 visited=17 target_grid=(2,19,3)
+follow path: steps=2
+move step: from_grid=(0,19,3) to_grid=(1,19,3)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(1,19,3) orientation_deg=(0,0)
+move step: from_grid=(1,19,3) to_grid=(2,19,3)
+command: advance distance_cm=1
+after move: position_cm=(2,19,3) orientation_deg=(0,0)
+iteration 71
+before scan: position_cm=(2,19,3) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=2.9 relative_xy_deg=37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=3.1 relative_xy_deg=54.7356 relative_altitude_deg=-54.7356
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=5 missed=16
+lidar hit: distance_cm=3.1 relative_xy_deg=35.2644 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=2.9 relative_xy_deg=52.5708 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=2.8 relative_xy_deg=90 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=2.9 relative_xy_deg=127.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=3.1 relative_xy_deg=144.736 relative_altitude_deg=-54.7356
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=3.1 relative_xy_deg=125.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=2.9 relative_xy_deg=142.571 relative_altitude_deg=-61.5779
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=44 target_grid=(2,20,2)
+follow path: steps=2
+move step: from_grid=(2,19,3) to_grid=(2,20,3)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(2,20,3) orientation_deg=(90,0)
+move step: from_grid=(2,20,3) to_grid=(2,20,2)
+command: elevate distance_cm=-1
+after move: position_cm=(2,20,2) orientation_deg=(90,0)
+iteration 72
+before scan: position_cm=(2,20,2) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=2.2 relative_xy_deg=90 relative_altitude_deg=-45
+lidar hit: distance_cm=1.7 relative_xy_deg=90 relative_altitude_deg=-63.4349
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=2.2 relative_xy_deg=270 relative_altitude_deg=-45
+lidar hit: distance_cm=1.7 relative_xy_deg=270 relative_altitude_deg=-63.4349
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=5 missed=16
+lidar hit: distance_cm=1.5 relative_xy_deg=0 relative_altitude_deg=-90
+lidar hit: distance_cm=1.5 relative_xy_deg=45 relative_altitude_deg=-90
+lidar hit: distance_cm=1.5 relative_xy_deg=-45 relative_altitude_deg=-90
+lidar hit: distance_cm=1.5 relative_xy_deg=63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=1.5 relative_xy_deg=-63.4349 relative_altitude_deg=-90
+frontier path found: length=6 visited=106 target_grid=(6,20,1)
+follow path: steps=5
+move step: from_grid=(2,20,2) to_grid=(3,20,2)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(3,20,2) orientation_deg=(0,0)
+move step: from_grid=(3,20,2) to_grid=(4,20,2)
+command: advance distance_cm=1
+after move: position_cm=(4,20,2) orientation_deg=(0,0)
+move step: from_grid=(4,20,2) to_grid=(5,20,2)
+command: advance distance_cm=1
+after move: position_cm=(5,20,2) orientation_deg=(0,0)
+move step: from_grid=(5,20,2) to_grid=(6,20,2)
+command: advance distance_cm=1
+after move: position_cm=(6,20,2) orientation_deg=(0,0)
+move step: from_grid=(6,20,2) to_grid=(6,20,1)
+command: elevate distance_cm=-1
+after move: position_cm=(6,20,1) orientation_deg=(0,0)
+iteration 73
+before scan: position_cm=(6,20,1) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=0.8 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-45
+lidar hit: distance_cm=16.8 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+lidar hit: distance_cm=0.7 relative_xy_deg=-54.7356 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=-37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=37.4292 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=54.7356 relative_altitude_deg=-54.7356
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=0.9 relative_xy_deg=28.4221 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=0.7 relative_xy_deg=35.2644 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=52.5708 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=90 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=127.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=144.736 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.9 relative_xy_deg=151.578 relative_altitude_deg=-37.4292
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=0.8 relative_xy_deg=180 relative_altitude_deg=-45
+lidar hit: distance_cm=0.7 relative_xy_deg=125.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=142.571 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=180 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=217.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=234.736 relative_altitude_deg=-54.7356
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=7 missed=14
+lidar hit: distance_cm=0.9 relative_xy_deg=208.422 relative_altitude_deg=-37.4292
+lidar hit: distance_cm=0.7 relative_xy_deg=215.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.6 relative_xy_deg=232.571 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.6 relative_xy_deg=270 relative_altitude_deg=-63.4349
+lidar hit: distance_cm=0.6 relative_xy_deg=307.429 relative_altitude_deg=-61.5779
+lidar hit: distance_cm=0.7 relative_xy_deg=324.736 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=0.9 relative_xy_deg=331.578 relative_altitude_deg=-37.4292
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=13 missed=8
+lidar hit: distance_cm=0.6 relative_xy_deg=0 relative_altitude_deg=-90
+lidar hit: distance_cm=0.6 relative_xy_deg=45 relative_altitude_deg=-90
+lidar hit: distance_cm=0.8 relative_xy_deg=3.50835e-15 relative_altitude_deg=-45
+lidar hit: distance_cm=0.6 relative_xy_deg=-45 relative_altitude_deg=-90
+lidar hit: distance_cm=0.8 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-135
+lidar hit: distance_cm=0.6 relative_xy_deg=63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=0.7 relative_xy_deg=61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=1.2 relative_xy_deg=7.01671e-15 relative_altitude_deg=-26.5651
+lidar hit: distance_cm=0.7 relative_xy_deg=-61.5779 relative_altitude_deg=-52.5708
+lidar hit: distance_cm=0.6 relative_xy_deg=-63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=0.7 relative_xy_deg=-61.5779 relative_altitude_deg=-127.429
+lidar hit: distance_cm=1.2 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+lidar hit: distance_cm=0.7 relative_xy_deg=61.5779 relative_altitude_deg=-127.429
+frontier path found: length=4 visited=40 target_grid=(8,20,2)
+follow path: steps=3
+move step: from_grid=(6,20,1) to_grid=(7,20,1)
+command: advance distance_cm=1
+after move: position_cm=(7,20,1) orientation_deg=(0,0)
+move step: from_grid=(7,20,1) to_grid=(8,20,1)
+command: advance distance_cm=1
+after move: position_cm=(8,20,1) orientation_deg=(0,0)
+move step: from_grid=(8,20,1) to_grid=(8,20,2)
+command: elevate distance_cm=1
+after move: position_cm=(8,20,2) orientation_deg=(0,0)
+iteration 74
+before scan: position_cm=(8,20,2) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=2.2 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-45
+lidar hit: distance_cm=1.7 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-63.4349
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=2.2 relative_xy_deg=180 relative_altitude_deg=-45
+lidar hit: distance_cm=1.7 relative_xy_deg=180 relative_altitude_deg=-63.4349
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=9 missed=12
+lidar hit: distance_cm=1.5 relative_xy_deg=0 relative_altitude_deg=-90
+lidar hit: distance_cm=1.5 relative_xy_deg=45 relative_altitude_deg=-90
+lidar hit: distance_cm=2.2 relative_xy_deg=3.50835e-15 relative_altitude_deg=-45
+lidar hit: distance_cm=1.5 relative_xy_deg=-45 relative_altitude_deg=-90
+lidar hit: distance_cm=2.2 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-135
+lidar hit: distance_cm=1.5 relative_xy_deg=63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=3.4 relative_xy_deg=7.01671e-15 relative_altitude_deg=-26.5651
+lidar hit: distance_cm=1.5 relative_xy_deg=-63.4349 relative_altitude_deg=-90
+lidar hit: distance_cm=3.4 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+frontier path found: length=7 visited=208 target_grid=(5,19,4)
+follow path: steps=6
+move step: from_grid=(8,20,2) to_grid=(7,20,2)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=180
+command: rotate_left angle_deg=90 from_deg=90 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(7,20,2) orientation_deg=(180,0)
+move step: from_grid=(7,20,2) to_grid=(6,20,2)
+command: advance distance_cm=1
+after move: position_cm=(6,20,2) orientation_deg=(180,0)
+move step: from_grid=(6,20,2) to_grid=(5,20,2)
+command: advance distance_cm=1
+after move: position_cm=(5,20,2) orientation_deg=(180,0)
+move step: from_grid=(5,20,2) to_grid=(5,19,2)
+command: rotate_left angle_deg=90 from_deg=180 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(5,19,2) orientation_deg=(270,0)
+move step: from_grid=(5,19,2) to_grid=(5,19,3)
+command: elevate distance_cm=1
+after move: position_cm=(5,19,3) orientation_deg=(270,0)
+move step: from_grid=(5,19,3) to_grid=(5,19,4)
+command: elevate distance_cm=1
+after move: position_cm=(5,19,4) orientation_deg=(270,0)
+iteration 75
+before scan: position_cm=(5,19,4) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=4 relative_xy_deg=127.429 relative_altitude_deg=-61.5779
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=4.3 relative_xy_deg=125.264 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=4.3 relative_xy_deg=234.736 relative_altitude_deg=-54.7356
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=4 relative_xy_deg=232.571 relative_altitude_deg=-61.5779
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=2 missed=19
+lidar hit: distance_cm=4.5 relative_xy_deg=-61.5779 relative_altitude_deg=-127.429
+lidar hit: distance_cm=4.5 relative_xy_deg=61.5779 relative_altitude_deg=-127.429
+frontier path found: length=9 visited=319 target_grid=(7,13,4)
+follow path: steps=8
+move step: from_grid=(5,19,4) to_grid=(6,19,4)
+command: rotate_left angle_deg=90 from_deg=270 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(6,19,4) orientation_deg=(0,0)
+move step: from_grid=(6,19,4) to_grid=(7,19,4)
+command: advance distance_cm=1
+after move: position_cm=(7,19,4) orientation_deg=(0,0)
+move step: from_grid=(7,19,4) to_grid=(7,18,4)
+command: rotate_right angle_deg=90 from_deg=0 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(7,18,4) orientation_deg=(270,0)
+move step: from_grid=(7,18,4) to_grid=(7,17,4)
+command: advance distance_cm=1
+after move: position_cm=(7,17,4) orientation_deg=(270,0)
+move step: from_grid=(7,17,4) to_grid=(7,16,4)
+command: advance distance_cm=1
+after move: position_cm=(7,16,4) orientation_deg=(270,0)
+move step: from_grid=(7,16,4) to_grid=(7,15,4)
+command: advance distance_cm=1
+after move: position_cm=(7,15,4) orientation_deg=(270,0)
+move step: from_grid=(7,15,4) to_grid=(7,14,4)
+command: advance distance_cm=1
+after move: position_cm=(7,14,4) orientation_deg=(270,0)
+move step: from_grid=(7,14,4) to_grid=(7,13,4)
+command: advance distance_cm=1
+after move: position_cm=(7,13,4) orientation_deg=(270,0)
+iteration 76
+before scan: position_cm=(7,13,4) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-45
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.8 relative_xy_deg=28.4221 relative_altitude_deg=-37.4292
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=4 missed=17
+lidar hit: distance_cm=5 relative_xy_deg=3.50835e-15 relative_altitude_deg=-45
+lidar hit: distance_cm=9.4 relative_xy_deg=-37.4292 relative_altitude_deg=-151.578
+lidar hit: distance_cm=7.9 relative_xy_deg=-2.10501e-14 relative_altitude_deg=-153.435
+lidar hit: distance_cm=9.4 relative_xy_deg=37.4292 relative_altitude_deg=-151.578
+frontier path found: length=7 visited=320 target_grid=(7,15,0)
+follow path: steps=6
+move step: from_grid=(7,13,4) to_grid=(7,14,4)
+command: rotate_left angle_deg=90 from_deg=270 target_deg=90
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(7,14,4) orientation_deg=(90,0)
+move step: from_grid=(7,14,4) to_grid=(7,15,4)
+command: advance distance_cm=1
+after move: position_cm=(7,15,4) orientation_deg=(90,0)
+move step: from_grid=(7,15,4) to_grid=(7,15,3)
+command: elevate distance_cm=-1
+after move: position_cm=(7,15,3) orientation_deg=(90,0)
+move step: from_grid=(7,15,3) to_grid=(7,15,2)
+command: elevate distance_cm=-1
+after move: position_cm=(7,15,2) orientation_deg=(90,0)
+move step: from_grid=(7,15,2) to_grid=(7,15,1)
+command: elevate distance_cm=-1
+after move: position_cm=(7,15,1) orientation_deg=(90,0)
+move step: from_grid=(7,15,1) to_grid=(7,15,0)
+command: elevate distance_cm=-1
+after move: position_cm=(7,15,0) orientation_deg=(90,0)
+iteration 77
+before scan: position_cm=(7,15,0) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=4.5 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=10.1 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=6.4 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=5.1 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=5.6 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=17.7 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=14 relative_xy_deg=243.435 relative_altitude_deg=0
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=12.6 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=17.7 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=5.1 relative_xy_deg=333.435 relative_altitude_deg=0
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=13 visited=987 target_grid=(0,10,0)
+follow path: steps=12
+move step: from_grid=(7,15,0) to_grid=(6,15,0)
+command: rotate_left angle_deg=90 from_deg=90 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(6,15,0) orientation_deg=(180,0)
+move step: from_grid=(6,15,0) to_grid=(5,15,0)
+command: advance distance_cm=1
+after move: position_cm=(5,15,0) orientation_deg=(180,0)
+move step: from_grid=(5,15,0) to_grid=(4,15,0)
+command: advance distance_cm=1
+after move: position_cm=(4,15,0) orientation_deg=(180,0)
+move step: from_grid=(4,15,0) to_grid=(3,15,0)
+command: advance distance_cm=1
+after move: position_cm=(3,15,0) orientation_deg=(180,0)
+move step: from_grid=(3,15,0) to_grid=(2,15,0)
+command: advance distance_cm=1
+after move: position_cm=(2,15,0) orientation_deg=(180,0)
+move step: from_grid=(2,15,0) to_grid=(1,15,0)
+command: advance distance_cm=1
+after move: position_cm=(1,15,0) orientation_deg=(180,0)
+move step: from_grid=(1,15,0) to_grid=(0,15,0)
+command: advance distance_cm=1
+after move: position_cm=(0,15,0) orientation_deg=(180,0)
+move step: from_grid=(0,15,0) to_grid=(0,14,0)
+command: rotate_left angle_deg=90 from_deg=180 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(-1.83697e-16,14,0) orientation_deg=(270,0)
+move step: from_grid=(0,14,0) to_grid=(0,13,0)
+command: advance distance_cm=1
+after move: position_cm=(-3.67394e-16,13,0) orientation_deg=(270,0)
+move step: from_grid=(0,13,0) to_grid=(0,12,0)
+command: advance distance_cm=1
+after move: position_cm=(-5.51091e-16,12,0) orientation_deg=(270,0)
+move step: from_grid=(0,12,0) to_grid=(0,11,0)
+command: advance distance_cm=1
+after move: position_cm=(-7.34788e-16,11,0) orientation_deg=(270,0)
+move step: from_grid=(0,11,0) to_grid=(0,10,0)
+command: advance distance_cm=1
+after move: position_cm=(-9.18485e-16,10,0) orientation_deg=(270,0)
+iteration 78
+before scan: position_cm=(-9.18485e-16,10,0) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=7.3 relative_xy_deg=63.4349 relative_altitude_deg=0
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=19.5 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=13.5 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=10.7 relative_xy_deg=153.435 relative_altitude_deg=0
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=9.6 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=13.5 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=21.3 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=4 visited=54 target_grid=(0,10,3)
+follow path: steps=3
+move step: from_grid=(0,10,0) to_grid=(0,10,1)
+command: elevate distance_cm=1
+after move: position_cm=(-9.18485e-16,10,1) orientation_deg=(270,0)
+move step: from_grid=(0,10,1) to_grid=(0,10,2)
+command: elevate distance_cm=1
+after move: position_cm=(-9.18485e-16,10,2) orientation_deg=(270,0)
+move step: from_grid=(0,10,2) to_grid=(0,10,3)
+command: elevate distance_cm=1
+after move: position_cm=(-9.18485e-16,10,3) orientation_deg=(270,0)
+iteration 79
+before scan: position_cm=(-9.18485e-16,10,3) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=4 visited=60 target_grid=(0,13,3)
+follow path: steps=3
+move step: from_grid=(0,10,3) to_grid=(0,11,3)
+command: rotate_left angle_deg=90 from_deg=270 target_deg=90
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(-8.57253e-16,11,3) orientation_deg=(90,0)
+move step: from_grid=(0,11,3) to_grid=(0,12,3)
+command: advance distance_cm=1
+after move: position_cm=(-7.9602e-16,12,3) orientation_deg=(90,0)
+move step: from_grid=(0,12,3) to_grid=(0,13,3)
+command: advance distance_cm=1
+after move: position_cm=(-7.34788e-16,13,3) orientation_deg=(90,0)
+iteration 80
+before scan: position_cm=(-7.34788e-16,13,3) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=7.3 relative_xy_deg=7.01671e-15 relative_altitude_deg=-26.5651
+frontier path found: length=7 visited=218 target_grid=(0,7,3)
+follow path: steps=6
+move step: from_grid=(0,13,3) to_grid=(0,12,3)
+command: rotate_left angle_deg=90 from_deg=90 target_deg=270
+command: rotate_left angle_deg=90 from_deg=180 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(-9.18485e-16,12,3) orientation_deg=(270,0)
+move step: from_grid=(0,12,3) to_grid=(0,11,3)
+command: advance distance_cm=1
+after move: position_cm=(-1.10218e-15,11,3) orientation_deg=(270,0)
+move step: from_grid=(0,11,3) to_grid=(0,10,3)
+command: advance distance_cm=1
+after move: position_cm=(-1.28588e-15,10,3) orientation_deg=(270,0)
+move step: from_grid=(0,10,3) to_grid=(0,9,3)
+command: advance distance_cm=1
+after move: position_cm=(-1.46958e-15,9,3) orientation_deg=(270,0)
+move step: from_grid=(0,9,3) to_grid=(0,8,3)
+command: advance distance_cm=1
+after move: position_cm=(-1.65327e-15,8,3) orientation_deg=(270,0)
+move step: from_grid=(0,8,3) to_grid=(0,7,3)
+command: advance distance_cm=1
+after move: position_cm=(-1.83697e-15,7,3) orientation_deg=(270,0)
+iteration 81
+before scan: position_cm=(-1.83697e-15,7,3) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=4 visited=68 target_grid=(0,5,2)
+follow path: steps=3
+move step: from_grid=(0,7,3) to_grid=(0,6,3)
+command: advance distance_cm=1
+after move: position_cm=(-2.02067e-15,6,3) orientation_deg=(270,0)
+move step: from_grid=(0,6,3) to_grid=(0,5,3)
+command: advance distance_cm=1
+after move: position_cm=(-2.20436e-15,5,3) orientation_deg=(270,0)
+move step: from_grid=(0,5,3) to_grid=(0,5,2)
+command: elevate distance_cm=-1
+after move: position_cm=(-2.20436e-15,5,2) orientation_deg=(270,0)
+iteration 82
+before scan: position_cm=(-2.20436e-15,5,2) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=13.6 relative_xy_deg=90 relative_altitude_deg=0
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=6 visited=161 target_grid=(1,3,4)
+follow path: steps=5
+move step: from_grid=(0,5,2) to_grid=(1,5,2)
+command: rotate_left angle_deg=90 from_deg=270 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(1,5,2) orientation_deg=(0,0)
+move step: from_grid=(1,5,2) to_grid=(1,4,2)
+command: rotate_right angle_deg=90 from_deg=0 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(1,4,2) orientation_deg=(270,0)
+move step: from_grid=(1,4,2) to_grid=(1,3,2)
+command: advance distance_cm=1
+after move: position_cm=(1,3,2) orientation_deg=(270,0)
+move step: from_grid=(1,3,2) to_grid=(1,3,3)
+command: elevate distance_cm=1
+after move: position_cm=(1,3,3) orientation_deg=(270,0)
+move step: from_grid=(1,3,3) to_grid=(1,3,4)
+command: elevate distance_cm=1
+after move: position_cm=(1,3,4) orientation_deg=(270,0)
+iteration 83
+before scan: position_cm=(1,3,4) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=5 visited=76 target_grid=(4,2,4)
+follow path: steps=4
+move step: from_grid=(1,3,4) to_grid=(2,3,4)
+command: rotate_left angle_deg=90 from_deg=270 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(2,3,4) orientation_deg=(0,0)
+move step: from_grid=(2,3,4) to_grid=(3,3,4)
+command: advance distance_cm=1
+after move: position_cm=(3,3,4) orientation_deg=(0,0)
+move step: from_grid=(3,3,4) to_grid=(4,3,4)
+command: advance distance_cm=1
+after move: position_cm=(4,3,4) orientation_deg=(0,0)
+move step: from_grid=(4,3,4) to_grid=(4,2,4)
+command: rotate_right angle_deg=90 from_deg=0 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(4,2,4) orientation_deg=(270,0)
+iteration 84
+before scan: position_cm=(4,2,4) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.7 relative_xy_deg=151.578 relative_altitude_deg=-37.4292
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=7.4 relative_xy_deg=-37.4292 relative_altitude_deg=-151.578
+frontier path found: length=3 visited=19 target_grid=(6,2,4)
+follow path: steps=2
+move step: from_grid=(4,2,4) to_grid=(5,2,4)
+command: rotate_left angle_deg=90 from_deg=270 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(5,2,4) orientation_deg=(0,0)
+move step: from_grid=(5,2,4) to_grid=(6,2,4)
+command: advance distance_cm=1
+after move: position_cm=(6,2,4) orientation_deg=(0,0)
+iteration 85
+before scan: position_cm=(6,2,4) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.5 relative_xy_deg=61.5779 relative_altitude_deg=-37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.8 relative_xy_deg=54.7356 relative_altitude_deg=-35.2644
+frontier path found: length=3 visited=37 target_grid=(6,4,4)
+follow path: steps=2
+move step: from_grid=(6,2,4) to_grid=(6,3,4)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(6,3,4) orientation_deg=(90,0)
+move step: from_grid=(6,3,4) to_grid=(6,4,4)
+command: advance distance_cm=1
+after move: position_cm=(6,4,4) orientation_deg=(90,0)
+iteration 86
+before scan: position_cm=(6,4,4) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=5.4 relative_xy_deg=324.736 relative_altitude_deg=-54.7356
+lidar hit: distance_cm=5.8 relative_xy_deg=331.578 relative_altitude_deg=-37.4292
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=5 visited=91 target_grid=(9,3,4)
+follow path: steps=4
+move step: from_grid=(6,4,4) to_grid=(7,4,4)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(7,4,4) orientation_deg=(0,0)
+move step: from_grid=(7,4,4) to_grid=(8,4,4)
+command: advance distance_cm=1
+after move: position_cm=(8,4,4) orientation_deg=(0,0)
+move step: from_grid=(8,4,4) to_grid=(9,4,4)
+command: advance distance_cm=1
+after move: position_cm=(9,4,4) orientation_deg=(0,0)
+move step: from_grid=(9,4,4) to_grid=(9,3,4)
+command: rotate_right angle_deg=90 from_deg=0 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(9,3,4) orientation_deg=(270,0)
+iteration 87
+before scan: position_cm=(9,3,4) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=5 relative_xy_deg=180 relative_altitude_deg=-45
+lidar hit: distance_cm=6.5 relative_xy_deg=118.422 relative_altitude_deg=-37.4292
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=5.8 relative_xy_deg=208.422 relative_altitude_deg=-37.4292
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=2 missed=19
+lidar hit: distance_cm=5 relative_xy_deg=-1.05251e-14 relative_altitude_deg=-135
+lidar hit: distance_cm=6.8 relative_xy_deg=-54.7356 relative_altitude_deg=-144.736
+frontier path found: length=4 visited=50 target_grid=(11,2,4)
+follow path: steps=3
+move step: from_grid=(9,3,4) to_grid=(10,3,4)
+command: rotate_left angle_deg=90 from_deg=270 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(10,3,4) orientation_deg=(0,0)
+move step: from_grid=(10,3,4) to_grid=(11,3,4)
+command: advance distance_cm=1
+after move: position_cm=(11,3,4) orientation_deg=(0,0)
+move step: from_grid=(11,3,4) to_grid=(11,2,4)
+command: rotate_right angle_deg=90 from_deg=0 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(11,2,4) orientation_deg=(270,0)
+iteration 88
+before scan: position_cm=(11,2,4) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.5 relative_xy_deg=208.422 relative_altitude_deg=-37.4292
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=2 missed=19
+lidar hit: distance_cm=4.7 relative_xy_deg=-37.4292 relative_altitude_deg=-151.578
+lidar hit: distance_cm=7.4 relative_xy_deg=37.4292 relative_altitude_deg=-151.578
+frontier path found: length=6 visited=160 target_grid=(12,2,0)
+follow path: steps=5
+move step: from_grid=(11,2,4) to_grid=(12,2,4)
+command: rotate_left angle_deg=90 from_deg=270 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(12,2,4) orientation_deg=(0,0)
+move step: from_grid=(12,2,4) to_grid=(12,2,3)
+command: elevate distance_cm=-1
+after move: position_cm=(12,2,3) orientation_deg=(0,0)
+move step: from_grid=(12,2,3) to_grid=(12,2,2)
+command: elevate distance_cm=-1
+after move: position_cm=(12,2,2) orientation_deg=(0,0)
+move step: from_grid=(12,2,2) to_grid=(12,2,1)
+command: elevate distance_cm=-1
+after move: position_cm=(12,2,1) orientation_deg=(0,0)
+move step: from_grid=(12,2,1) to_grid=(12,2,0)
+command: elevate distance_cm=-1
+after move: position_cm=(12,2,0) orientation_deg=(0,0)
+iteration 89
+before scan: position_cm=(12,2,0) orientation_deg=(0,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=7.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=10.7 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=3.4 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=4 relative_xy_deg=61.5779 relative_altitude_deg=37.4292
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=17.6 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=6.4 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=10.7 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=8.4 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=6.4 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=5.6 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=1 missed=20
+lidar hit: distance_cm=3.8 relative_xy_deg=54.7356 relative_altitude_deg=35.2644
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=37 target_grid=(12,4,0)
+follow path: steps=2
+move step: from_grid=(12,2,0) to_grid=(12,3,0)
+command: rotate_left angle_deg=90 from_deg=0 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(12,3,0) orientation_deg=(90,0)
+move step: from_grid=(12,3,0) to_grid=(12,4,0)
+command: advance distance_cm=1
+after move: position_cm=(12,4,0) orientation_deg=(90,0)
+iteration 90
+before scan: position_cm=(12,4,0) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=6 missed=15
+lidar hit: distance_cm=15.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=45 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=5.6 relative_xy_deg=63.4349 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=-61.5779 relative_altitude_deg=37.4292
+lidar hit: distance_cm=1.7 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=3.6 relative_xy_deg=45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=5.6 relative_xy_deg=26.5651 relative_altitude_deg=1.40334e-14
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=8.4 relative_xy_deg=243.435 relative_altitude_deg=0
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=7.6 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=2.2 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=16.8 relative_xy_deg=333.435 relative_altitude_deg=0
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=3 missed=18
+lidar hit: distance_cm=2.9 relative_xy_deg=-61.5779 relative_altitude_deg=52.5708
+lidar hit: distance_cm=2.3 relative_xy_deg=-54.7356 relative_altitude_deg=35.2644
+lidar hit: distance_cm=2.9 relative_xy_deg=-37.4292 relative_altitude_deg=28.4221
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=3 visited=27 target_grid=(10,4,0)
+follow path: steps=2
+move step: from_grid=(12,4,0) to_grid=(11,4,0)
+command: rotate_left angle_deg=90 from_deg=90 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(11,4,0) orientation_deg=(180,0)
+move step: from_grid=(11,4,0) to_grid=(10,4,0)
+command: advance distance_cm=1
+after move: position_cm=(10,4,0) orientation_deg=(180,0)
+iteration 91
+before scan: position_cm=(10,4,0) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=2 missed=19
+lidar hit: distance_cm=3.6 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=2.8 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=9.6 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=13.5 relative_xy_deg=225 relative_altitude_deg=0
+lidar hit: distance_cm=17.4 relative_xy_deg=243.435 relative_altitude_deg=0
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=4 missed=17
+lidar hit: distance_cm=15.6 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=3.6 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=13.5 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=4 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=4 visited=79 target_grid=(10,1,0)
+follow path: steps=3
+move step: from_grid=(10,4,0) to_grid=(10,3,0)
+command: rotate_left angle_deg=90 from_deg=180 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(10,3,0) orientation_deg=(270,0)
+move step: from_grid=(10,3,0) to_grid=(10,2,0)
+command: advance distance_cm=1
+after move: position_cm=(10,2,0) orientation_deg=(270,0)
+move step: from_grid=(10,2,0) to_grid=(10,1,0)
+command: advance distance_cm=1
+after move: position_cm=(10,1,0) orientation_deg=(270,0)
+iteration 92
+before scan: position_cm=(10,1,0) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=9.6 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=5 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=20.7 relative_xy_deg=153.435 relative_altitude_deg=0
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=18.6 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=5 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=10.7 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.2 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=4 visited=45 target_grid=(12,0,0)
+follow path: steps=3
+move step: from_grid=(10,1,0) to_grid=(11,1,0)
+command: rotate_left angle_deg=90 from_deg=270 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(11,1,0) orientation_deg=(0,0)
+move step: from_grid=(11,1,0) to_grid=(12,1,0)
+command: advance distance_cm=1
+after move: position_cm=(12,1,0) orientation_deg=(0,0)
+move step: from_grid=(12,1,0) to_grid=(12,0,0)
+command: rotate_right angle_deg=90 from_deg=0 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(12,0,0) orientation_deg=(270,0)
+iteration 93
+before scan: position_cm=(12,0,0) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=7.6 relative_xy_deg=90 relative_altitude_deg=0
+lidar hit: distance_cm=10.7 relative_xy_deg=135 relative_altitude_deg=0
+lidar hit: distance_cm=5.1 relative_xy_deg=153.435 relative_altitude_deg=0
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=19.5 relative_xy_deg=180 relative_altitude_deg=0
+lidar hit: distance_cm=10.7 relative_xy_deg=135 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=8.4 relative_xy_deg=116.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=7.3 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=5 visited=75 target_grid=(9,0,1)
+follow path: steps=4
+move step: from_grid=(12,0,0) to_grid=(11,0,0)
+command: rotate_right angle_deg=90 from_deg=270 target_deg=180
+command: advance distance_cm=1
+after move: position_cm=(11,1.22465e-16,0) orientation_deg=(180,0)
+move step: from_grid=(11,0,0) to_grid=(10,0,0)
+command: advance distance_cm=1
+after move: position_cm=(10,2.44929e-16,0) orientation_deg=(180,0)
+move step: from_grid=(10,0,0) to_grid=(9,0,0)
+command: advance distance_cm=1
+after move: position_cm=(9,3.67394e-16,0) orientation_deg=(180,0)
+move step: from_grid=(9,0,0) to_grid=(9,0,1)
+command: elevate distance_cm=1
+after move: position_cm=(9,3.67394e-16,1) orientation_deg=(180,0)
+iteration 94
+before scan: position_cm=(9,3.67394e-16,1) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.4 relative_xy_deg=225 relative_altitude_deg=0
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=6.4 relative_xy_deg=225 relative_altitude_deg=7.01671e-15
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=5 visited=88 target_grid=(5,0,1)
+follow path: steps=4
+move step: from_grid=(9,0,1) to_grid=(8,0,1)
+command: advance distance_cm=1
+after move: position_cm=(8,4.89859e-16,1) orientation_deg=(180,0)
+move step: from_grid=(8,0,1) to_grid=(7,0,1)
+command: advance distance_cm=1
+after move: position_cm=(7,6.12323e-16,1) orientation_deg=(180,0)
+move step: from_grid=(7,0,1) to_grid=(6,0,1)
+command: advance distance_cm=1
+after move: position_cm=(6,7.34788e-16,1) orientation_deg=(180,0)
+move step: from_grid=(6,0,1) to_grid=(5,0,1)
+command: advance distance_cm=1
+after move: position_cm=(5,8.57253e-16,1) orientation_deg=(180,0)
+iteration 95
+before scan: position_cm=(5,8.57253e-16,1) orientation_deg=(180,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=1 missed=20
+lidar hit: distance_cm=10.1 relative_xy_deg=206.565 relative_altitude_deg=1.40334e-14
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=4 visited=69 target_grid=(5,2,0)
+follow path: steps=3
+move step: from_grid=(5,0,1) to_grid=(5,1,1)
+command: rotate_right angle_deg=90 from_deg=180 target_deg=90
+command: advance distance_cm=1
+after move: position_cm=(5,1,1) orientation_deg=(90,0)
+move step: from_grid=(5,1,1) to_grid=(5,2,1)
+command: advance distance_cm=1
+after move: position_cm=(5,2,1) orientation_deg=(90,0)
+move step: from_grid=(5,2,1) to_grid=(5,2,0)
+command: elevate distance_cm=-1
+after move: position_cm=(5,2,0) orientation_deg=(90,0)
+iteration 96
+before scan: position_cm=(5,2,0) orientation_deg=(90,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=17.6 relative_xy_deg=0 relative_altitude_deg=0
+lidar hit: distance_cm=20.6 relative_xy_deg=-45 relative_altitude_deg=7.01671e-15
+lidar hit: distance_cm=9.6 relative_xy_deg=-63.4349 relative_altitude_deg=1.40334e-14
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=3 missed=18
+lidar hit: distance_cm=14.6 relative_xy_deg=270 relative_altitude_deg=0
+lidar hit: distance_cm=20.6 relative_xy_deg=315 relative_altitude_deg=0
+lidar hit: distance_cm=5.1 relative_xy_deg=333.435 relative_altitude_deg=0
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier path found: length=8 visited=302 target_grid=(6,0,4)
+follow path: steps=7
+move step: from_grid=(5,2,0) to_grid=(6,2,0)
+command: rotate_right angle_deg=90 from_deg=90 target_deg=0
+command: advance distance_cm=1
+after move: position_cm=(6,2,0) orientation_deg=(0,0)
+move step: from_grid=(6,2,0) to_grid=(6,1,0)
+command: rotate_right angle_deg=90 from_deg=0 target_deg=270
+command: advance distance_cm=1
+after move: position_cm=(6,1,0) orientation_deg=(270,0)
+move step: from_grid=(6,1,0) to_grid=(6,0,0)
+command: advance distance_cm=1
+after move: position_cm=(6,8.88178e-16,0) orientation_deg=(270,0)
+move step: from_grid=(6,0,0) to_grid=(6,0,1)
+command: elevate distance_cm=1
+after move: position_cm=(6,8.88178e-16,1) orientation_deg=(270,0)
+move step: from_grid=(6,0,1) to_grid=(6,0,2)
+command: elevate distance_cm=1
+after move: position_cm=(6,8.88178e-16,2) orientation_deg=(270,0)
+move step: from_grid=(6,0,2) to_grid=(6,0,3)
+command: elevate distance_cm=1
+after move: position_cm=(6,8.88178e-16,3) orientation_deg=(270,0)
+move step: from_grid=(6,0,3) to_grid=(6,0,4)
+command: elevate distance_cm=1
+after move: position_cm=(6,8.88178e-16,4) orientation_deg=(270,0)
+iteration 97
+before scan: position_cm=(6,8.88178e-16,4) orientation_deg=(270,0)
+scan: relative_xy=0 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=90 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=180 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=270 relative_altitude=0 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=90 beams=21 detected=0 missed=21
+scan: relative_xy=0 relative_altitude=-90 beams=21 detected=0 missed=21
+frontier search stopped: no reachable frontier, visited=2149
+simulation stop: no path to frontier
+simulation end
+final state: position_cm=(6,8.88178e-16,4) orientation_deg=(270,0)
+score: 96.9484
+stats: total=3703 correct=3590 incorrect=113 mapped_occupied=56 mapped_empty=3534 mapped_not_mapped=113 occupied_found=56 occupied_missed=0 false_occupied=0
+wrote map output: "../scenario_default_duplicate/map_output.txt"

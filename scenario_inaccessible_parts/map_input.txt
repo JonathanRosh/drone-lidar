@@ -1,0 +1,64 @@
+# occupied cells
+# solid divider wall that blocks access to the east side
+6 -1 -1
+6 0 -1
+6 1 -1
+6 2 -1
+6 3 -1
+6 4 -1
+6 5 -1
+6 6 -1
+6 7 -1
+6 8 -1
+6 -1 0
+6 0 0
+6 1 0
+6 2 0
+6 3 0
+6 4 0
+6 5 0
+6 6 0
+6 7 0
+6 8 0
+6 -1 1
+6 0 1
+6 1 1
+6 2 1
+6 3 1
+6 4 1
+6 5 1
+6 6 1
+6 7 1
+6 8 1
+6 -1 2
+6 0 2
+6 1 2
+6 2 2
+6 3 2
+6 4 2
+6 5 2
+6 6 2
+6 7 2
+6 8 2
+6 -1 3
+6 0 3
+6 1 3
+6 2 3
+6 3 3
+6 4 3
+6 5 3
+6 6 3
+6 7 3
+6 8 3
+
+# obstacle reachable from the start side
+2 3 0
+3 3 0
+3 4 0
+
+# inaccessible east-side obstacle cluster
+10 2 0
+10 3 0
+11 2 0
+11 3 0
+11 3 1

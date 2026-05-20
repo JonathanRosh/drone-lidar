@@ -35,3 +35,24 @@ Mapping DroneMap::get(const Position3D &pos) const {
   }
   return it->second;
 }
+
+std::size_t DroneMap::occupiedCount() const {
+  std::size_t n = 0;
+  for (const auto &[grid, mapping] : cells_) {
+    if (mapping == OCCUPIED) {
+      ++n;
+    }
+  }
+  return n;
+}
+
+void DroneMap::writeOccupied(std::ostream &out) const {
+  for (const auto &[grid, mapping] : cells_) {
+    if (mapping != OCCUPIED) {
+      continue;
+    }
+    const Position3D p = gridToWorld(grid);
+    out << p.x.numerical_value_in(cm) << ',' << p.y.numerical_value_in(cm)
+        << ',' << p.z.numerical_value_in(cm) << '\n';
+  }
+}

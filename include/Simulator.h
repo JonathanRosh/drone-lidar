@@ -17,14 +17,14 @@ class Simulator {
   ILidarSensor *lidar_sensor;
   IPositionSensor *position_sensor;
   IMovementDriver *movement_driver;
-  SimulationState simulation_state;
+  SimulationState &simulation_state_;
   const MissionConfig &mission_config_;
   const DroneConfig &drone_config_;
 
 public:
   Simulator(IDrone &drone, TrueMap &true_map, IMap3D &map,
             ILidarSensor &lidar_sensor, IPositionSensor &position_sensor,
-            IMovementDriver &movement_driver,
+            IMovementDriver &movement_driver, SimulationState &simulation_state,
             const MissionConfig &mission_config,
             const DroneConfig &drone_config);
 

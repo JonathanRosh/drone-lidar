@@ -32,10 +32,13 @@ std::optional<Distance> LidarSensorMock::traceBeam(const Orientation& beam_orien
             origin.z + dz.force_numerical_value_in(mp::one) * distance.force_numerical_value_in(cm) * z_extent[cm],
         };
 
-        // TODO: map.get is expensive right now because of world to grid conversion
-        if (map.get(sample) != EMPTY) {
-            if (distance < lidar_config.zMin){
-                return Distance{0*cm};
+        if (!map.isInsideBounds(sample)) {
+            break;
+        }
+        const Mapping cell = map.get(sample);
+        if (cell == OCCUPIED) {
+            if (distance < lidar_config.zMin) {
+                return Distance{0 * cm};
             }
             return distance;
         }

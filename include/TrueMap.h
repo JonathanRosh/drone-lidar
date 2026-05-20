@@ -7,6 +7,8 @@
 #include "TrueMapBuilder.h"
 #include "MapUtils.h"
 
+#include <functional>
+
 class TrueMap : public IMap3D {
 
     
@@ -30,6 +32,13 @@ public:
 
     /** First in-bounds cell in lex order (x, then y, then z) whose mapping is not OCCUPIED. */
     std::optional<Position3D> firstUnoccupiedPositionLexOrder() const;
+
+    /** Start pose near occupied structure (for simulation bootstrap). */
+    std::optional<Position3D> startPositionNearStructure() const;
+
+    /** Invokes fn for each explicitly stored cell (sparse occupied points). */
+    void forEachStoredCell(
+        const std::function<void(const Position3D &, Mapping)> &fn) const;
 };
 
 #endif //DRONE_LIDAR_TRUEMAP_H

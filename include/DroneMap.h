@@ -4,6 +4,7 @@
 #include "GridCoord.h"
 #include "IMap3D.h"
 
+#include <ostream>
 #include <unordered_map>
 
 class DroneMap : public IMap3D {
@@ -21,4 +22,7 @@ public:
   Mapping get(const Position3D &pos) const override;
   void set(const Position3D &pos, Mapping val) override;
   bool isInsideBounds(const Position3D &pos) const override;
+
+  void writeOccupied(std::ostream &out) const;
+  std::size_t occupiedCount() const;
 };

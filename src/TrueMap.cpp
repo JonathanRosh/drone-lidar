@@ -1,8 +1,9 @@
 #include "../include/TrueMap.h"
 #include "../include/MapGrid.h"
 
-#include <iostream>
 #include <cmath>
+#include <functional>
+#include <iostream>
 
 TrueMap::TrueMap(const MissionConfig& mission_config) : 
     config(mission_config), 
@@ -43,7 +44,7 @@ Mapping TrueMap::get(const Position3D& pos) const {
     auto it = cells.find(grid);
 
     if (it == cells.end()) {
-        return NOT_MAPPED;
+        return EMPTY;
     }
 
     return it->second;
@@ -84,4 +85,74 @@ std::optional<Position3D> TrueMap::firstUnoccupiedPositionLexOrder() const {
     }
 
     return std::nullopt;
+}
+
+namespace {
+
+Position3D positionFromCm(double x, double y, double z) {
+  Position3D p{};
+  p.x = x * cm;
+  p.y = y * cm;
+  p.z = z * cm;
+  return p;
+}
+
+} // namespace
+
+std::optional<Position3D> TrueMap::startPositionNearStructure() const {
+  if (cells.empty()) {
+    return firstUnoccupiedPositionLexOrder();
+  }
+
+  double sum_x = 0;
+  double sum_y = 0;
+  double sum_z = 0;
+  std::size_t count = 0;
+  for (const auto &[grid, mapping] : cells) {
+    if (mapping != OCCUPIED) {
+      continue;
+    }
+    const Position3D p = gridToWorld(grid);
+    sum_x += p.x.numerical_value_in(cm);
+    sum_y += p.y.numerical_value_in(cm);
+    sum_z += p.z.numerical_value_in(cm);
+    ++count;
+  }
+
+  const double cx = sum_x / static_cast<double>(count);
+  const double cy = sum_y / static_cast<double>(count);
+  const double cz = sum_z / static_cast<double>(count);
+
+  const double rx = res_xy.numerical_value_in(cm);
+  const double rz = res_height.numerical_value_in(cm);
+  const int max_radius = 200;
+
+  for (int radius = 0; radius <= max_radius; ++radius) {
+    for (int ix = -radius; ix <= radius; ++ix) {
+      for (int iy = -radius; iy <= radius; ++iy) {
+        for (int iz = -radius; iz <= radius; ++iz) {
+          if (std::max({std::abs(ix), std::abs(iy), std::abs(iz)}) != radius) {
+            continue;
+          }
+          const Position3D candidate = positionFromCm(
+              cx + ix * rx, cy + iy * rx, cz + iz * rz);
+          if (!isInsideBounds(candidate)) {
+            continue;
+          }
+          if (get(candidate) != OCCUPIED) {
+            return candidate;
+          }
+        }
+      }
+    }
+  }
+
+  return firstUnoccupiedPositionLexOrder();
+}
+
+void TrueMap::forEachStoredCell(
+    const std::function<void(const Position3D &, Mapping)> &fn) const {
+  for (const auto &[grid, mapping] : cells) {
+    fn(gridToWorld(grid), mapping);
+  }
 }

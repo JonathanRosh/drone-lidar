@@ -117,6 +117,18 @@ MissionConfig Parser::parseMissionConfig(const std::string &filename) {
       mission_config.map_resolution.xy_resolution = std::stoi(value);
     } else if (key == "resolution_height" || key == "map_resolution_height") {
       mission_config.map_resolution.height_resolution = std::stoi(value);
+    } else if (key == "initial_x" || key == "initial_position_x") {
+      mission_config.initial_pose.position.x = XLength{std::stod(value) * cm};
+    } else if (key == "initial_y" || key == "initial_position_y") {
+      mission_config.initial_pose.position.y = YLength{std::stod(value) * cm};
+    } else if (key == "initial_height" ||
+               key == "initial_position_height" ||
+               key == "initial_z" ||
+               key == "initial_position_z") {
+      mission_config.initial_pose.position.z = ZLength{std::stod(value) * cm};
+    } else if (key == "initial_angle" || key == "initial_xy_angle") {
+      mission_config.initial_pose.orientation.horizontal =
+          HorizontalAngle{std::stod(value) * deg};
     } else {
       throw std::runtime_error("Failed to parse line: " + line);
     }

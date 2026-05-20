@@ -22,6 +22,27 @@ MissionConfig lineMissionConfig() {
   };
 }
 
+MissionConfig offsetStartMissionConfig() {
+  return MissionConfig{
+      .map_boundry = {
+          .minX = 5.0 * cm,
+          .minY = 0.0 * cm,
+          .maxX = 9.0 * cm,
+          .maxY = 0.0 * cm,
+          .maxHeight = 0.0 * cm,
+          .minHeight = 0.0 * cm,
+      },
+      .map_resolution = {
+          .xy_resolution = 0,
+          .height_resolution = 0,
+      },
+      .initial_pose = {
+          .position = {6.0 * cm, 0.0 * cm, 0.0 * cm},
+          .orientation = {0.0 * deg, 0.0 * deg},
+      },
+  };
+}
+
 DroneConfig testDroneConfig() {
   return DroneConfig{
       .minPass = {
@@ -57,4 +78,18 @@ TEST(SimulatorTest, SimulateMapsSimpleOccupiedVoxelAndFreeRayCells) {
   EXPECT_EQ(mapped.get({1.0 * cm, 0.0 * cm, 0.0 * cm}), EMPTY);
   EXPECT_EQ(mapped.get({2.0 * cm, 0.0 * cm, 0.0 * cm}), EMPTY);
   EXPECT_EQ(mapped.get({3.0 * cm, 0.0 * cm, 0.0 * cm}), OCCUPIED);
+}
+
+TEST(SimulatorTest, SimulateStartsAtMissionInitialPosition) {
+  const MissionConfig mission_config = offsetStartMissionConfig();
+  TrueMap true_map(mission_config);
+  TrueMapBuilder::set(true_map, {8.0 * cm, 0.0 * cm, 0.0 * cm}, OCCUPIED);
+
+  Simulator simulator(testDroneConfig(), mission_config, true_map);
+  IMap3D &mapped = simulator.simulate();
+
+  EXPECT_EQ(mapped.get({6.0 * cm, 0.0 * cm, 0.0 * cm}), EMPTY);
+  EXPECT_EQ(mapped.get({7.0 * cm, 0.0 * cm, 0.0 * cm}), EMPTY);
+  EXPECT_EQ(mapped.get({8.0 * cm, 0.0 * cm, 0.0 * cm}), OCCUPIED);
+  EXPECT_EQ(mapped.get({0.0 * cm, 0.0 * cm, 0.0 * cm}), OUTSIDE_BOUNDARY);
 }

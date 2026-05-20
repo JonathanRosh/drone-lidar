@@ -37,9 +37,15 @@ struct MapResolution {
   unsigned int height_resolution;
 };
 
+struct InitialPose {
+  Position3D position;
+  Orientation orientation;
+};
+
 struct MissionConfig {
   MapBoundry map_boundry;
   MapResolution map_resolution;
+  InitialPose initial_pose;
   // std::set<Position3D> recharging_stations; TODO
 };
 

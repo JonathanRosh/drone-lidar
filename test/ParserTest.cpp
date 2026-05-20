@@ -82,6 +82,15 @@ TEST(ParserTest, ParseMissionConfigValidFile) {
                    50.0);
   EXPECT_EQ(config.map_resolution.xy_resolution, 2u);
   EXPECT_EQ(config.map_resolution.height_resolution, 3u);
+  EXPECT_DOUBLE_EQ(config.initial_pose.position.x.force_numerical_value_in(cm),
+                   4.0);
+  EXPECT_DOUBLE_EQ(config.initial_pose.position.y.force_numerical_value_in(cm),
+                   5.0);
+  EXPECT_DOUBLE_EQ(config.initial_pose.position.z.force_numerical_value_in(cm),
+                   6.0);
+  EXPECT_DOUBLE_EQ(config.initial_pose.orientation.horizontal
+                       .force_numerical_value_in(deg),
+                   90.0);
 }
 
 TEST(ParserTest, ParseMissionConfigAcceptsResolutionAliases) {
@@ -91,6 +100,15 @@ TEST(ParserTest, ParseMissionConfigAcceptsResolutionAliases) {
 
   EXPECT_EQ(config.map_resolution.xy_resolution, 4u);
   EXPECT_EQ(config.map_resolution.height_resolution, 5u);
+  EXPECT_DOUBLE_EQ(config.initial_pose.position.x.force_numerical_value_in(cm),
+                   0.0);
+  EXPECT_DOUBLE_EQ(config.initial_pose.position.y.force_numerical_value_in(cm),
+                   0.0);
+  EXPECT_DOUBLE_EQ(config.initial_pose.position.z.force_numerical_value_in(cm),
+                   0.0);
+  EXPECT_DOUBLE_EQ(config.initial_pose.orientation.horizontal
+                       .force_numerical_value_in(deg),
+                   0.0);
 }
 
 TEST(ParserTest, ParseMissionConfigThrowsOnMissingFile) {

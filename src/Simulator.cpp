@@ -58,8 +58,8 @@ Simulator::Simulator(const DroneConfig &drone_config,
       mission_config_(mission_config),
       true_map_(true_map),
       sim_state_{
-          .drone_position = {0.0 * cm, 0.0 * cm, 0.0 * cm},
-          .drone_orientation = {0.0 * deg, 0.0 * deg},
+          .drone_position = mission_config_.initial_pose.position,
+          .drone_orientation = mission_config_.initial_pose.orientation,
           .failure_reason = "",
       },
       mapped_map_(mission_config_),
@@ -400,44 +400,6 @@ void Simulator::moveAlongPath(const std::vector<GridCoord> &path) {
   }
 }
 
-/*
- * The simulator uses a deliberately simple occupancy-grid exploration
- * algorithm. The key rule is that all sensing and movement decisions go
- * through the IDrone interface: the simulator may command scans, rotations,
- * advances, and elevation changes, and it may read the drone position and
- * orientation, but it does not inspect the true map directly to decide what
- * to map. The true map remains behind the lidar and movement-driver mocks.
- *
- * Mapping is done as a sparse voxel occupancy grid in mapped_map_. Every
- * position starts as NOT_MAPPED because mapped_map_ is a DroneMap. At the
- * current drone position we scan six deterministic directions: four horizontal
- * compass directions and up/down. Each lidar result describes one emitted beam.
- * For that beam, the simulator combines the drone orientation with the
- * beam-relative orientation, steps along the ray at mission resolution, and
- * marks traversed voxels EMPTY. If the beam detected an obstacle, the endpoint
- * voxel is marked OCCUPIED. If the lidar reports distance 0, the obstacle is
- * too close to measure accurately, so only the nearest voxel in that beam
- * direction is marked OCCUPIED. If the beam did not detect an obstacle, the ray
- * is still useful: cells along the beam up to the reported max range are marked
- * EMPTY, but no endpoint is marked OCCUPIED.
- *
- * Exploration uses a frontier strategy over the discovered map. A frontier is
- * a known EMPTY voxel that has at least one in-bounds NOT_MAPPED 6-neighbor.
- * After scanning, the simulator runs BFS through known EMPTY voxels only, using
- * a fixed neighbor order (+X, -X, +Y, -Y, +Z, -Z), and chooses the nearest
- * reachable frontier. It then follows the BFS path one grid step at a time:
- * horizontal steps rotate toward the target neighbor and advance one XY
- * resolution, while vertical steps use elevate by one height resolution. Each
- * command is split into chunks that respect the configured max movement and
- * rotation limits. If the movement mock reports simulation failure, exploration
- * stops immediately.
- *
- * The loop terminates when there is no reachable frontier, when the simulation
- * fails, or when a conservative iteration cap is reached. The cap prevents an
- * infinite loop in cases where the lidar cannot make progress because of blind
- * spots or because all remaining unknown space is unreachable. Unreachable or
- * unobservable cells may legitimately remain NOT_MAPPED in the returned map.
- */
 IMap3D &Simulator::simulate() {
   logger_.simulationStart(res_xy_, res_z_, drone_config_);
   logger_.state("initial state", drone_.getPosition(), drone_.getOrientation());

@@ -7,3 +7,7 @@ map_boundary_height_min: 3
 map_boundary_height_max: 50
 resolution_xy: 2
 map_resolution_height: 3
+initial_x: 4
+initial_y: 5
+initial_height: 6
+initial_xy_angle: 90
